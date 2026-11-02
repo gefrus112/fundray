@@ -1,6 +1,6 @@
 # Fundray
 
-> **Important premise — read this first:** Fundray is **not an operating system**.
+> **Important premise — read this first:** the Fundray **toolkit** for Windows is **not an operating system**.
 > It is an enhancement toolkit that runs on top of an existing Windows 7 SP1 / Windows 10 /
 > Windows 11 installation. It tunes the system you already have, and every change it makes is
 > logged and reversible. It never touches activation, licensing, or system files.
@@ -26,6 +26,27 @@ risk:
   one-click restore.
 
 ---
+
+---
+
+## What's new in v5 (Fundray Linux — the real thing)
+
+- **Fundray Linux 1.0 "Rebirth"** — the project now ships an actual, bootable
+  Linux distribution: official Linux 6.12.115 LTS (configured `tinyconfig` + our
+  fragment, `6.12.115-fundray`, ~2.4 MB bzImage), a static BusyBox 1.37.0 userland
+  built from source, a 30-line `ctty` getty replacement, and the `fundray` CLI.
+  One ~6.3 MB ISO that boots BIOS **and** UEFI, runs live from RAM, and never
+  touches a disk. See [os.html](https://gefrus112.github.io/fundray/os.html).
+- **Boot-tested, not hand-waved** — the repo ships an automated QEMU test
+  (`os/qemu-test.sh`) that boots the ISO over the serial console and verifies
+  `uname`, `fundray info`, `fundray clean`, `fundray bench` and a clean reboot
+  via `fundray rebirth`. The captured VGA boot screen is on the website.
+- **Everything from source** — `os/build.sh` downloads the kernel and BusyBox
+  tarballs, verifies the kernel sha256 against kernel.org, compiles both and
+  assembles the hybrid ISO with GRUB. The exact kernel config ships in the
+  kernel itself (`/proc/config.gz`) and as `os/kernel.config.generated`.
+- **The Windows toolkit is unchanged** — same honest scope as before: it tunes
+  the Windows you already have and remains a toolkit, not an OS.
 
 ## What's new in v4 (website)
 

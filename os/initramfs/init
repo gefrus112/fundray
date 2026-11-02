@@ -1,0 +1,56 @@
+#!/bin/busybox sh
+# Fundray Linux — /init (PID 1)
+#
+# The whole boot of this distribution is this file: mount the pseudo
+# filesystems, print the welcome screens, hand out one shell per console,
+# and never exit. No service manager, no daemons, nothing auto-starts.
+
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin
+export HOME=/root
+export TERM="${TERM:-linux}"
+export COLUMNS="${COLUMNS:-80}"
+export PS1='fundray> '
+
+/bin/busybox --install -s /bin 2>/dev/null
+
+mount -t devtmpfs devtmpfs /dev 2>/dev/null
+mount -t proc     proc     /proc 2>/dev/null
+mount -t sysfs    sysfs    /sys  2>/dev/null
+mount -t tmpfs    tmpfs    /tmp  2>/dev/null
+
+hostname fundray 2>/dev/null
+ip link set lo up 2>/dev/null
+
+welcome() {
+  clear 2>/dev/null
+  cat /etc/banner.txt 2>/dev/null
+  echo
+  echo -e " \033[1;36mKernel\033[0m    : $(uname -r) ($(uname -m))"
+  echo -e " \033[1;36mMachine\033[0m   :$(grep -m1 'model name' /proc/cpuinfo | cut -d: -f2 || echo ' unknown')"
+  echo -e " \033[1;36mMemory\033[0m    : $(awk '/MemTotal/ {printf "%.0f MB total", $2/1024}' /proc/meminfo) · $(awk '/MemAvailable/ {printf "%.0f MB available", $2/1024}' /proc/meminfo)"
+  echo -e " \033[1;36mSystem\033[0m    : 0 services · $(ls /proc | grep -c '^[0-9]') processes · running live from RAM"
+  echo
+  echo " Nothing is installed and no disk is touched."
+  echo -e " Type \033[1;32mfundray help\033[0m to see what this little OS can do."
+  echo
+}
+
+welcome > /dev/tty0 2>/dev/null
+welcome > /dev/ttyS0 2>/dev/null
+
+# One interactive shell per console, each supervised: if a shell exits,
+# PID 1 restarts it. ctty(1) opens the console, makes it the controlling
+# terminal of a fresh session and execs the shell, so job control works
+# on every console.
+respawn() {
+  while :; do
+    ctty "$1"
+    echo "Shell exited — restarting on $1." > "$1" 2>/dev/null
+    sleep 1
+  done
+}
+respawn /dev/tty1  >/dev/null 2>&1 &
+respawn /dev/ttyS0 >/dev/null 2>&1 &
+
+# PID 1 idles here, reaping children, forever.
+wait

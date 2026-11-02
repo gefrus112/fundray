@@ -46,6 +46,7 @@
         <li><a href="features.html">Features</a></li>
         <li><a href="docs.html">Docs</a></li>
         <li><a href="after.html">After install</a></li>
+        <li><a href="os.html">Linux</a></li>
         <li><a href="download.html">Download</a></li>
         <li><a href="windows11.html">Windows 11</a></li>
       </ul>
@@ -58,7 +59,7 @@
     <section class="hero-v5">
       <div class="aurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
       <div class="container">
-        <span class="pill reveal">v4 &middot; Open source &middot; MIT &middot; No telemetry</span>
+        <span class="pill reveal">v5 &middot; Now with Fundray Linux &middot; MIT &middot; No telemetry</span>
         <h1 class="reveal d1">Unlock your Windows machine's <span class="grad-text anim">full potential</span>.</h1>
         <p class="lead reveal d2">Fundray is a free enhancement toolkit for Windows 7 SP1, 10 and 11.
         Fewer background processes, a lighter startup queue, an honest power plan —
@@ -73,6 +74,7 @@
           <span class="trust-chip warn"><span class="tdot"></span>Not an operating system</span>
           <span class="trust-chip green"><span class="tdot"></span>Restore point before every tweak</span>
           <span class="trust-chip cyan"><span class="tdot"></span>100% reversible — undo log included</span>
+          <span class="trust-chip indigo"><span class="tdot"></span>New: bootable Fundray Linux 1.0</span>
           <span class="trust-chip indigo"><span class="tdot"></span>Win 7 SP1 / 10 / 11</span>
         </div>
 
@@ -226,7 +228,36 @@
     </section>
 
     <!-- ============ BEFORE / AFTER ============ -->
-    <section class="section" id="after">
+    
+    <!-- ============ LINUX ============ -->
+    <section class="section" id="linux">
+      <div class="container">
+        <span class="kicker reveal">New in v5</span>
+        <h2 class="reveal d1">Fundray <span class="grad-text">Linux</span> — now it's real</h2>
+        <p class="lead reveal d2">The Windows toolkit tunes the machine you have. Fundray Linux
+        is a different thing entirely: an actual, bootable Linux distribution built from the
+        official 6.12 LTS kernel — ~6&nbsp;MB, zero services, live from RAM, boot-tested in
+        QEMU with its own <code>fundray</code> command line.</p>
+
+        <div class="term reveal d2">
+          <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span><span class="term-title">fundray@ttyS0 — live ISO</span></div>
+          <div class="term-body"><code><span class="t-prompt">fundray&gt;</span> uname -a
+Linux fundray 6.12.115-fundray #1 SMP x86_64 GNU/Linux
+<span class="t-prompt">fundray&gt;</span> fundray info
+Kernel    : Linux 6.12.115-fundray (x86_64)
+Memory    : 494 MB total · 479 MB available
+Services  : 0 (there is no service manager — by design)
+Storage   : initramfs in RAM — no disk is mounted or touched</code></div>
+        </div>
+
+        <div class="cta-row reveal d3">
+          <a class="btn btn-primary" href="os.html">Meet Fundray Linux &rarr;</a>
+          <a class="btn btn-ghost" href="os.html#download">Download the ~6 MB ISO</a>
+        </div>
+      </div>
+    </section>
+
+<section class="section" id="after">
       <div class="container">
         <div class="section-head reveal">
           <h2>The startup queue, before and after</h2>
@@ -405,9 +436,9 @@
           </svg>
           <span class="brand-name">Fund<span>ray</span></span>
         </a>
-        <p>Fundray is an enhancement toolkit for Windows 7 SP1, 10 and 11 — it is
-        <strong>not an operating system</strong>, it never touches activation or licensing,
-        and every change is reversible.</p>
+        <p>The Fundray toolkit for Windows is an enhancement tool — the toolkit itself is
+        <strong>not an operating system</strong>. Our separate distro,
+        <a href="os.html">Fundray Linux</a>, is. Everything is open source and reversible.</p>
       </div>
       <div>
         <h4>Site</h4>
@@ -416,6 +447,7 @@
         <a href="docs.html">Docs</a>
         <a href="after.html">After install</a>
         <a href="screenshots.html">Screenshots</a>
+        <a href="os.html">Fundray Linux</a>
         <a href="download.html">Download</a>
         <a href="windows11.html">Windows 11</a>
         <a href="faq.html">FAQ</a>

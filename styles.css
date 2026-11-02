@@ -1156,3 +1156,6 @@ kbd {
   .step-v5::after { transition: none; }
   .b-tile { transition: none; }
 }
+
+/* ---------- v5: Fundray Linux page ---------- */
+.img-pixelated { image-rendering: pixelated; }

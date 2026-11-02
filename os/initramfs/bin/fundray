@@ -1,0 +1,126 @@
+#!/bin/sh
+# fundray — the command line of Fundray Linux
+# The whole distribution is one idea: almost nothing running,
+# almost nothing used, everything inspectable.
+
+CY="\033[1;33m"
+CG="\033[1;32m"
+C0="\033[0m"
+
+about() {
+  cat /etc/banner.txt 2>/dev/null
+  echo
+  echo " Fundray Linux is a real, bootable Linux distribution,"
+  echo " assembled by the Fundray project from three parts:"
+  echo
+  echo "   1. the official Linux kernel (LTS), configured tiny"
+  echo "   2. a BusyBox userland — one static binary, ~200 unix tools"
+  echo "   3. the fundray command line (this program)"
+  echo
+  echo " 0 services. 0 daemons. Nothing auto-starts. Nothing phones home."
+  echo " The whole system lives in RAM — power it off and it is gone."
+  echo " Learn more: https://gefrus112.github.io/fundray/os.html"
+  echo
+}
+
+info() {
+  echo "Kernel    : $(uname -sr) ($(uname -m))"
+  echo "Hostname  : $(hostname)"
+  echo "CPU       :$(grep -m1 'model name' /proc/cpuinfo | cut -d: -f2 || echo ' unknown')"
+  echo "Memory    : $(awk '/MemTotal/ {printf "%.0f MB", $2/1024}' /proc/meminfo) total · $(awk '/MemAvailable/ {printf "%.0f MB", $2/1024}' /proc/meminfo) available"
+  echo "Uptime    : $(cut -d' ' -f1 /proc/uptime)s"
+  echo "Processes : $(ls /proc | grep -c '^[0-9]')"
+  echo "Services  : 0 (there is no service manager — by design)"
+  echo "Storage   : initramfs in RAM — no disk is mounted or touched"
+}
+
+services() {
+  echo "Services  : 0 — Fundray Linux has no service manager, by design."
+  echo "Processes :"
+  for p in /proc/[0-9]*; do
+    [ -r "$p/comm" ] && printf '   %-6s %s\n' "${p#/proc/}" "$(cat "$p/comm")"
+  done
+}
+
+clean() {
+  sync
+  if echo 3 > /proc/sys/vm/drop_caches 2>/dev/null; then
+    echo "Page cache dropped. (Live system — this only frees RAM.)"
+  else
+    echo "Could not drop caches. (You are root, so this would be odd.)"
+  fi
+}
+
+bench() {
+  t0=$(cut -d ' ' -f1 /proc/uptime)
+  dd if=/dev/zero of=/dev/null bs=1M count=2000 2>/dev/null
+  t1=$(cut -d ' ' -f1 /proc/uptime)
+  awk -v a="$t0" -v b="$t1" 'BEGIN{
+    d = b - a; if (d <= 0) d = 0.001;
+    printf "Pushed 2000 MB through the CPU in %.2fs (~%.0f MB/s)\n", d, 2000/d }'
+}
+
+net() {
+  found=0
+  for d in /sys/class/net/*; do
+    i="${d##*/}"
+    [ "$i" = "lo" ] && continue
+    found=1
+    echo "Requesting DHCP on $i ..."
+    udhcpc -i "$i" -n -q -s /etc/udhcpc.script 2>&1 | sed -n 1p
+  done
+  if [ "$found" = 0 ]; then
+    echo "No wired interface found. v1 ships drivers for common Intel/Realtek"
+    echo "NICs; Wi-Fi needs firmware that does not fit in a tiny kernel."
+  else
+    ip -4 addr show 2>/dev/null | sed -n '/inet/p'
+  fi
+}
+
+rebirth() {
+  echo -e "${CY}Applying the Fundray touch...${C0}"
+  for c in '|' '/' '-' '\'; do
+    printf '\r  %s  ' "$c"
+    sleep 0.2 2>/dev/null || sleep 1
+  done
+  printf '\r        \r'
+  echo -e "${CG}Everything is clean. Rebooting — your machine, reborn.${C0}"
+  sleep 1
+  reboot -f
+}
+
+case "${1:-help}" in
+  about)    about ;;
+  info)     info ;;
+  services) services ;;
+  clean)    clean ;;
+  bench)    bench ;;
+  net)      net ;;
+  rebirth)  rebirth ;;
+  reboot)   echo "Rebooting..."; sleep 1; reboot -f ;;
+  poweroff) echo "Powering off..."; sleep 1; poweroff -f ;;
+  license)
+    echo "Linux kernel : GPL-2.0        (Copyright Linus Torvalds and contributors)"
+    echo "BusyBox      : GPL-2.0+       (Copyright the BusyBox project)"
+    echo "Fundray init, fundray CLI and build kit : GPL-2.0"
+    ;;
+  help|*)
+    cat <<'EOF'
+fundray — the Fundray Linux command line
+
+  fundray about      what this system is
+  fundray info       kernel, memory, uptime, processes
+  fundray services   prove that zero services are running
+  fundray clean      drop the page cache (frees RAM)
+  fundray bench      a quick, silly CPU throughput test
+  fundray net        DHCP on the wired NIC (Intel/Realtek drivers)
+  fundray rebirth    the little reboot ceremony
+  fundray reboot     reboot now
+  fundray poweroff   power off now
+  fundray license    licensing (GPL-2.0)
+
+Live system: nothing is installed, no disk is touched.
+Kernel config: zcat /proc/config.gz | less
+EOF
+    ;;
+esac

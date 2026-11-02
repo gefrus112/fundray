@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundray Linux &mdash; a real, tiny, bootable Linux distribution</title>
+  <meta name="description" content="Fundray Linux 1.0 'Rebirth' — a real, bootable live Linux distribution built from the official Linux 6.12 LTS kernel, a static BusyBox userland and the fundray CLI. ~6 MB ISO, BIOS + UEFI, QEMU-verified.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="nav container">
+      <a class="brand" href="index.html">
+        <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="frt-os" x1="0" y1="32" x2="32" y2="0" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#0b0e1a"/><stop offset="1" stop-color="#171d33"/>
+            </linearGradient>
+            <linearGradient id="frr-os" x1="4" y1="28" x2="28" y2="4" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#22d3ee"/><stop offset="0.55" stop-color="#818cf8"/><stop offset="1" stop-color="#e879f9"/>
+            </linearGradient>
+          </defs>
+          <rect width="32" height="32" rx="7.5" fill="url(#frt-os)"/>
+          <circle cx="8.4" cy="23.6" r="2.4" fill="url(#frr-os)"/>
+          <path d="M8 16.6 A7 7 0 0 1 15.4 24" fill="none" stroke="url(#frr-os)" stroke-width="2.7" stroke-linecap="round"/>
+          <path d="M8 11.4 A12.2 12.2 0 0 1 20.6 24" fill="none" stroke="url(#frr-os)" stroke-width="2.7" stroke-linecap="round" opacity="0.72"/>
+          <path d="M8 6.2 A17.4 17.4 0 0 1 25.8 24" fill="none" stroke="url(#frr-os)" stroke-width="2.7" stroke-linecap="round" opacity="0.45"/>
+        </svg>
+        <span class="brand-name">Fund<span>ray</span></span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+      <label for="nav-toggle" class="nav-burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="docs.html">Docs</a></li>
+        <li><a href="after.html">After install</a></li>
+        <li><a href="os.html" class="active">Linux</a></li>
+        <li><a href="download.html">Download</a></li>
+        <li><a href="windows11.html">Windows 11</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero hero-compact">
+      <div class="aurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
+      <div class="container">
+        <span class="pill reveal">v5 &middot; It's a real operating system now</span>
+        <h1 class="reveal d1">Fundray <span class="grad-text anim">Linux</span></h1>
+        <p class="lead reveal d2">A real, bootable live Linux distribution, assembled by the
+        Fundray project from the official Linux 6.12 LTS kernel, a static BusyBox userland
+        and our own <code>fundray</code> command line. ~6&nbsp;MB. Boots in seconds.
+        Zero services. Nothing touches your disks.</p>
+
+        <div class="cta-row reveal d3">
+          <a class="btn btn-primary" href="#download">Download the ISO</a>
+          <a class="btn btn-ghost" href="#build">Build it from source &rarr;</a>
+        </div>
+
+        <div class="trust-row reveal d3">
+          <span class="trust-chip cyan"><span class="tdot"></span>Linux 6.12.115 LTS (6.12.115-fundray)</span>
+          <span class="trust-chip indigo"><span class="tdot"></span>x86_64 &middot; BIOS + UEFI</span>
+          <span class="trust-chip green"><span class="tdot"></span>~6 MB ISO &middot; boots live from RAM</span>
+          <span class="trust-chip warn"><span class="tdot"></span>Boot-tested in QEMU</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROOF ============ -->
+    <section class="section" id="proof">
+      <div class="container">
+        <span class="kicker reveal">This is not a mockup</span>
+        <h2 class="reveal d1">An actual boot, captured from the emulator</h2>
+        <p class="lead reveal d2">The screenshot below is a raw VGA frame from QEMU while
+        Fundray Linux boots its live system — the sunburst banner, the live memory numbers
+        and the <code>fundray&gt;</code> prompt are the real thing. The serial log next to it
+        is the captured boot session from our automated test.</p>
+
+        <div class="reveal d2">
+          <img class="fullshot img-pixelated" src="assets/screenshots/os-boot.png"
+               alt="Fundray Linux 1.0 booting: sunburst banner, kernel version 6.12.115-fundray, live memory stats and the fundray prompt"
+               loading="lazy" width="720" height="400">
+        </div>
+
+        <div class="term reveal d2">
+          <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span><span class="term-title">serial console — captured boot session (QEMU)</span></div>
+          <div class="term-body"><code>[    0.000000] Linux version 6.12.115-fundray ...
+SeaBIOS -> GRUB 2.12 -> bzImage (2.4 MB)
+
+        \       |       /
+         \      |      /
+   --------    (o)    --------    Fundray Linux 1.0 "Rebirth"
+          /     |     \
+         /      |      \          a real, tiny, bootable Linux
+        /       |       \         built on the Linux kernel 6.12 LTS
+
+ Kernel    : 6.12.115-fundray (x86_64)
+ Memory    : 494 MB total - 479 MB available
+ System    : 0 services - 32 processes - running live from RAM
+
+fundray> uname -a
+Linux fundray 6.12.115-fundray #1 SMP x86_64 GNU/Linux
+fundray> fundray clean
+Page cache dropped. (Live system - this only frees RAM.)
+fundray> fundray bench
+Pushed 2000 MB through the CPU in 4.84s (~413 MB/s)
+fundray> fundray rebirth
+Everything is clean. Rebooting - your machine, reborn.
+reboot: Restarting system</code></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHAT'S INSIDE ============ -->
+    <section class="section" id="inside">
+      <div class="container">
+        <span class="kicker reveal">Three parts, that's the whole OS</span>
+        <h2 class="reveal d1">What's inside the ~6&nbsp;MB</h2>
+        <div class="grid3">
+          <div class="card reveal">
+            <h3>Linux 6.12.115-fundray</h3>
+            <p>The official LTS kernel from kernel.org, configured with <code>tinyconfig</code>
+            plus one honest fragment: VGA + serial consoles, initramfs, USB keyboards, ACPI,
+            EFI stub and the common wired NIC drivers. 2.4&nbsp;MB. The exact config ships in
+            the kernel itself (<code>zcat /proc/config.gz</code>).</p>
+          </div>
+          <div class="card reveal d1">
+            <h3>Static BusyBox 1.37.0</h3>
+            <p>One static binary with ~270 unix tools — the entire userland. Built from source
+            with line-editing terminal queries turned off, so the console behaves even on
+            dumb serial lines. No libc, no package manager, nothing else.</p>
+          </div>
+          <div class="card reveal d2">
+            <h3>ctty + fundray CLI</h3>
+            <p><code>ctty</code> is our 30-line getty replacement: one shell per console,
+            supervised by PID&nbsp;1, with proper job control. <code>fundray</code> is the
+            front door — honest, tiny, and it never pretends the OS is something it isn't.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FUND RAY CLI ============ -->
+    <section class="section" id="cli">
+      <div class="container">
+        <span class="kicker reveal">The command line</span>
+        <h2 class="reveal d1">One command, zero lies</h2>
+        <div class="grid3">
+          <div class="card reveal"><h3><code>fundray info</code></h3><p>Kernel, memory, uptime,
+          process count — and the services line always reads <strong>0</strong>, because
+          Fundray Linux has no service manager at all.</p></div>
+          <div class="card reveal d1"><h3><code>fundray clean</code></h3><p>Drops the page
+          cache through <code>/proc/sys/vm/drop_caches</code>. On a live RAM-only system that
+          is exactly what it says: RAM freed, nothing else touched.</p></div>
+          <div class="card reveal d2"><h3><code>fundray net</code></h3><p>Brings the wired NIC
+          up via DHCP (Intel e1000/e1000e, Realtek r8169, virtio). Wi-Fi needs firmware that
+          does not fit in a tiny kernel — honest v1 scope.</p></div>
+          <div class="card reveal"><h3><code>fundray services</code></h3><p>Prints the full
+          process list as proof: kernel workers, PID 1, your shells. Nothing else.</p></div>
+          <div class="card reveal d1"><h3><code>fundray bench</code></h3><p>A silly-but-honest
+          CPU throughput probe: pushes 2000&nbsp;MB through the CPU and reports the rate it
+          measured on <em>your</em> machine.</p></div>
+          <div class="card reveal d2"><h3><code>fundray rebirth</code></h3><p>The little
+          ceremony: a spinner, "your machine, reborn", and a clean reboot. The Fundray spirit,
+          ported to an actual Linux PID&nbsp;1.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HONESTY ============ -->
+    <section class="section" id="honest">
+      <div class="container">
+        <span class="kicker reveal">Scope, stated plainly</span>
+        <h2 class="reveal d1">What it is &mdash; and what it isn't</h2>
+        <div class="grid2">
+          <div class="card reveal">
+            <h3>It is</h3>
+            <p>A real operating system: it boots from the GRUB menu on BIOS and UEFI machines,
+            runs entirely from RAM, gives you a working Linux shell with ~270 tools, wired
+            networking, and a PID&nbsp;1 that supervises everything. Boot-tested end-to-end in
+            QEMU, including <code>fundray rebirth</code> performing a clean reboot.</p>
+          </div>
+          <div class="card reveal d1">
+            <h3>It isn't</h3>
+            <p>A desktop distribution — v1 is console-only, live-only (nothing persists across
+            reboots), with wired-only networking. It is also <strong>not a replacement for
+            Windows</strong>: the Fundray toolkit for Windows 7&nbsp;SP1/10/11 is still exactly
+            what the docs say — a reversible tweak tool, not an OS. Fundray Linux is the
+            separate, actually-bootable side of the project.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DOWNLOAD ============ -->
+    <section class="section" id="download">
+      <div class="container">
+        <span class="kicker reveal">Get the ISO</span>
+        <h2 class="reveal d1">Download Fundray Linux 1.0</h2>
+        <div class="dl-grid">
+          <a class="dl-card reveal" href="artifacts/fundray-linux-1.0-x86_64.iso" download>
+            <div class="dl-tag">ISO &middot; BIOS + UEFI</div>
+            <h3>fundray-linux-1.0-x86_64.iso</h3>
+            <p>~6.3&nbsp;MB live ISO. Boot it in QEMU/VirtualBox or write it to a USB stick
+            (<code>dd</code>, double-check the device name).</p>
+            <span class="dl-meta">sha256: 88d6fe1cf5934cb64aa7d45f08f2dc14…</span>
+          </a>
+          <a class="dl-card reveal d1" href="https://github.com/gefrus112/fundray/tree/main/os">
+            <div class="dl-tag">Source</div>
+            <h3>Build it yourself</h3>
+            <p>Everything is in the repo: kernel fragment, init, CLI, ctty, GRUB config and a
+            one-command builder that verifies every download.</p>
+            <span class="dl-meta">github.com/gefrus112/fundray/tree/main/os</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BUILD ============ -->
+    <section class="section" id="build">
+      <div class="container">
+        <span class="kicker reveal">From source to ISO</span>
+        <h2 class="reveal d1">One command, fully reproducible</h2>
+        <div class="term reveal d1">
+          <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span><span class="term-title">bash</span></div>
+          <div class="term-body"><code><span class="t-prompt">$</span> git clone https://github.com/gefrus112/fundray.git
+<span class="t-prompt">$</span> cd fundray/os
+<span class="t-prompt">$</span> ./build.sh          <span class="t-dim"># kernel.org + busybox.net -> ~6 MB ISO (~15-30 min)</span>
+<span class="t-prompt">$</span> ./qemu-test.sh     <span class="t-dim"># boots your ISO, checks the whole tool chain</span>
+BOOT TEST: PASS</code></div>
+        </div>
+        <p class="footnote reveal d2">The builder verifies the kernel tarball against
+        kernel.org's published sha256 before unpacking, compiles the kernel and BusyBox from
+        source, and assembles the ISO with GRUB for BIOS and UEFI. Full details in
+        <a href="https://github.com/gefrus112/fundray/blob/main/os/README.md">os/README.md</a>.</p>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section cta-final">
+      <div class="container center">
+        <h2 class="reveal">Two flavors of <span class="grad-text">Fundray</span></h2>
+        <p class="lead reveal d1">Fundray Linux boots the machine. Fundray for Windows makes the
+        Windows you already have feel like new. Both are honest about what they are.</p>
+        <div class="cta-row reveal d2">
+          <a class="btn btn-ghost" href="index.html">Back to the Windows toolkit</a>
+          <a class="btn btn-primary" href="after.html">See the after-install tour &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="32" height="32" rx="7.5" fill="url(#frt-os)"/>
+            <circle cx="8.4" cy="23.6" r="2.4" fill="url(#frr-os)"/>
+            <path d="M8 16.6 A7 7 0 0 1 15.4 24" fill="none" stroke="url(#frr-os)" stroke-width="2.7" stroke-linecap="round"/>
+            <path d="M8 11.4 A12.2 12.2 0 0 1 20.6 24" fill="none" stroke="url(#frr-os)" stroke-width="2.7" stroke-linecap="round" opacity="0.72"/>
+            <path d="M8 6.2 A17.4 17.4 0 0 1 25.8 24" fill="none" stroke="url(#frr-os)" stroke-width="2.7" stroke-linecap="round" opacity="0.45"/>
+          </svg>
+          <span class="brand-name">Fund<span>ray</span></span>
+        </a>
+        <p>The Fundray toolkit for Windows is an enhancement tool — the toolkit itself is
+        <strong>not an operating system</strong>. Our separate distro,
+        <a href="os.html">Fundray Linux</a>, is. Everything is open source and reversible.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="docs.html">Docs</a>
+        <a href="after.html">After install</a>
+        <a href="os.html">Fundray Linux</a>
+        <a href="screenshots.html">Screenshots</a>
+        <a href="download.html">Download</a>
+        <a href="windows11.html">Windows 11</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Project</h4>
+        <a href="https://github.com/gefrus112/fundray">GitHub repository</a>
+        <a href="https://github.com/gefrus112/fundray/releases">Releases</a>
+        <a href="https://github.com/gefrus112/fundray/issues">Issues</a>
+        <a href="docs/install.md">Install guide</a>
+        <a href="docs/revert.md">Revert guide</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>&copy; 2026 Fundray contributors &middot; MIT License</span>
+      <span>Use at your own risk — always keep a restore point.</span>
+    </div>
+  </footer>
+
+  <script src="site.js" defer></script>
+</body>
+</html>

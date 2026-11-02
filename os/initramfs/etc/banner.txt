@@ -1,0 +1,7 @@
+        \       |       /
+         \      |      /
+          \     |     /
+   --------    (o)    --------        Fundray Linux 1.0  "Rebirth"
+          /     |     \                a real, tiny, bootable Linux
+         /      |      \               built on the Linux kernel 6.12 LTS
+        /       |       \              + BusyBox  ·  GPL-2.0  ·  x86_64

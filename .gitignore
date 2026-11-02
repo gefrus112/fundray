@@ -1,17 +1,8 @@
-# Build output
-build/
-bin/
-obj/
-*.exe
-*.user
-
-# Visual Studio / editor noise
-.vs/
-.idea/
-
-# OS noise
-Thumbs.db
-Desktop.ini
-
-# Local logs
-*.log
+# Fundray Linux build scratch
+os/build/
+os/linux-*/
+os/busybox-*/
+os/build/
+*.tar.xz
+*.tar.bz2
+os/kernel.config.generated.bak
