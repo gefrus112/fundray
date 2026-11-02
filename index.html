@@ -54,35 +54,39 @@
 
   <main id="main">
 
-    <section class="hero">
+    <!-- ============ HERO ============ -->
+    <section class="hero-v5">
       <div class="aurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
       <div class="container">
-        <div class="hero-grid">
-          <div>
-            <span class="pill reveal">Open source &middot; MIT &middot; No telemetry</span>
-            <h1 class="reveal d1">Unlock your Windows machine's <span class="grad-text anim">full potential</span>.</h1>
-            <p class="lead reveal d2">Fundray is a free enhancement toolkit for Windows 7 SP1, 10 and 11.
-            Fewer background processes, a lighter startup queue, an honest power plan —
-            the lag goes away because the noise does. Every change is logged and reversible.</p>
+        <span class="pill reveal">v4 &middot; Open source &middot; MIT &middot; No telemetry</span>
+        <h1 class="reveal d1">Unlock your Windows machine's <span class="grad-text anim">full potential</span>.</h1>
+        <p class="lead reveal d2">Fundray is a free enhancement toolkit for Windows 7 SP1, 10 and 11.
+        Fewer background processes, a lighter startup queue, an honest power plan —
+        the lag goes away because the noise does. Every change is logged and reversible.</p>
 
-            <div class="hero-note">
-              <strong>Fundray is not an operating system.</strong> It installs on top of the Windows
-              you already have, tunes it, and can undo everything. It never touches activation,
-              licensing or system files.
-            </div>
+        <div class="cta-row reveal d3">
+          <a class="btn btn-primary" href="download.html">Download for Windows 7 / 10 / 11</a>
+          <a class="btn btn-ghost" href="after.html">Take the after-install tour &rarr;</a>
+        </div>
 
-            <div class="cta-row">
-              <a class="btn btn-primary" href="download.html">Download for Windows 7 / 10 / 11</a>
-              <a class="btn btn-ghost" href="docs.html">Install it from the terminal &rarr;</a>
-            </div>
+        <div class="trust-row reveal d3">
+          <span class="trust-chip warn"><span class="tdot"></span>Not an operating system</span>
+          <span class="trust-chip green"><span class="tdot"></span>Restore point before every tweak</span>
+          <span class="trust-chip cyan"><span class="tdot"></span>100% reversible — undo log included</span>
+          <span class="trust-chip indigo"><span class="tdot"></span>Win 7 SP1 / 10 / 11</span>
+        </div>
+
+        <div class="hero-stack reveal">
+          <div class="win-back">
+            <img src="assets/screenshots/restart.png" alt="The Fundray restart screen — logo, spinner, tweaks applied" loading="lazy">
           </div>
-
-          <div class="term" role="img" aria-label="Terminal window showing the Fundray installer menu">
-            <div class="term-bar">
-              <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
-              <span class="term-title">Command Prompt — install.bat</span>
-            </div>
-            <div class="term-body"><code><span class="t-prompt">C:\Fundray&gt;</span> <span class="t-cmd">install.bat</span>
+          <div class="win-front">
+            <div class="term" role="img" aria-label="Terminal window showing the Fundray installer menu">
+              <div class="term-bar">
+                <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+                <span class="term-title">Command Prompt — install.bat</span>
+              </div>
+              <div class="term-body"><code><span class="t-prompt">C:\Fundray&gt;</span> <span class="t-cmd">install.bat</span>
 
 <span class="t-dim"> ============================================================</span>
 <span class="t-acc">  Fundray installer</span> <span class="t-dim">- detected:</span> <span class="t-ok">Windows 10/11</span>
@@ -98,6 +102,32 @@
    <span class="t-acc">[0]</span> <span class="t-cmd">Exit</span>
 
  <span class="t-sel">Choice:</span> <span class="t-warn">1</span><span class="t-cursor"></span></code></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <div class="m-half">
+            <span>ULTIMATE PERFORMANCE</span><span class="m-star">&#10022;</span>
+            <span>LIGHTER STARTUP QUEUE</span><span class="m-star">&#10022;</span>
+            <span>POWER PANEL</span><span class="m-star">&#10022;</span>
+            <span>CLASSIC RIGHT-CLICK MENU</span><span class="m-star">&#10022;</span>
+            <span>YOUR OWN LOGON BACKGROUND</span><span class="m-star">&#10022;</span>
+            <span>QUIETER SERVICES</span><span class="m-star">&#10022;</span>
+            <span>100% REVERSIBLE</span><span class="m-star">&#10022;</span>
+            <span>NO TELEMETRY</span><span class="m-star">&#10022;</span>
+          </div>
+          <div class="m-half">
+            <span>ULTIMATE PERFORMANCE</span><span class="m-star">&#10022;</span>
+            <span>LIGHTER STARTUP QUEUE</span><span class="m-star">&#10022;</span>
+            <span>POWER PANEL</span><span class="m-star">&#10022;</span>
+            <span>CLASSIC RIGHT-CLICK MENU</span><span class="m-star">&#10022;</span>
+            <span>YOUR OWN LOGON BACKGROUND</span><span class="m-star">&#10022;</span>
+            <span>QUIETER SERVICES</span><span class="m-star">&#10022;</span>
+            <span>100% REVERSIBLE</span><span class="m-star">&#10022;</span>
+            <span>NO TELEMETRY</span><span class="m-star">&#10022;</span>
           </div>
         </div>
       </div>
@@ -114,159 +144,151 @@
       </div>
     </section>
 
-    <section class="section" id="after">
-      <div class="container">
-        <div class="feature-row">
-          <div class="feature-copy">
-            <div class="kicker reveal">New &middot; the rebirth tour</div>
-            <h2 class="reveal">Run install.bat once. Reboot. Meet your new PC.</h2>
-            <p class="reveal">The screenshots nobody else shows you: the new restart moment, the
-            startup queue going from ten entries to one, the Power Panel, and a performance report
-            you can actually read. This is what &ldquo;after install&rdquo; really looks like.</p>
-            <div class="cta-row reveal d1">
-              <a class="btn btn-primary" href="after.html">Take the after-install tour</a>
-              <a class="btn btn-ghost" href="screenshots.html">All screenshots &rarr;</a>
-            </div>
-          </div>
-          <div class="feature-shot reveal d1">
-            <img src="assets/screenshots/restart.png" alt="The Fundray restart screen — logo, spinner, tweaks applied" loading="lazy">
-          </div>
-        </div>
-
-        <div class="grid-features" style="margin-top: 34px;">
-          <a class="shot reveal" href="after.html#startup">
-            <img src="assets/screenshots/after.png" alt="Task Manager after Fundray — 1 of 10 startup apps enabled" loading="lazy">
-            <span class="shot-meta"><span><h3>Startup queue: 10 &rarr; 1</h3><p>Undo list saved, Windows Security kept on</p></span><span class="arr">&rarr;</span></span>
-          </a>
-          <a class="shot reveal d1" href="after.html#restart">
-            <img src="assets/screenshots/restart.png" alt="The Fundray restart screen" loading="lazy">
-            <span class="shot-meta"><span><h3>The new restart moment</h3><p>One dark screen, one spinner, rebirth</p></span><span class="arr">&rarr;</span></span>
-          </a>
-          <a class="shot reveal d2" href="after.html#report">
-            <img src="assets/screenshots/report.png" alt="The Fundray performance report" loading="lazy">
-            <span class="shot-meta"><span><h3>A readable report</h3><p>What changed, what was freed, how to undo</p></span><span class="arr">&rarr;</span></span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="speed">
-      <div class="container">
-        <div class="section-head">
-          <h2>Where the lag actually goes</h2>
-          <p>Game stutter and slow laptops are usually not mysterious: years of auto-starting
-          helpers, background services and a balanced power plan. Fundray removes that noise —
-          that is the whole trick, and it works.</p>
-        </div>
-        <div class="grid-features">
-          <div class="card">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M7 12h10M10 18h4"/></svg>
-            </div>
-            <h3>A lighter startup queue</h3>
-            <p>Every auto-starting helper delays your desktop and your games. Fundray lists the
-            queue, disables the safe entries, and saves a before/after list you can undo.</p>
-          </div>
-          <div class="card">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg>
-            </div>
-            <h3>Quieter background services</h3>
-            <p>Whitelist-only service tuning: only known-safe entries are touched, critical
-            services are protected by a hard list, and everything lands in the undo log.</p>
-          </div>
-          <div class="card">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#e879f9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4.5 13.5H11L10 22l8.5-11.5H12z"/></svg>
-            </div>
-            <h3>The right power plan</h3>
-            <p>High or Ultimate Performance instead of the balanced default — on a laptop that
-            means fewer micro-stalls when you actually need the speed.</p>
-          </div>
-        </div>
-        <p class="footnote" style="margin-top:18px;">Honesty clause: Fundray frees CPU, RAM and disk
-        friction — it does not upgrade hardware and it does not fake FPS numbers. A quieter Windows
-        is a faster-feeling Windows; that is the promise, and it is the one it can keep.</p>
-      </div>
-    </section>
-
+    <!-- ============ BENTO ============ -->
     <section class="section" id="modules">
       <div class="container">
-        <div class="section-head">
-          <h2>Seven modules, one installer</h2>
+        <div class="section-head reveal">
+          <h2>Seven modules. Zero clutter.</h2>
           <p>Everything is applied by readable Batch and PowerShell scripts, logged to disk,
-          and reversible with one click.</p>
+          and reversible with one click. Pick one module or take the full install.</p>
         </div>
 
-        <div class="grid-features">
-          <div class="card">
+        <div class="bento">
+          <div class="b-tile b-s4 reveal">
             <div class="card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4.5 13.5H11L10 22l8.5-11.5H12z"/></svg>
             </div>
             <h3>Performance optimization</h3>
             <p>High / Ultimate Performance power plans, whitelist-only service and startup tuning,
-            temp &amp; Windows Update cache cleanup, optional visual-effect tuning. A restore point
-            is created first.</p>
-            <a class="card-link" href="features.html">See how it works &rarr;</a>
+            temp &amp; Windows Update cache cleanup. A restore point is created first — and the
+            optimizer prints exactly what it changed.</p>
+            <a class="b-link" href="features.html">See how it works &rarr;</a>
+            <div class="b-shot"><img src="assets/screenshots/after.png" alt="Task Manager after Fundray — 1 of 10 startup apps enabled" loading="lazy"></div>
           </div>
-          <div class="card">
+
+          <div class="b-tile b-s2 reveal d1">
             <div class="card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 9l3 3-3 3M12 15h6"/></svg>
             </div>
-            <h3>Windows Terminal configuration</h3>
-            <p>Adds a separate <em>Fundray</em> profile to your existing Terminal settings.json —
-            Cascadia Code, a dark scheme, sane window defaults. Your configuration is never
-            overwritten.</p>
-            <a class="card-link" href="docs.html">Terminal guide &rarr;</a>
+            <h3>Fundray Terminal</h3>
+            <p>A separate <em>Fundray</em> profile in your own Windows Terminal — Cascadia Code,
+            dark scheme, sane defaults. Your settings are never overwritten.</p>
+            <a class="b-link" href="docs.html">Terminal guide &rarr;</a>
+            <div class="b-shot"><img src="assets/screenshots/terminal.png" alt="The Fundray profile inside Windows Terminal" loading="lazy"></div>
           </div>
-          <div class="card">
+
+          <div class="b-tile b-s2 reveal">
+            <span class="b-acc amber">Opt-in &middot; off by default</span>
+            <h3>Defender control</h3>
+            <p>Pause or re-enable Windows Defender real-time protection from one switch — with
+            clear warnings and a log entry.</p>
+            <a class="b-link" href="faq.html">Is it safe? &rarr;</a>
+          </div>
+
+          <div class="b-tile b-s2 reveal d1">
+            <span class="b-acc blue">Windows 11</span>
+            <h3>Win11 tweaks</h3>
+            <p>Classic full right-click menu and taskbar alignment your way — both reversible,
+            both self-checked.</p>
+            <a class="b-link" href="windows11.html">Windows 11 support &rarr;</a>
+          </div>
+
+          <div class="b-tile b-s2 reveal d2">
             <div class="card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="#e879f9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18h1.5a2.5 2.5 0 0 0 0-5H12a2 2 0 0 1 0-4h7a2 2 0 0 0 2-2 7 7 0 0 0-9-7z"/><circle cx="7.5" cy="10.5" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="16.5" cy="10.5" r="1"/></svg>
             </div>
-            <h3>Appearance, safely</h3>
-            <p>Logon background via the documented registry method and a curated theme guide.
-            Fundray never patches or replaces system files — third-party theming tools stay
-            external and optional.</p>
-            <a class="card-link" href="features.html">Learn more &rarr;</a>
-          </div>
-          <div class="card">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
-            </div>
             <h3>Boot &amp; splash</h3>
-            <p>Your own logon background through <code>OEMBackground</code>, plus an honest guide
-            to quieting the BIOS / American Megatrends splash — which is firmware and cannot be
-            changed from inside Windows.</p>
-            <a class="card-link" href="features.html">Learn more &rarr;</a>
+            <p>Your own logon background via the documented <code>OEMBackground</code> method —
+            plus an honest BIOS guide for the American Megatrends splash.</p>
+            <a class="b-link" href="features.html">Learn more &rarr;</a>
           </div>
-          <div class="card">
+
+          <div class="b-tile b-s4 reveal">
             <div class="card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v8"/><path d="M6.3 6.3a8 8 0 1 0 11.4 0"/></svg>
             </div>
             <h3>Power Panel</h3>
             <p>A clean shutdown GUI: Restart, Shut down, Sleep, Sign out, Lock and a restore-point
-            button in one dark, easy-to-use window. One shortcut — no more digging through menus.</p>
-            <a class="card-link" href="features.html">See the GUI &rarr;</a>
+            button in one dark window. One shortcut — no more digging through menus.</p>
+            <a class="b-link" href="after.html#restart">See the restart moment &rarr;</a>
+            <div class="b-shot"><img src="assets/screenshots/powerpanel.png" alt="Fundray Power Panel — dark shutdown GUI" loading="lazy"></div>
           </div>
-          <div class="card">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#e879f9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.4-3 8.4-7 10-4-1.6-7-5.6-7-10V6z"/></svg>
-            </div>
-            <h3>Defender control <span class="status-chip status-chip-blue">Opt-in</span></h3>
-            <p>Optionally pause or re-enable Windows Defender real-time protection from one switch
-            — with clear warnings, a log entry, and full reversibility. Off by default.</p>
-            <a class="card-link" href="faq.html">Is it safe? &rarr;</a>
+
+          <div class="b-tile b-s2 accent reveal d1">
+            <div class="b-num">100%</div>
+            <h3>Reversible, always</h3>
+            <p>Every registry change is logged. One script — <code>revert.ps1</code> — puts
+            everything back exactly how it was.</p>
+            <a class="b-link" href="docs.html">Revert guide &rarr;</a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ============ BEFORE / AFTER ============ -->
+    <section class="section" id="after">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>The startup queue, before and after</h2>
+          <p>Drag the slider. Left: the auto-start pile-up a normal laptop collects. Right:
+          after <code>optimize.ps1</code> — only what matters keeps starting, Windows Security
+          stays on, and the original list is saved for undo.</p>
+        </div>
+
+        <div class="compare reveal" role="group" aria-label="Before and after comparison of the Windows startup app list">
+          <img src="assets/screenshots/after.png" alt="Task Manager after Fundray — 1 of 10 startup apps enabled">
+          <div class="cmp-before">
+            <img src="assets/screenshots/before.png" alt="Task Manager before Fundray — 10 startup apps enabled">
+          </div>
+          <span class="cmp-tag cmp-tag-before">Before &middot; 10 enabled</span>
+          <span class="cmp-tag cmp-tag-after">After &middot; 1 enabled</span>
+          <div class="cmp-handle" aria-hidden="true"></div>
+          <input class="cmp-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+        </div>
+
+        <p class="footnote reveal">Illustrative example built from a typical tune run — your queue
+        and impact ratings are your own. Full tour with screenshots:
+        <a href="after.html">the after-install page</a>.</p>
+      </div>
+    </section>
+
+    <!-- ============ 3 STEPS ============ -->
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Three steps between you and the new feel</h2>
+          <p>No account, no setup wizard, no bundled extras. It is a folder of readable scripts.</p>
+        </div>
+        <div class="steps-v5">
+          <div class="step-v5 reveal">
+            <span class="step-num">01</span>
+            <h3>Download &amp; verify</h3>
+            <p>Grab a release from GitHub and check its SHA256 with
+            <code>certutil -hashfile</code> — checksums ship with every release.</p>
+          </div>
+          <div class="step-v5 reveal d1">
+            <span class="step-num">02</span>
+            <h3>Run <code>install.bat</code></h3>
+            <p>Right-click &rarr; Run as administrator. Pick a module — the installer detects
+            Windows 7 SP1 / 10 / 11 and creates a restore point first.</p>
+          </div>
+          <div class="step-v5 reveal d2">
+            <span class="step-num">03</span>
+            <h3>Reboot reborn</h3>
+            <p>Restart from the Power Panel. Your machine comes back with a lighter startup
+            queue, quieter services and the right power plan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WINDOWS 11 ============ -->
     <section class="section" id="windows11">
       <div class="container">
         <div class="feature-row">
           <div class="feature-copy">
-            <div class="kicker">New &middot; Windows 7 SP1 / 10 / 11</div>
-            <h2>Windows 11 is now properly supported</h2>
+            <div class="kicker">Windows 7 SP1 / 10 / 11</div>
+            <h2>Windows 11 is properly supported</h2>
             <p>The installer detects your Windows version and adjusts. On Windows 11 you get
             everything above <em>plus</em> Win11-specific tweaks: the classic full right-click menu,
             taskbar alignment your way, and Win11-safe service tuning.</p>
@@ -286,25 +308,41 @@
       </div>
     </section>
 
-    <section class="section">
+    <!-- ============ HONESTY ============ -->
+    <section class="section" id="safety">
       <div class="container">
-        <div class="section-head">
-          <h2>Safety first, always</h2>
-          <p>Fundray is designed so that every single change can be rolled back.</p>
+        <div class="section-head reveal">
+          <h2>Safety first — and honest limits</h2>
+          <p>Fundray is designed so every single change can be rolled back. Equally important:
+          it refuses to pretend it can do things it cannot.</p>
         </div>
-        <div class="check-band">
-          <ul class="check-list">
-            <li>Creates a system restore point before running optimizations</li>
-            <li>Whitelist-only edits — critical services are never touched</li>
-            <li>Every registry change is logged and reversible with one click</li>
-            <li>No activation cracking, no licensing bypasses, ever</li>
-            <li>No bundled third-party closed-source binaries</li>
-            <li>SHA256 checksums published with every release</li>
-          </ul>
+        <div class="honesty">
+          <div class="h-col good reveal">
+            <h3>What Fundray does</h3>
+            <ul class="h-list">
+              <li class="ok"><strong>Restore point first</strong> — before every optimization run</li>
+              <li class="ok"><strong>Whitelist-only edits</strong> — critical services are never touched</li>
+              <li class="ok"><strong>Logged &amp; reversible</strong> — one-click undo via <code>revert.ps1</code></li>
+              <li class="ok"><strong>SHA256 checksums</strong> published with every release</li>
+              <li class="ok"><strong>No activation cracking</strong>, no licensing bypasses, ever</li>
+              <li class="ok"><strong>No bundled closed-source binaries</strong></li>
+            </ul>
+          </div>
+          <div class="h-col never reveal d1">
+            <h3>What it will never do</h3>
+            <ul class="h-list">
+              <li class="no"><strong>No hardware miracles</strong> — it frees friction, it cannot make an old machine new</li>
+              <li class="no"><strong>No fake FPS numbers</strong> — a quieter Windows is a faster-feeling Windows; that is the whole promise</li>
+              <li class="no"><strong>No compatibility breaks fixed</strong> — tuning cannot make unsupported software run</li>
+              <li class="no"><strong>No firmware changes</strong> — the BIOS / American Megatrends splash is not Windows</li>
+              <li class="no"><strong>No system-file patching</strong> — boot animations require replacing <code>bootres.dll</code>, and Fundray refuses</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- ============ REQUIREMENTS ============ -->
     <section class="section">
       <div class="container">
         <div class="section-head">
@@ -339,48 +377,14 @@
 
     <section class="section">
       <div class="container">
-        <div class="section-head">
-          <h2>What Fundray will not do</h2>
-          <p>Honest limits, stated up front.</p>
-        </div>
-        <div class="grid-2">
-          <div class="card">
-            <h3>No hardware miracles</h3>
-            <p>Fundray removes friction from an aging system — it cannot make an old machine new.
-            It makes Windows smoother; it does not upgrade your hardware.</p>
-          </div>
-          <div class="card">
-            <h3>No compatibility breaks</h3>
-            <p>Fundray cannot make software run that its vendor no longer supports on your Windows
-            version. Recent Minecraft: Java Edition releases, for example, no longer officially
-            support Windows 7 — tuning the system will not change that.</p>
-          </div>
-          <div class="card">
-            <h3>No firmware changes</h3>
-            <p>The American Megatrends screen you see at power-on belongs to your motherboard's
-            BIOS, not to Windows. Fundray guides you through BIOS quiet-boot settings instead of
-            pretending software can remove it.</p>
-          </div>
-          <div class="card">
-            <h3>No system-file patching</h3>
-            <p>Custom boot animations require replacing <code>bootres.dll</code> — a Windows system
-            file. Fundray refuses to do that: it is the fastest way to brick a boot. You get safe,
-            documented tweaks instead.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
         <div class="cta-band">
           <div>
-            <h2>Ready to try it?</h2>
+            <h2>Ready to meet your new PC?</h2>
             <p>Grab a release, verify its checksum, and let the restore point catch you.</p>
           </div>
           <div class="cta-row">
             <a class="btn btn-primary" href="download.html">Download</a>
-            <a class="btn btn-ghost" href="screenshots.html">See it in action</a>
+            <a class="btn btn-ghost" href="after.html">See what changes &rarr;</a>
           </div>
         </div>
       </div>
@@ -410,8 +414,8 @@
         <a href="index.html">Home</a>
         <a href="features.html">Features</a>
         <a href="docs.html">Docs</a>
-        <a href="screenshots.html">Screenshots</a>
         <a href="after.html">After install</a>
+        <a href="screenshots.html">Screenshots</a>
         <a href="download.html">Download</a>
         <a href="windows11.html">Windows 11</a>
         <a href="faq.html">FAQ</a>
