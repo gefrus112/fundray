@@ -1,11 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!--
+    Fundray logo — an original "signal ray" mark: three expanding arcs and a
+    spark, drawn in a cyan-to-fuchsia gradient on a dark tile. Not derived
+    from any existing brand or game logo.
+  -->
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0078d4"/>
-      <stop offset="1" stop-color="#4cc2ff"/>
+    <linearGradient id="fr-tile" x1="0" y1="32" x2="32" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0b0e1a"/>
+      <stop offset="1" stop-color="#171d33"/>
+    </linearGradient>
+    <linearGradient id="fr-ray" x1="4" y1="28" x2="28" y2="4" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22d3ee"/>
+      <stop offset="0.55" stop-color="#818cf8"/>
+      <stop offset="1" stop-color="#e879f9"/>
     </linearGradient>
   </defs>
-  <rect x="1" y="1" width="30" height="30" rx="8" fill="url(#g)"/>
-  <path d="M8 6h12.5v4.6h-7.1v3.9h6v4.5h-6V26H8z" fill="#fff"/>
-  <path d="M23.4 10.6l-4.6 8.9h3.7l-2.4 8.4 7.6-10.6h-3.7l2.8-6.7z" fill="#fff" opacity="0.92"/>
+  <rect width="32" height="32" rx="7.5" fill="url(#fr-tile)"/>
+  <circle cx="8.4" cy="23.6" r="2.4" fill="url(#fr-ray)"/>
+  <path d="M8 16.6 A7 7 0 0 1 15.4 24" fill="none" stroke="url(#fr-ray)" stroke-width="2.7" stroke-linecap="round"/>
+  <path d="M8 11.4 A12.2 12.2 0 0 1 20.6 24" fill="none" stroke="url(#fr-ray)" stroke-width="2.7" stroke-linecap="round" opacity="0.72"/>
+  <path d="M8 6.2 A17.4 17.4 0 0 1 25.8 24" fill="none" stroke="url(#fr-ray)" stroke-width="2.7" stroke-linecap="round" opacity="0.45"/>
 </svg>

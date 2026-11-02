@@ -37,11 +37,10 @@ risk:
 | Power Panel (shutdown GUI) | Available in source — first public release being packaged |
 | Defender control (opt-in) | Available in source — first public release being packaged |
 | Interface beautification | Available in source — first public release being packaged |
-| Windows 11 Experience Pack | **In development** — see the [Windows 11 page](https://gefrus112.github.io/fundray/windows11.html) |
+| Windows 11 support | **Supported since v2.1** — installer option [8] + `scripts\win11.ps1` (classic right-click menu, taskbar alignment) |
 
-> The [Windows 11 page](https://gefrus112.github.io/fundray/windows11.html) on the project
-> website is a placeholder under construction — Windows 11 support is currently in development,
-> and no Windows 11–specific downloads are available yet.
+> Windows 11 is a first-class target: the installer detects the OS version and every module
+> adjusts. The full per-module matrix lives on the [Windows 11 page](https://gefrus112.github.io/fundray/windows11.html).
 
 ## System requirements
 
@@ -59,12 +58,12 @@ risk:
 2. Verify the SHA256 checksum:
    `certutil -hashfile Fundray.exe SHA256`
 3. Run `install.bat` (**right-click → Run as administrator**). It detects your Windows version
-   (7 SP1 / 10), shows a module menu —
+   (7 SP1 / 10 / 11), shows a module menu —
 
    ```
    [1] Full install     [2] Performance only   [3] Windows Terminal
    [4] Appearance       [5] Boot & splash      [6] Power Panel
-   [7] Defender control [8] Files only
+   [7] Defender control [8] Windows 11 tweaks  [9] Files only
    ```
 
    creates a restore point, copies the toolkit to `%ProgramFiles%\Fundray` and creates Start
@@ -166,10 +165,11 @@ fundray/
 ├── screenshots.html          # Website: gallery (CSS-only lightbox)
 ├── download.html             # Website: Download (working GitHub links)
 ├── faq.html                  # Website: FAQ (boot screen, Win7 gaming, Defender...)
-├── windows11.html            # Website: Windows 11 (placeholder, in development)
-├── styles.css                # Website stylesheet (shared)
+├── windows11.html            # Website: Windows 11 support (matrix + Win11 tweaks)
+├── styles.css                # Website stylesheet (shared, dark "signal" theme)
 ├── assets/
-│   ├── favicon.svg           # Fundray mark (F + bolt)
+│   ├── favicon.svg           # Fundray mark (original signal-ray logo)
+│   ├── app.ico               # Windows app icon (generated from the same mark)
 │   └── screenshots/          # Generated UI screenshots used by the site
 ├── README.md
 ├── LICENSE
@@ -188,6 +188,7 @@ fundray/
 │   ├── bootsplash.ps1        # Boot & splash: logon background set/remove/status
 │   ├── powerpanel.ps1        # Power Panel shutdown GUI (WinForms, PS 2.0+)
 │   ├── defender.ps1          # Opt-in Defender control (status/disable/enable)
+│   ├── win11.ps1             # Windows 11 tweaks (classic menu, taskbar align)
 │   └── revert.ps1            # Replays the change log backwards
 └── docs/
     ├── install.md
@@ -226,12 +227,12 @@ fundray/
 The project website (GitHub Pages) lives in this repository:
 <https://gefrus112.github.io/fundray/>
 
-Pages: [Home](https://gefrus112.github.io/fundray/) · [Features](https://gefrus112.github.io/fundray/features.html) · [Docs](https://gefrus112.github.io/fundray/docs.html) · [Screenshots](https://gefrus112.github.io/fundray/screenshots.html) · [Download](https://gefrus112.github.io/fundray/download.html) · [FAQ](https://gefrus112.github.io/fundray/faq.html) · [Windows 11](https://gefrus112.github.io/fundray/windows11.html) (placeholder — see the note under [Project status](#project-status)).
+Pages: [Home](https://gefrus112.github.io/fundray/) · [Features](https://gefrus112.github.io/fundray/features.html) · [Docs](https://gefrus112.github.io/fundray/docs.html) · [Screenshots](https://gefrus112.github.io/fundray/screenshots.html) · [Download](https://gefrus112.github.io/fundray/download.html) · [FAQ](https://gefrus112.github.io/fundray/faq.html) · [Windows 11](https://gefrus112.github.io/fundray/windows11.html) (support matrix + Win11 tweaks).
 
 ## Roadmap
 
-1. First public release (installer, checksums, screenshots)
-2. Windows 11 Experience Pack — right-click menu toggle, taskbar alignment, one-click apply
+1. ~~First public release (installer, checksums, screenshots)~~ — done
+2. Theme & icon-pack download page — curated, MIT-friendly links only (no bundled binaries)
 3. Optional C++ micro-launcher / memory cleaner (kept small, optional and compilable)
 
 ## License

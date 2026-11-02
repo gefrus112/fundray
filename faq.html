@@ -4,22 +4,34 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FAQ — Fundray</title>
-  <meta name="description" content="Frequently asked questions about Fundray: is it an OS, the American Megatrends boot screen, Windows 7 gaming, Defender safety and reversibility.">
+  <meta name="description" content="Frequently asked questions about Fundray: is it an OS, the American Megatrends boot screen, game lag and FPS, Windows 11 support, Defender safety and reversibility.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="nav container">
       <a class="brand" href="index.html">
         <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs><linearGradient id="lgf-fq" x1="0" y1="0" x2="32" y2="32">
-            <stop stop-color="#0078d4"/><stop offset="1" stop-color="#4cc2ff"/>
-          </linearGradient></defs>
-          <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="url(#lgf-fq)"/>
-          <path d="M8 6h12.5v4.6h-7.1v3.9h6v4.5h-6V26H8z" fill="#fff"/>
-          <path d="M23.4 10.6l-4.6 8.9h3.7l-2.4 8.4 7.6-10.6h-3.7l2.8-6.7z" fill="#fff" opacity="0.92"/>
+          <defs>
+            <linearGradient id="frt-fq" x1="0" y1="32" x2="32" y2="0" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#0b0e1a"/><stop offset="1" stop-color="#171d33"/>
+            </linearGradient>
+            <linearGradient id="frr-fq" x1="4" y1="28" x2="28" y2="4" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#22d3ee"/><stop offset="0.55" stop-color="#818cf8"/><stop offset="1" stop-color="#e879f9"/>
+            </linearGradient>
+          </defs>
+          <rect width="32" height="32" rx="7.5" fill="url(#frt-fq)"/>
+          <circle cx="8.4" cy="23.6" r="2.4" fill="url(#frr-fq)"/>
+          <path d="M8 16.6 A7 7 0 0 1 15.4 24" fill="none" stroke="url(#frr-fq)" stroke-width="2.7" stroke-linecap="round"/>
+          <path d="M8 11.4 A12.2 12.2 0 0 1 20.6 24" fill="none" stroke="url(#frr-fq)" stroke-width="2.7" stroke-linecap="round" opacity="0.72"/>
+          <path d="M8 6.2 A17.4 17.4 0 0 1 25.8 24" fill="none" stroke="url(#frr-fq)" stroke-width="2.7" stroke-linecap="round" opacity="0.45"/>
         </svg>
         <span class="brand-name">Fund<span>ray</span></span>
       </a>
@@ -35,31 +47,42 @@
         <li><a href="docs.html">Docs</a></li>
         <li><a href="screenshots.html">Screenshots</a></li>
         <li><a href="download.html">Download</a></li>
-        <li><a href="windows11.html">Windows 11 <span class="badge-soon">Soon</span></a></li>
+        <li><a href="windows11.html">Windows 11</a></li>
       </ul>
     </div>
   </header>
 
-  <main>
+  <main id="main">
 
-
-    <section class="hero hero-compact">
+    <section class="hero hero-compact" style="padding-bottom:32px;">
       <div class="container">
         <span class="pill">FAQ</span>
-        <h1>Frequently asked questions</h1>
+        <h1>Frequently asked <span class="grad-text">questions</span></h1>
         <p class="lead">Straight answers — including the ones other tools dodge.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
+
         <details class="faq-item">
           <summary>Is Fundray an operating system?</summary>
           <div class="faq-body"><p>No — and it never claims to be. Fundray is an enhancement toolkit that installs on top of
-     the Windows you already have (Windows 7 SP1 or Windows 10). It tunes services, power plans,
+     the Windows you already have (Windows 7 SP1, 10 or 11). It tunes services, power plans,
      Terminal, boot-time appearance and a few UX niceties. Windows stays Windows; Fundray just
      makes it smoother.</p></div>
         </details>
+
+        <details class="faq-item">
+          <summary>Will it remove lag in games and make my laptop faster?</summary>
+          <div class="faq-body"><p>It removes the <em>system-side</em> causes of stutter: auto-starting helpers, pointless
+     background services and the balanced power plan. On an aged machine that is very noticeable —
+     Windows feels snappier and games stutter less because the system is quiet. What it will not
+     do: upgrade your hardware, add DirectX versions your OS lacks, or promise magic FPS numbers.
+     Recent Minecraft: Java Edition releases, for example, no longer officially support Windows 7 —
+     no tuning changes that.</p></div>
+        </details>
+
         <details class="faq-item">
           <summary>Can Fundray remove the American Megatrends boot screen?</summary>
           <div class="faq-body"><p>Not from inside Windows — nobody honestly can. That screen is drawn by your
@@ -70,13 +93,17 @@
      <a href="docs/bootsplash.md">boot &amp; splash guide</a> walks you through it, and its
      software-side tweaks (logon background) cover everything Windows controls.</p></div>
         </details>
+
         <details class="faq-item">
-          <summary>Will Fundray make my Windows 7 laptop run the latest games?</summary>
-          <div class="faq-body"><p>No, and the honest answer matters here. Tuning frees CPU, RAM and disk friction — it cannot
-     add DirectX 12 support that Windows 7 lacks. Recent Minecraft: Java Edition releases, for
-     example, no longer officially support Windows 7. Use the version of each game that still
-     supports your OS; Fundray will not pretend otherwise.</p></div>
+          <summary>Does it work on Windows 11?</summary>
+          <div class="faq-body"><p>Yes — Windows 11 is a first-class target. The installer detects your version and adjusts
+     every module, and installer option <strong>[8]</strong> adds Win11-specific tweaks: the
+     classic full right-click menu and taskbar alignment. One honest exception: the
+     <code>OEMBackground</code> logon-background method is a Windows 7/10 mechanism and is skipped
+     on Windows 11 rather than shipped broken. See the
+     <a href="windows11.html">Windows 11 page</a> for the full support matrix.</p></div>
         </details>
+
         <details class="faq-item">
           <summary>Why would I disable Windows Defender, and is it safe?</summary>
           <div class="faq-body"><p>The Defender switch is <strong>opt-in</strong> and exists for a narrow, common case: power
@@ -85,6 +112,7 @@
      <code>uninstall.bat</code> re-enables protection automatically. If you have no other
      antivirus, leave Defender on — that is the safe default and Fundray's default too.</p></div>
         </details>
+
         <details class="faq-item">
           <summary>Is everything reversible?</summary>
           <div class="faq-body"><p>Yes — that is the project's core rule. Three safety layers: (1) Fundray's own undo log and
@@ -92,6 +120,7 @@
      created before any optimization. Run <code>uninstall.bat</code> or restore a checkpoint and
      you are back to where you started.</p></div>
         </details>
+
         <details class="faq-item">
           <summary>Why does SmartScreen warn about install.bat?</summary>
           <div class="faq-body"><p>Because it is an unsigned batch file downloaded from the internet. That is expected and not
@@ -99,19 +128,14 @@
      the SHA256 checksum from the release, read the script in Notepad (it is plain text for a
      reason), then choose <em>More info &rarr; Run anyway</em>.</p></div>
         </details>
+
         <details class="faq-item">
           <summary>Does the boot animation get replaced?</summary>
           <div class="faq-body"><p>No. Replacing the boot animation means patching <code>bootres.dll</code>, a Windows system
      file — the fastest way to turn a slow laptop into an unbootable one. Fundray refuses to touch
      system files. You get the documented logon-background tweak and a BIOS guide instead.</p></div>
         </details>
-        <details class="faq-item">
-          <summary>What about Windows 11?</summary>
-          <div class="faq-body"><p>A dedicated Windows 11 Experience Pack is being built on the
-     <a href="windows11.html">Windows 11 page</a> — nothing is ready to download yet, and no dates
-     are promised. The current toolkit already runs fine <em>on</em> Windows 10; the pack will add
-     Win11-specific touches like the classic right-click menu.</p></div>
-        </details>
+
       </div>
     </section>
 
@@ -137,13 +161,15 @@
       <div>
         <a class="brand" href="index.html">
           <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="#0078d4"/>
-            <path d="M8 6h12.5v4.6h-7.1v3.9h6v4.5h-6V26H8z" fill="#fff"/>
-            <path d="M23.4 10.6l-4.6 8.9h3.7l-2.4 8.4 7.6-10.6h-3.7l2.8-6.7z" fill="#fff" opacity="0.92"/>
+            <rect width="32" height="32" rx="7.5" fill="url(#frt-fq)"/>
+            <circle cx="8.4" cy="23.6" r="2.4" fill="url(#frr-fq)"/>
+            <path d="M8 16.6 A7 7 0 0 1 15.4 24" fill="none" stroke="url(#frr-fq)" stroke-width="2.7" stroke-linecap="round"/>
+            <path d="M8 11.4 A12.2 12.2 0 0 1 20.6 24" fill="none" stroke="url(#frr-fq)" stroke-width="2.7" stroke-linecap="round" opacity="0.72"/>
+            <path d="M8 6.2 A17.4 17.4 0 0 1 25.8 24" fill="none" stroke="url(#frr-fq)" stroke-width="2.7" stroke-linecap="round" opacity="0.45"/>
           </svg>
           <span class="brand-name">Fund<span>ray</span></span>
         </a>
-        <p>Fundray is an enhancement toolkit for Windows 7 SP1 and Windows 10 — it is
+        <p>Fundray is an enhancement toolkit for Windows 7 SP1, 10 and 11 — it is
         <strong>not an operating system</strong>, it never touches activation or licensing,
         and every change is reversible.</p>
       </div>

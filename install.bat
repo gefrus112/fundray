@@ -1,6 +1,6 @@
 @echo off
 setlocal EnableExtensions
-title Fundray installer - Windows 7 SP1 / Windows 10
+title Fundray installer - Windows 7 SP1 / 10 / 11
 rem ============================================================================
 rem install.bat - full Fundray installer and module menu.
 rem
@@ -15,7 +15,8 @@ rem     [4] Appearance          - visual effects, safe look-and-feel tweaks
 rem     [5] Boot & splash       - logon background (documented registry method)
 rem     [6] Power Panel         - shutdown / restart GUI + Start menu shortcut
 rem     [7] Defender control    - OPTIONAL switch (warns, logs, reversible)
-rem     [8] Files only          - deploy files + shortcuts, apply no tweaks
+rem     [8] Windows 11 tweaks   - classic right-click menu, taskbar (Win11 only)
+rem     [9] Files only          - deploy files + shortcuts, apply no tweaks
 rem
 rem Run as administrator (the script self-elevates). A restore point is
 rem created before any tweak. Every action is logged to
@@ -48,10 +49,11 @@ echo     [4] Appearance tweaks
 echo     [5] Boot ^& splash (logon background)
 echo     [6] Power Panel (shutdown GUI)
 echo     [7] Defender control  (opt-in - type 7 to read the warnings)
-echo     [8] Files only (no tweaks)
+echo     [8] Windows 11 tweaks (classic right-click menu, taskbar)
+echo     [9] Files only (no tweaks)
 echo     [0] Exit
 echo.
-set /p CHOICE="  Choose 1-8 (or 0): "
+set /p CHOICE="  Choose 1-9 (or 0): "
 if "%CHOICE%"=="1" call :full
 if "%CHOICE%"=="2" call :module_perf
 if "%CHOICE%"=="3" call :module_term
@@ -59,7 +61,8 @@ if "%CHOICE%"=="4" call :module_appear
 if "%CHOICE%"=="5" call :module_boot
 if "%CHOICE%"=="6" call :module_panel
 if "%CHOICE%"=="7" call :module_defender
-if "%CHOICE%"=="8" call :deploy
+if "%CHOICE%"=="8" call :module_win11
+if "%CHOICE%"=="9" call :deploy
 if "%CHOICE%"=="0" goto :eof
 echo.
 set /p AGAIN="  Back to menu? (Y/n): "
@@ -84,7 +87,7 @@ ver | findstr /i "6.1.7601" >nul && set "OSNAME=Windows 7 SP1"
 ver | findstr /i "6.1.760"  >nul && if "%OSNAME%"=="Unknown Windows" set "OSNAME=Windows 7 SP1"
 ver | findstr /i "10.0."    >nul && set "OSNAME=Windows 10/11"
 if "%OSNAME%"=="Unknown Windows" (
-    echo   NOTE: this Windows version is untested. Windows 7 SP1 and 10 are supported.
+    echo   NOTE: this Windows version is untested. Windows 7 SP1, 10 and 11 are supported.
     echo   Scripts will still run - report issues at github.com/gefrus112/fundray
     echo.
 )
@@ -179,6 +182,26 @@ if "%BGIMG%"=="" goto :eof
 call :log "Boot & splash module finished"
 goto :eof
 
+:module_win11
+echo   [win11] Windows 11 tweaks module.
+echo.
+echo   Applies two documented Windows 11 settings - both reversible with
+echo   scripts\revert.ps1. On Windows 7/10 this script politely refuses.
+echo.
+echo     [M] Classic full right-click menu  ON
+echo     [N] Back to the Windows 11 condensed menu
+echo     [L] Classic menu + taskbar LEFT
+echo     [C] Classic menu + taskbar CENTER
+echo     [X] Cancel
+echo.
+set /p WCHOICE="  Choose M/N/L/C/X: "
+if /i "%WCHOICE%"=="M" %PS% -File "%TARGET%\scripts\win11.ps1" -Menu 2>nul || %PS% -File "%ROOT%scripts\win11.ps1" -Menu
+if /i "%WCHOICE%"=="N" %PS% -File "%TARGET%\scripts\win11.ps1" -NoMenu 2>nul || %PS% -File "%ROOT%scripts\win11.ps1" -NoMenu
+if /i "%WCHOICE%"=="L" %PS% -File "%TARGET%\scripts\win11.ps1" -Menu -TaskbarAlign left 2>nul || %PS% -File "%ROOT%scripts\win11.ps1" -Menu -TaskbarAlign left
+if /i "%WCHOICE%"=="C" %PS% -File "%TARGET%\scripts\win11.ps1" -Menu -TaskbarAlign center 2>nul || %PS% -File "%ROOT%scripts\win11.ps1" -Menu -TaskbarAlign center
+call :log "Windows 11 tweaks module finished (choice: %WCHOICE%)"
+goto :eof
+
 :module_panel
 call :deploy
 echo   [power panel] Power Panel installed.
@@ -219,7 +242,8 @@ echo  ============================================================
 echo   Full install finished.
 echo   - Start Menu ^> Fundray ^> Power Panel  (shutdown GUI)
 echo   - Everything is reversible: run uninstall.bat
-echo   - Windows 7 users: reboot once to apply power-plan changes
+echo   - Windows 11 users: pick [8] afterwards for the Win11 tweaks
+echo   - Reboot once to apply power-plan changes
 echo  ============================================================
 call :log "FULL install finished"
 goto :eof

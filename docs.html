@@ -4,22 +4,34 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Docs — Fundray</title>
-  <meta name="description" content="Fundray documentation: installation guide, module guides, revert instructions and step-by-step screenshots.">
+  <meta name="description" content="Fundray documentation: install it from the terminal, first launch, every module guide, Windows 11 tweaks and how to revert everything — with screenshots at every step.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="nav container">
       <a class="brand" href="index.html">
         <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs><linearGradient id="lgf-doc" x1="0" y1="0" x2="32" y2="32">
-            <stop stop-color="#0078d4"/><stop offset="1" stop-color="#4cc2ff"/>
-          </linearGradient></defs>
-          <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="url(#lgf-doc)"/>
-          <path d="M8 6h12.5v4.6h-7.1v3.9h6v4.5h-6V26H8z" fill="#fff"/>
-          <path d="M23.4 10.6l-4.6 8.9h3.7l-2.4 8.4 7.6-10.6h-3.7l2.8-6.7z" fill="#fff" opacity="0.92"/>
+          <defs>
+            <linearGradient id="frt-doc" x1="0" y1="32" x2="32" y2="0" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#0b0e1a"/><stop offset="1" stop-color="#171d33"/>
+            </linearGradient>
+            <linearGradient id="frr-doc" x1="4" y1="28" x2="28" y2="4" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#22d3ee"/><stop offset="0.55" stop-color="#818cf8"/><stop offset="1" stop-color="#e879f9"/>
+            </linearGradient>
+          </defs>
+          <rect width="32" height="32" rx="7.5" fill="url(#frt-doc)"/>
+          <circle cx="8.4" cy="23.6" r="2.4" fill="url(#frr-doc)"/>
+          <path d="M8 16.6 A7 7 0 0 1 15.4 24" fill="none" stroke="url(#frr-doc)" stroke-width="2.7" stroke-linecap="round"/>
+          <path d="M8 11.4 A12.2 12.2 0 0 1 20.6 24" fill="none" stroke="url(#frr-doc)" stroke-width="2.7" stroke-linecap="round" opacity="0.72"/>
+          <path d="M8 6.2 A17.4 17.4 0 0 1 25.8 24" fill="none" stroke="url(#frr-doc)" stroke-width="2.7" stroke-linecap="round" opacity="0.45"/>
         </svg>
         <span class="brand-name">Fund<span>ray</span></span>
       </a>
@@ -35,171 +47,310 @@
         <li><a href="docs.html" class="active">Docs</a></li>
         <li><a href="screenshots.html">Screenshots</a></li>
         <li><a href="download.html">Download</a></li>
-        <li><a href="windows11.html">Windows 11 <span class="badge-soon">Soon</span></a></li>
+        <li><a href="windows11.html">Windows 11</a></li>
       </ul>
     </div>
   </header>
 
-  <main>
+  <main id="main">
+    <div class="container docs-shell">
 
+      <aside class="docs-side">
+        <nav class="docs-nav" aria-label="Documentation">
+          <h4>Get started</h4>
+          <a href="#overview">Overview</a>
+          <a href="#install" class="active">Install from the terminal</a>
+          <a href="#first-launch">First launch</a>
+          <h4>Modules</h4>
+          <a href="#module-performance">Performance</a>
+          <a href="#module-terminal">Terminal profile</a>
+          <a href="#module-boot">Boot &amp; splash</a>
+          <a href="#module-powerpanel">Power Panel</a>
+          <a href="#module-defender">Defender control</a>
+          <a href="#module-win11">Windows 11 tweaks</a>
+          <h4>Safety</h4>
+          <a href="#revert">Revert everything</a>
+          <a href="#smartscreen">SmartScreen warnings</a>
+        </nav>
+      </aside>
 
-    <section class="hero hero-compact">
-      <div class="container">
-        <span class="pill">Documentation</span>
-        <h1>Docs</h1>
-        <p class="lead">How to install, use and cleanly undo Fundray — with screenshots at every
-        step. The same guides live in the repository as Markdown.</p>
-      </div>
-    </section>
+      <article class="docs-main">
 
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Install in five steps</h2>
-          <p>From download to a tuned system in about five minutes.</p>
-        </div>
+        <section class="doc-section" id="overview">
+          <span class="pill">Documentation</span>
+          <h1 style="font-size:2.2rem;">Fundray docs</h1>
+          <p class="lead">How to install Fundray from the terminal, use every module, and undo
+          everything — with a screenshot at every step. The same guides live in the repository
+          as plain Markdown.</p>
 
-        <ol class="steps">
-          <li>
-            <h3>Download</h3>
-            <p>Grab the latest release ZIP from the <a href="download.html">Download page</a> —
-            it links straight to GitHub Releases. No mirrors, no download managers.</p>
-          </li>
-          <li>
-            <h3>Verify the checksum</h3>
-            <p>Open PowerShell in the download folder and compare against
-            <code>SHA256SUMS.txt</code>:</p>
-            <div class="code-block">Get-FileHash .\Fundray-*.zip -Algorithm SHA256</div>
-          </li>
-          <li>
-            <h3>Run the installer</h3>
-            <p>Unzip, then right-click <code>install.bat</code> &rarr; <em>Run as administrator</em>.
-            The installer asks for the restore point it creates before touching anything.</p>
-            <div class="callout callout-warn"><strong>SmartScreen note:</strong> the batch file is
-            unsigned. If Windows warns you, click <em>More info</em> &rarr; <em>Run anyway</em> —
-            after checking the checksum, that is safe for an open-source script you can read.</div>
-          </li>
-          <li>
-            <h3>Pick your modules</h3>
-            <p>The installer menu runs the same scripts you could run by hand:
-            <strong>[1]</strong> Full install &middot; <strong>[2]</strong> Performance only &middot;
-            <strong>[3]</strong> Terminal only &middot; <strong>[4]</strong> Appearance &middot;
-            <strong>[5]</strong> Boot &amp; splash &middot; <strong>[6]</strong> Power Panel &middot;
-            <strong>[7]</strong> Defender control. Restore point first, always.</p>
-          </li>
-          <li>
-            <h3>Reboot and keep the undo log</h3>
-            <p>A restart applies power-plan and service changes. Your log and one-click undo live
-            in <code>%ProgramData%\Fundray\</code> — see <a href="docs/revert.md">revert.md</a>.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
+          <h2>Supported systems at a glance</h2>
+          <p>The installer detects your Windows version and adjusts every module automatically.
+          Here is exactly what runs where:</p>
+          <table class="matrix">
+            <tr>
+              <th scope="col">Module</th>
+              <th scope="col">Windows 7 SP1</th>
+              <th scope="col">Windows 10</th>
+              <th scope="col">Windows 11</th>
+            </tr>
+            <tr><td>Performance optimization</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td></tr>
+            <tr><td>Windows Terminal profile</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td></tr>
+            <tr><td>Power Panel shutdown GUI</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td></tr>
+            <tr><td>Defender control (opt-in)</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td></tr>
+            <tr><td>Logon background (OEMBackground)</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="no">&mdash;</td></tr>
+            <tr><td>Classic right-click menu &amp; taskbar</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="ok">&#10003;</td></tr>
+          </table>
+          <p class="footnote">Windows 7 SP1 needs the free .NET Framework 4.8 and PowerShell 5.1
+          (WMF 5.1) installs first — see <a href="docs/install.md">docs/install.md</a>.</p>
+        </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Module guides</h2>
-          <p>One page per module, in the repository as plain Markdown.</p>
-        </div>
-        <div class="doc-grid">
-                    <div class="card">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
-            </div>
-            <h3>install.md</h3>
-            <p>Full installer reference: menu items, prerequisites, SmartScreen, silent install switches.</p>
-            <a class="card-link" href="docs/install.md">Open guide &rarr;</a>
-          </div>
-                    <div class="card">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
-            </div>
-            <h3>revert.md</h3>
-            <p>Three safety layers: Fundray one-click restore, Terminal reset, Windows System Restore.</p>
-            <a class="card-link" href="docs/revert.md">Open guide &rarr;</a>
-          </div>
-                    <div class="card">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 9l3 3-3 3M12 15h6"/></svg>
-            </div>
-            <h3>terminal.md</h3>
-            <p>How the Fundray Terminal profile works and how to restore your original settings.json.</p>
-            <a class="card-link" href="docs/terminal.md">Open guide &rarr;</a>
-          </div>
-                    <div class="card">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
-            </div>
-            <h3>bootsplash.md</h3>
-            <p>Logon background via OEMBackground + the honest BIOS guide for the AMI splash.</p>
-            <a class="card-link" href="docs/bootsplash.md">Open guide &rarr;</a>
-          </div>
-                    <div class="card">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.4-3 8.4-7 10-4-1.6-7-5.6-7-10V6z"/></svg>
-            </div>
-            <h3>defender.md</h3>
-            <p>What the Defender switch does, what it does not do, and why it is opt-in.</p>
-            <a class="card-link" href="docs/defender.md">Open guide &rarr;</a>
-          </div>
-                    <div class="card">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v8"/><path d="M6.3 6.3a8 8 0 1 0 11.4 0"/></svg>
-            </div>
-            <h3>powerpanel.md</h3>
-            <p>Power Panel shortcuts, hotkeys and how to build the C# version with build.bat.</p>
-            <a class="card-link" href="docs/powerpanel.md">Open guide &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </section>
+        <section class="doc-section" id="install">
+          <h2>Install it from the terminal</h2>
+          <p>Five commands, five minutes, one restore point. You can do every step with the
+          mouse too — but the terminal way is faster and shows you exactly what happens.</p>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Using the Power Panel</h2>
-          <p>The everyday GUI — here is the whole workflow.</p>
-        </div>
-        <div class="feature-row">
-          <div class="feature-copy">
-            <div class="kicker">Everyday use</div>
-            <h2>Shut down, restart, protect</h2>
-            <p>Launch <strong>Fundray Power Panel</strong> from the Start menu. Click the action
-            you need — that is the whole interface. Restart and Shut down ask for a confirmation
-            click; Sleep, Sign out and Lock act immediately; <strong>Restore point</strong> creates
-            a fresh checkpoint before you try anything risky.</p>
-            <ul>
-              <li>Pin it to the taskbar for one-click access</li>
-              <li>Runs from <code>%ProgramFiles%\Fundray\scripts\powerpanel.ps1</code></li>
-              <li>C# build available via <code>build.bat</code> for purists</li>
-            </ul>
+          <h3>1 &middot; Unzip and enter the folder</h3>
+          <p>Extract the release ZIP to <code>C:\Fundray\</code>, then open
+          <strong>PowerShell</strong> or <strong>Command Prompt</strong> in that folder
+          (type <code>cmd</code> in the Explorer address bar, or hold <kbd>Shift</kbd> +
+          right-click &rarr; <em>Open PowerShell window here</em>):</p>
+          <div class="term">
+            <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span><span class="term-title">PowerShell — download &amp; verify</span></div>
+            <div class="term-body"><code><span class="t-prompt">PS&gt;</span> <span class="t-path">cd</span> <span class="t-cmd">C:\Fundray</span>
+<span class="t-prompt">PS C:\Fundray&gt;</span> <span class="t-path">dir</span>
+<span class="t-dim">  install.bat   optimize.bat   scripts\   docs\   ...</span></code></div>
           </div>
-          <div class="feature-shot">
-            <img src="assets/screenshots/powerpanel.png" alt="Fundray Power Panel GUI" loading="lazy">
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Uninstall</h2>
-          <p>The exit is as clean as the entrance.</p>
-        </div>
-        <div class="check-band">
-          <ul class="check-list">
-            <li>Run <code>uninstall.bat</code> as administrator — it re-applies defaults</li>
-            <li>Re-enables Windows Defender if the opt-in switch was used</li>
-            <li>Removes shortcuts, scheduled entries and the Fundray folder</li>
-            <li>Or restore a full System Restore point from Windows itself</li>
+          <h3>2 &middot; Verify the checksum</h3>
+          <p>Compare your download against <code>SHA256SUMS.txt</code> from the release.
+          Thirty seconds of checking beats an afternoon of cleanup:</p>
+          <div class="term">
+            <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span><span class="term-title">Command Prompt — SHA256</span></div>
+            <div class="term-body"><code><span class="t-prompt">C:\Fundray&gt;</span> <span class="t-cmd">certutil -hashfile install.bat SHA256</span>
+<span class="t-dim">SHA256 hash of install.bat:</span>
+<span class="t-ok">e5b007ceee341c11db154cf720e20b673a67c090a9fa714eb214ed9ab7243f6c</span>
+<span class="t-dim">CertUtil: -hashfile command completed successfully.</span></code></div>
+          </div>
+          <p>PowerShell equivalent: <code>Get-FileHash .\install.bat -Algorithm SHA256</code>.
+          The hash must match <code>SHA256SUMS.txt</code> exactly. If it differs, do not run
+          anything — open a GitHub issue instead.</p>
+
+          <h3>3 &middot; Run the installer</h3>
+          <p>From the same elevated terminal, launch the menu:</p>
+          <div class="term">
+            <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span><span class="term-title">Command Prompt — installer menu</span></div>
+            <div class="term-body"><code><span class="t-prompt">C:\Fundray&gt;</span> <span class="t-cmd">install.bat</span>
+
+<span class="t-acc">  Fundray installer</span> <span class="t-dim">- detected:</span> <span class="t-ok">Windows 10/11</span>
+ <span class="t-dim"> What do you want to install?</span>
+   <span class="t-acc">[1]</span> <span class="t-cmd">Full install</span>      <span class="t-dim">- performance + terminal + panel</span>
+   <span class="t-acc">[2]</span> <span class="t-cmd">Performance only</span>
+   <span class="t-acc">[3]</span> <span class="t-cmd">Windows Terminal profile</span>
+   <span class="t-acc">[4]</span> <span class="t-cmd">Appearance tweaks</span>
+   <span class="t-acc">[5]</span> <span class="t-cmd">Boot &amp; splash (logon background)</span>
+   <span class="t-acc">[6]</span> <span class="t-cmd">Power Panel (shutdown GUI)</span>
+   <span class="t-acc">[7]</span> <span class="t-cmd">Defender control (opt-in)</span>
+   <span class="t-acc">[8]</span> <span class="t-cmd">Windows 11 tweaks</span> <span class="t-dim">(Win11 only)</span>
+   <span class="t-acc">[9]</span> <span class="t-cmd">Files only (no tweaks)</span>
+ <span class="t-sel">Choice:</span> <span class="t-cursor"></span></code></div>
+          </div>
+          <p>The script self-elevates if you forgot to run it as administrator. It then deploys
+          to <code>%ProgramFiles%\Fundray</code>, creates Start Menu shortcuts, registers a clean
+          Add/Remove Programs entry — and creates the restore point <em>before</em> touching
+          anything.</p>
+
+          <h3>4 &middot; Reboot</h3>
+          <p>Power-plan and service changes fully apply after a restart. Your undo log lives in
+          <code>%ProgramData%\Fundray\logs</code> — keep it.</p>
+
+          <div class="callout callout-warn">
+            <strong>SmartScreen note:</strong> the batch file is unsigned. If Windows warns you,
+            click <em>More info</em> &rarr; <em>Run anyway</em> — after checking the checksum,
+            that is safe for an open-source script you can read in Notepad first.
+          </div>
+        </section>
+
+        <section class="doc-section" id="first-launch">
+          <h2>First launch</h2>
+          <ol class="steps">
+            <li>
+              <h3>Create the baseline</h3>
+              <p>Start <strong>Fundray</strong> from the Start Menu, open the
+              <strong>Performance</strong> tab and click <strong>Create restore point</strong>.
+              Fundray accepts nothing less as a first move.</p>
+            </li>
+            <li>
+              <h3>Apply what you need</h3>
+              <p>Tick only the tweaks you want and click <strong>Apply selected
+              optimizations</strong>. Everything is printed in the status log and written to
+              <code>%ProgramData%\Fundray\logs</code>.</p>
+              <div class="feature-shot">
+                <img src="assets/screenshots/optimizer.png" alt="Fundray optimizer console output with restore point and OK markers" loading="lazy">
+              </div>
+            </li>
+            <li>
+              <h3>Keep the undo close</h3>
+              <p>Run <code>revert.ps1</code> from the same console — or the full
+              <code>uninstall.bat</code> — and every change replays backwards. See
+              <a href="#revert">Revert everything</a> below.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="doc-section" id="module-performance">
+          <h2>Performance optimization</h2>
+          <p>One command walks the five steps that matter on an aging machine — announced,
+          logged, undoable:</p>
+          <div class="term">
+            <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span><span class="term-title">PowerShell — run the optimizer by hand</span></div>
+            <div class="term-body"><code><span class="t-prompt">PS&gt;</span> <span class="t-cmd">powershell -NoProfile -ExecutionPolicy Bypass -File scripts\optimize.ps1 -All</span>
+<span class="t-dim"> 09:14:02 === Fundray performance optimization started ===</span>
+<span class="t-dim"> 09:14:02 OS: Windows 10 Pro</span>
+<span class="t-dim"> 09:14:03 [1/5] Ensuring a system restore point exists...</span>
+<span class="t-ok"> 09:14:09       Restore point created.</span>
+<span class="t-ok"> 09:14:09 [3/5] Startup: 6 entries disabled (list saved).</span></code></div>
+          </div>
+          <ul style="list-style:none;padding:0;display:grid;gap:9px;">
+            <li style="position:relative;padding-left:24px;color:var(--muted);"><span style="position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:2px;background:var(--grad);transform:rotate(45deg);"></span>High (Win 7) or Ultimate Performance (Win 10/11) power plan</li>
+            <li style="position:relative;padding-left:24px;color:var(--muted);"><span style="position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:2px;background:var(--grad);transform:rotate(45deg);"></span>Whitelist-only service tuning — critical services are never touched</li>
+            <li style="position:relative;padding-left:24px;color:var(--muted);"><span style="position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:2px;background:var(--grad);transform:rotate(45deg);"></span>Startup cleanup with a before/after list saved to disk</li>
+            <li style="position:relative;padding-left:24px;color:var(--muted);"><span style="position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:2px;background:var(--grad);transform:rotate(45deg);"></span>Temp files + Windows Update cache cleanup</li>
           </ul>
-        </div>
-      </div>
-    </section>
+          <p><a href="docs/install.md">Full install reference in the repository &rarr;</a></p>
+        </section>
 
-    <section class="section">
+        <section class="doc-section" id="module-terminal">
+          <h2>Windows Terminal profile</h2>
+          <p>Fundray adds a dedicated <strong>Fundray</strong> profile to your existing
+          Terminal settings.json — Cascadia Code, a dark scheme, a 120&times;30 window. Your
+          profiles are never overwritten and a backup of your original file is kept
+          automatically. Works wherever Windows Terminal is installed (Windows 7 users can
+          install it, but it is optional).</p>
+          <div class="feature-shot">
+            <img src="assets/screenshots/terminal.png" alt="Windows Terminal running the Fundray profile" loading="lazy">
+          </div>
+          <p><a href="docs/terminal.md">Terminal guide in the repository &rarr;</a></p>
+        </section>
+
+        <section class="doc-section" id="module-boot">
+          <h2>Boot &amp; splash</h2>
+          <p>Set your own logon background through the documented <code>OEMBackground</code>
+          registry method (Windows 7 and 10), and get straight answers about the boot screens
+          Fundray cannot touch — including the American Megatrends splash, which lives in your
+          motherboard firmware. The guide walks you through BIOS <strong>Quiet Boot</strong>
+          settings instead of pretending software can remove it.</p>
+          <div class="feature-shot">
+            <img src="assets/screenshots/bootsplash.png" alt="Logon background before and after Fundray" loading="lazy">
+          </div>
+          <p><a href="docs/bootsplash.md">Boot &amp; splash guide in the repository &rarr;</a></p>
+        </section>
+
+        <section class="doc-section" id="module-powerpanel">
+          <h2>Power Panel</h2>
+          <p>Launch <strong>Fundray Power Panel</strong> from the Start menu. Six big buttons:
+          Restart, Shut down, Sleep, Sign out, Lock and <strong>Restore point</strong>. Restart
+          and Shut down confirm; the rest act immediately; the restore-point button creates a
+          fresh checkpoint before you try anything risky.</p>
+          <div class="feature-shot">
+            <img src="assets/screenshots/powerpanel.png" alt="Fundray Power Panel shutdown GUI" loading="lazy">
+          </div>
+          <p><a href="docs/powerpanel.md">Power Panel guide in the repository &rarr;</a></p>
+        </section>
+
+        <section class="doc-section" id="module-defender">
+          <h2>Defender control <span class="status-chip status-chip-blue">Opt-in</span></h2>
+          <p>Menu item <strong>[7]</strong> exposes the opt-in switch: pause or re-enable Windows
+          Defender real-time protection. It uses documented Group Policy keys, warns before
+          acting, logs the change, and <code>uninstall.bat</code> re-enables protection
+          automatically. If you have no other antivirus, leave Defender on — that is the safe
+          default and Fundray's default too.</p>
+          <p><a href="docs/defender.md">Defender guide in the repository &rarr;</a></p>
+        </section>
+
+        <section class="doc-section" id="module-win11">
+          <h2>Windows 11 tweaks <span class="status-chip status-chip-green">New</span></h2>
+          <p>On Windows 11, installer option <strong>[8]</strong> (or the script directly) adds
+          the two tweaks everyone asks for — both documented registry settings, both in the undo
+          log:</p>
+          <div class="term">
+            <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span><span class="term-title">PowerShell — Windows 11 tweaks</span></div>
+            <div class="term-body"><code><span class="t-prompt">PS&gt;</span> <span class="t-cmd">powershell -NoProfile -ExecutionPolicy Bypass -File scripts\win11.ps1 -Menu -TaskbarAlign left</span>
+<span class="t-dim"> 09:20:11 OS: Windows 11 Pro - Win11 tweaks available.</span>
+<span class="t-ok"> 09:20:12 [OK] Classic right-click menu enabled.</span>
+<span class="t-ok"> 09:20:12 [OK] Taskbar alignment set to: left.</span>
+<span class="t-dim"> 09:20:12      Restart explorer.exe to see both changes.</span></code></div>
+          </div>
+          <ul style="list-style:none;padding:0;display:grid;gap:9px;">
+            <li style="position:relative;padding-left:24px;color:var(--muted);"><span style="position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:2px;background:var(--grad);transform:rotate(45deg);"></span><strong>Classic right-click menu</strong> — the full context menu back, one switch to revert</li>
+            <li style="position:relative;padding-left:24px;color:var(--muted);"><span style="position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:2px;background:var(--grad);transform:rotate(45deg);"></span><strong>Taskbar alignment</strong> — <code>-TaskbarAlign left</code> or <code>center</code></li>
+            <li style="position:relative;padding-left:24px;color:var(--muted);"><span style="position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:2px;background:var(--grad);transform:rotate(45deg);"></span>Self-checks: on Windows 7/10 the script politely refuses to run</li>
+          </ul>
+          <p><a href="windows11.html">Full Windows 11 support page &rarr;</a></p>
+        </section>
+
+        <section class="doc-section" id="revert">
+          <h2>Revert everything</h2>
+          <p>Three safety layers, deepest last:</p>
+          <ol class="steps">
+            <li>
+              <h3>Fundray's own undo log</h3>
+              <div class="term">
+                <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span><span class="term-title">PowerShell — one-click revert</span></div>
+                <div class="term-body"><code><span class="t-prompt">PS&gt;</span> <span class="t-cmd">powershell -NoProfile -ExecutionPolicy Bypass -File scripts\revert.ps1</span>
+<span class="t-ok"> Reverting from 1 change log(s): changes-20261102-091402.csv</span>
+<span class="t-dim"> [OK] Registry ... -> restored</span></code></div>
+              </div>
+            </li>
+            <li>
+              <h3>Terminal settings backup</h3>
+              <p>The original <code>settings.json</code> comes back byte-for-byte — the path is
+              printed in the Terminal module's log.</p>
+            </li>
+            <li>
+              <h3>Windows System Restore</h3>
+              <p>The restore point Fundray created before every run. Full uninstall:
+              <code>uninstall.bat</code> re-applies defaults, re-enables Defender, removes
+              shortcuts and the Fundray folder.</p>
+            </li>
+          </ol>
+          <p><a href="docs/revert.md">Revert guide in the repository &rarr;</a></p>
+        </section>
+
+        <section class="doc-section" id="smartscreen">
+          <h2>SmartScreen warnings, explained</h2>
+          <div class="callout">
+            <strong>Why the warning?</strong> Batch files from the internet trigger SmartScreen
+            and Mark-of-the-Web. That is expected for unsigned open-source tools — it means no
+            certificate vouches for the file, not that it is malware. Verify the SHA256
+            checksum, read <code>install.bat</code> in Notepad, then choose
+            <em>More info &rarr; Run anyway</em>.
+          </div>
+          <p>Everything Fundray runs is plain text: <code>scripts\optimize.ps1</code>,
+          <code>scripts\terminal-config.ps1</code>, <code>scripts\appearance.ps1</code>,
+          <code>scripts\win11.ps1</code> and <code>scripts\revert.ps1</code>. Read them before
+          you run them — that is the point.</p>
+        </section>
+
+      </article>
+
+      <aside class="docs-toc" aria-label="On this page">
+        <h4>On this page</h4>
+        <a href="#overview">Overview</a>
+        <a href="#install">Install from the terminal</a>
+        <a href="#first-launch">First launch</a>
+        <a href="#module-performance">Performance</a>
+        <a href="#module-terminal">Terminal profile</a>
+        <a href="#module-boot">Boot &amp; splash</a>
+        <a href="#module-powerpanel">Power Panel</a>
+        <a href="#module-defender">Defender control</a>
+        <a href="#module-win11">Windows 11 tweaks</a>
+        <a href="#revert">Revert everything</a>
+        <a href="#smartscreen">SmartScreen</a>
+      </aside>
+
+    </div>
+
+    <section class="section-tight">
       <div class="container">
         <div class="cta-band">
           <div>
@@ -222,13 +373,15 @@
       <div>
         <a class="brand" href="index.html">
           <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="#0078d4"/>
-            <path d="M8 6h12.5v4.6h-7.1v3.9h6v4.5h-6V26H8z" fill="#fff"/>
-            <path d="M23.4 10.6l-4.6 8.9h3.7l-2.4 8.4 7.6-10.6h-3.7l2.8-6.7z" fill="#fff" opacity="0.92"/>
+            <rect width="32" height="32" rx="7.5" fill="url(#frt-doc)"/>
+            <circle cx="8.4" cy="23.6" r="2.4" fill="url(#frr-doc)"/>
+            <path d="M8 16.6 A7 7 0 0 1 15.4 24" fill="none" stroke="url(#frr-doc)" stroke-width="2.7" stroke-linecap="round"/>
+            <path d="M8 11.4 A12.2 12.2 0 0 1 20.6 24" fill="none" stroke="url(#frr-doc)" stroke-width="2.7" stroke-linecap="round" opacity="0.72"/>
+            <path d="M8 6.2 A17.4 17.4 0 0 1 25.8 24" fill="none" stroke="url(#frr-doc)" stroke-width="2.7" stroke-linecap="round" opacity="0.45"/>
           </svg>
           <span class="brand-name">Fund<span>ray</span></span>
         </a>
-        <p>Fundray is an enhancement toolkit for Windows 7 SP1 and Windows 10 — it is
+        <p>Fundray is an enhancement toolkit for Windows 7 SP1, 10 and 11 — it is
         <strong>not an operating system</strong>, it never touches activation or licensing,
         and every change is reversible.</p>
       </div>

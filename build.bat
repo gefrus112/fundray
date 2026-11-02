@@ -25,6 +25,7 @@ if not exist build mkdir build
 
 echo [1/2] Compiling src\FundrayMain.cs -^> build\Fundray.exe  (.NET Framework 4.8, WinForms)
 "%CSC%" /nologo /target:winexe /out:build\Fundray.exe /optimize+ ^
+    /win32icon:assets\app.ico ^
     /r:System.Windows.Forms.dll /r:System.Drawing.dll /r:System.Core.dll ^
     src\FundrayMain.cs
 if errorlevel 1 (

@@ -129,6 +129,34 @@ foreach ($file in ($logFiles | Sort-Object LastWriteTime -Descending)) {
                 }
             }
 
+            'RegKey' {
+                # Key-level undo used by win11.ps1 (classic right-click menu).
+                try {
+                    if ($row.OldValue -eq '<ABSENT>') {
+                        # The key did not exist before Fundray - remove it again.
+                        if (Test-Path $row.Path) {
+                            Remove-Item -Path $row.Path -Recurse -Force -ErrorAction Stop
+                            Write-Log ('[OK] Registry key removed: ' + $row.Path)
+                            $undone++
+                        } else {
+                            Write-Log ('[SKIP] Registry key already absent: ' + $row.Path)
+                            $skipped++
+                        }
+                    } else {
+                        # The key existed before Fundray - recreate it with its old default.
+                        New-Item -Path $row.Path -Force -ErrorAction Stop | Out-Null
+                        if ($row.Name -and $row.Name -ne '-') {
+                            Set-ItemProperty -Path $row.Path -Name $row.Name -Value $row.OldValue -ErrorAction Stop
+                        }
+                        Write-Log ('[OK] Registry key restored: ' + $row.Path)
+                        $undone++
+                    }
+                } catch {
+                    Write-Log ('[SKIP] RegKey ' + $row.Path + ' (' + $_.Exception.Message + ')')
+                    $skipped++
+                }
+            }
+
             'File' {
                 if ($row.UndoHint -like 'RestoreBackup:*') {
                     $backup = $row.UndoHint.Substring('RestoreBackup:'.Length)

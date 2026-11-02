@@ -15,6 +15,7 @@
     <RootNamespace>Fundray</RootNamespace>
     <AssemblyName>Fundray</AssemblyName>
     <Version>0.1.0</Version>
+    <ApplicationIcon>..\assets\app.ico</ApplicationIcon>
     <Product>Fundray - Windows Enhancement Toolkit</Product>
     <Description>Safe, reversible enhancement toolkit for Windows. Not an operating system.</Description>
     <Company>Fundray contributors</Company>

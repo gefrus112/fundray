@@ -4,22 +4,34 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Download — Fundray</title>
-  <meta name="description" content="Download Fundray from the official GitHub repository: latest release ZIP, installer batch, source code and SHA256 checksums.">
+  <meta name="description" content="Download Fundray from the official GitHub repository: latest release ZIP, installer batch, source code and SHA256 checksums. For Windows 7 SP1, 10 and 11.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="nav container">
       <a class="brand" href="index.html">
         <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs><linearGradient id="lgf-dl" x1="0" y1="0" x2="32" y2="32">
-            <stop stop-color="#0078d4"/><stop offset="1" stop-color="#4cc2ff"/>
-          </linearGradient></defs>
-          <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="url(#lgf-dl)"/>
-          <path d="M8 6h12.5v4.6h-7.1v3.9h6v4.5h-6V26H8z" fill="#fff"/>
-          <path d="M23.4 10.6l-4.6 8.9h3.7l-2.4 8.4 7.6-10.6h-3.7l2.8-6.7z" fill="#fff" opacity="0.92"/>
+          <defs>
+            <linearGradient id="frt-dl" x1="0" y1="32" x2="32" y2="0" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#0b0e1a"/><stop offset="1" stop-color="#171d33"/>
+            </linearGradient>
+            <linearGradient id="frr-dl" x1="4" y1="28" x2="28" y2="4" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#22d3ee"/><stop offset="0.55" stop-color="#818cf8"/><stop offset="1" stop-color="#e879f9"/>
+            </linearGradient>
+          </defs>
+          <rect width="32" height="32" rx="7.5" fill="url(#frt-dl)"/>
+          <circle cx="8.4" cy="23.6" r="2.4" fill="url(#frr-dl)"/>
+          <path d="M8 16.6 A7 7 0 0 1 15.4 24" fill="none" stroke="url(#frr-dl)" stroke-width="2.7" stroke-linecap="round"/>
+          <path d="M8 11.4 A12.2 12.2 0 0 1 20.6 24" fill="none" stroke="url(#frr-dl)" stroke-width="2.7" stroke-linecap="round" opacity="0.72"/>
+          <path d="M8 6.2 A17.4 17.4 0 0 1 25.8 24" fill="none" stroke="url(#frr-dl)" stroke-width="2.7" stroke-linecap="round" opacity="0.45"/>
         </svg>
         <span class="brand-name">Fund<span>ray</span></span>
       </a>
@@ -35,20 +47,19 @@
         <li><a href="docs.html">Docs</a></li>
         <li><a href="screenshots.html">Screenshots</a></li>
         <li><a href="download.html" class="active">Download</a></li>
-        <li><a href="windows11.html">Windows 11 <span class="badge-soon">Soon</span></a></li>
+        <li><a href="windows11.html">Windows 11</a></li>
       </ul>
     </div>
   </header>
 
-  <main>
+  <main id="main">
 
-
-    <section class="hero hero-compact">
+    <section class="hero hero-compact" style="padding-bottom:32px;">
       <div class="container">
         <span class="pill">Download</span>
-        <h1>Get Fundray</h1>
+        <h1>Get <span class="grad-text">Fundray</span></h1>
         <p class="lead">Direct from the official GitHub repository — no mirrors, no installers
-        wrapped in adware, no downloads that pretend to be Fundray.</p>
+        wrapped in adware, no downloads that pretend to be Fundray. For Windows 7 SP1, 10 and 11.</p>
       </div>
     </section>
 
@@ -93,14 +104,17 @@
           <h2>Verify before you run</h2>
           <p>Thirty seconds of checking beats an afternoon of cleanup.</p>
         </div>
-        <div class="code-block">:: 1. Get the published checksum from SHA256SUMS.txt in the release
-:: 2. Compute the checksum of your downloaded file:
-certutil -hashfile Fundray-v1.0.zip SHA256
+        <div class="term" style="max-width:760px;">
+          <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span><span class="term-title">Command Prompt — checksum verification</span></div>
+          <div class="term-body"><code><span class="t-dim">:: 1. Get the published checksum from SHA256SUMS.txt in the release</span>
+<span class="t-dim">:: 2. Compute the checksum of your downloaded file:</span>
+<span class="t-prompt">C:\Downloads&gt;</span> <span class="t-cmd">certutil -hashfile Fundray-v2.1.zip SHA256</span>
+<span class="t-ok">a3f ... (must match SHA256SUMS.txt exactly)</span>
 
-:: 3. The two strings must match exactly.
-:: On Windows PowerShell you can also use:
-Get-FileHash .\Fundray-v1.0.zip -Algorithm SHA256</div>
-        <div class="callout">
+<span class="t-dim">:: On Windows PowerShell you can also use:</span>
+<span class="t-prompt">PS&gt;</span> <span class="t-cmd">Get-FileHash .\Fundray-v2.1.zip -Algorithm SHA256</span></code></div>
+        </div>
+        <div class="callout" style="margin-top:18px;">
           <strong>Why the warning?</strong> Batch files from the internet trigger SmartScreen and
           Mark-of-the-Web. That is expected for unsigned open-source tools. Read
           <code>install.bat</code> in Notepad, verify the checksum, then run it as administrator.
@@ -118,7 +132,8 @@ Get-FileHash .\Fundray-v1.0.zip -Algorithm SHA256</div>
           <li><h3>Unzip</h3><p>Right-click the ZIP &rarr; <em>Extract All&hellip;</em> to a folder
           like <code>C:\Fundray\</code>.</p></li>
           <li><h3>Run as administrator</h3><p>Right-click <code>install.bat</code> &rarr;
-          <em>Run as administrator</em> and pick your modules from the menu.</p></li>
+          <em>Run as administrator</em> and pick your modules from the menu — or run it from an
+          elevated terminal for the full <a href="docs.html#install">terminal install</a>.</p></li>
           <li><h3>Keep the undo</h3><p>Leave <code>uninstall.bat</code> next to your restore
           points — everything Fundray changes can be rolled back.</p></li>
         </ol>
@@ -131,7 +146,7 @@ Get-FileHash .\Fundray-v1.0.zip -Algorithm SHA256</div>
           <div>
             <h2>Prefer building from source?</h2>
             <p>Clone the repository and run <code>build.bat</code> — csc.exe and MSBuild are
-            already on every Windows 7 SP1 / 10 machine with .NET 4.8.</p>
+            already on every Windows 7 SP1 / 10 / 11 machine with .NET 4.8.</p>
           </div>
           <div class="cta-row">
             <a class="btn btn-primary" href="https://github.com/gefrus112/fundray">Open GitHub</a>
@@ -148,13 +163,15 @@ Get-FileHash .\Fundray-v1.0.zip -Algorithm SHA256</div>
       <div>
         <a class="brand" href="index.html">
           <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="#0078d4"/>
-            <path d="M8 6h12.5v4.6h-7.1v3.9h6v4.5h-6V26H8z" fill="#fff"/>
-            <path d="M23.4 10.6l-4.6 8.9h3.7l-2.4 8.4 7.6-10.6h-3.7l2.8-6.7z" fill="#fff" opacity="0.92"/>
+            <rect width="32" height="32" rx="7.5" fill="url(#frt-dl)"/>
+            <circle cx="8.4" cy="23.6" r="2.4" fill="url(#frr-dl)"/>
+            <path d="M8 16.6 A7 7 0 0 1 15.4 24" fill="none" stroke="url(#frr-dl)" stroke-width="2.7" stroke-linecap="round"/>
+            <path d="M8 11.4 A12.2 12.2 0 0 1 20.6 24" fill="none" stroke="url(#frr-dl)" stroke-width="2.7" stroke-linecap="round" opacity="0.72"/>
+            <path d="M8 6.2 A17.4 17.4 0 0 1 25.8 24" fill="none" stroke="url(#frr-dl)" stroke-width="2.7" stroke-linecap="round" opacity="0.45"/>
           </svg>
           <span class="brand-name">Fund<span>ray</span></span>
         </a>
-        <p>Fundray is an enhancement toolkit for Windows 7 SP1 and Windows 10 — it is
+        <p>Fundray is an enhancement toolkit for Windows 7 SP1, 10 and 11 — it is
         <strong>not an operating system</strong>, it never touches activation or licensing,
         and every change is reversible.</p>
       </div>

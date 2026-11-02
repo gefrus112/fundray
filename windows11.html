@@ -3,23 +3,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Windows 11 — Fundray</title>
-  <meta name="description" content="Windows 11 support is currently in development. Stay tuned.">
+  <title>Windows 11 support — Fundray</title>
+  <meta name="description" content="Fundray fully supports Windows 11: performance tuning, Power Panel, Defender control, plus Win11-specific tweaks — the classic right-click menu and taskbar alignment. Reversible, logged, restore point first.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="nav container">
       <a class="brand" href="index.html">
         <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs><linearGradient id="lgf-w11" x1="0" y1="0" x2="32" y2="32">
-            <stop stop-color="#0078d4"/><stop offset="1" stop-color="#4cc2ff"/>
-          </linearGradient></defs>
-          <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="url(#lgf-w11)"/>
-          <path d="M8 6h12.5v4.6h-7.1v3.9h6v4.5h-6V26H8z" fill="#fff"/>
-          <path d="M23.4 10.6l-4.6 8.9h3.7l-2.4 8.4 7.6-10.6h-3.7l2.8-6.7z" fill="#fff" opacity="0.92"/>
+          <defs>
+            <linearGradient id="frt-w11" x1="0" y1="32" x2="32" y2="0" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#0b0e1a"/><stop offset="1" stop-color="#171d33"/>
+            </linearGradient>
+            <linearGradient id="frr-w11" x1="4" y1="28" x2="28" y2="4" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#22d3ee"/><stop offset="0.55" stop-color="#818cf8"/><stop offset="1" stop-color="#e879f9"/>
+            </linearGradient>
+          </defs>
+          <rect width="32" height="32" rx="7.5" fill="url(#frt-w11)"/>
+          <circle cx="8.4" cy="23.6" r="2.4" fill="url(#frr-w11)"/>
+          <path d="M8 16.6 A7 7 0 0 1 15.4 24" fill="none" stroke="url(#frr-w11)" stroke-width="2.7" stroke-linecap="round"/>
+          <path d="M8 11.4 A12.2 12.2 0 0 1 20.6 24" fill="none" stroke="url(#frr-w11)" stroke-width="2.7" stroke-linecap="round" opacity="0.72"/>
+          <path d="M8 6.2 A17.4 17.4 0 0 1 25.8 24" fill="none" stroke="url(#frr-w11)" stroke-width="2.7" stroke-linecap="round" opacity="0.45"/>
         </svg>
         <span class="brand-name">Fund<span>ray</span></span>
       </a>
@@ -35,31 +47,34 @@
         <li><a href="docs.html">Docs</a></li>
         <li><a href="screenshots.html">Screenshots</a></li>
         <li><a href="download.html">Download</a></li>
-        <li><a href="windows11.html" class="active">Windows 11 <span class="badge-soon">Soon</span></a></li>
+        <li><a href="windows11.html" class="active">Windows 11</a></li>
       </ul>
     </div>
   </header>
 
-  <main>
+  <main id="main">
 
-
-    <section class="hero hero-compact">
+    <section class="hero hero-compact" style="padding-bottom:40px;">
       <div class="container">
-        <span class="pill pill-warn">In development</span>
-        <h1>Windows 11</h1>
-        <p class="lead">A dedicated Windows 11 experience for Fundray — built with the same
-        safety rules as the rest of the toolkit: restore point first, whitelist-only, fully reversible.</p>
+        <span class="pill">Windows 7 SP1 &middot; 10 &middot; 11</span>
+        <h1>Windows 11, <span class="grad-text">properly supported</span>.</h1>
+        <p class="lead">The installer detects Windows 11 and adjusts every module — plus you get
+        Win11-specific tweaks the community actually asks for. Same rules as always: restore
+        point first, whitelist-only, fully reversible.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="download.html">Download for Windows 11</a>
+          <a class="btn btn-ghost" href="docs.html#module-win11">Win11 tweaks in the docs &rarr;</a>
+        </div>
       </div>
     </section>
 
     <section class="section-tight">
       <div class="container">
-        <div class="notice notice-dev" role="status">
-          <h2>Windows 11 support is currently in development. Stay tuned.</h2>
-          <p>We are building the <strong>Windows&nbsp;11 Experience&nbsp;Pack</strong> — a set of safe,
-          reversible Windows&nbsp;11 tweaks. Nothing on this page is ready to download yet. When the pack
-          ships, it will be announced here first and published on
-          <a href="https://github.com/gefrus112/fundray/releases">GitHub&nbsp;Releases</a>.</p>
+        <div class="notice" role="status">
+          <h2>Windows 11 is a first-class target since Fundray v2.1.</h2>
+          <p>Pick <strong>[8] Windows 11 tweaks</strong> in the installer menu — or run the script
+          directly. Every change goes into the same undo log as everything else, and the script
+          politely refuses to run on Windows 7/10 where the tweaks make no sense.</p>
         </div>
       </div>
     </section>
@@ -67,37 +82,67 @@
     <section class="section">
       <div class="container">
         <div class="section-head">
-          <h2>What's planned</h2>
-          <p>A first look at what the pack may include. Plans can change while development is ongoing —
-          no dates and no promises; only tested features get announced.</p>
+          <h2>The Windows 11 tweaks</h2>
+          <p>Two settings, both documented registry values, both one switch away from gone.</p>
         </div>
 
         <ul class="plan-list">
           <li>
-            <span class="status-chip">Planned</span>
+            <span class="status-chip status-chip-green">Available</span>
             <div class="plan-body">
-              <h3>Modern right-click menu</h3>
-              <p>Restore the classic full context menu on Windows 11 — with a one-click switch back to the default.</p>
+              <h3>Classic right-click menu</h3>
+              <p>Bring back the full context menu instead of the condensed Windows 11 one —
+              "Show more options" gets old fast. One registry key, one switch to revert,
+              explorer restart applied for you.</p>
             </div>
           </li>
           <li>
-            <span class="status-chip">Planned</span>
+            <span class="status-chip status-chip-green">Available</span>
             <div class="plan-body">
               <h3>Taskbar alignment</h3>
-              <p>Center or left-align the taskbar, your call — applied safely through documented settings.</p>
-            </div>
-          </li>
-          <li>
-            <span class="status-chip">Planned</span>
-            <div class="plan-body">
-              <h3>One-click apply</h3>
-              <p>Every item individually checkable, a restore point created first, every change logged and reversible.</p>
+              <p>Center or left-align the taskbar through the documented
+              <code>TaskbarAl</code> setting — your call, applied safely, reversible.</p>
             </div>
           </li>
         </ul>
 
-        <p class="footnote">This page is a placeholder while the pack is under construction — no
-        Windows&nbsp;11 downloads are available yet.</p>
+        <div class="term" style="max-width:720px;">
+          <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span><span class="term-title">PowerShell — apply the Win11 tweaks</span></div>
+          <div class="term-body"><code><span class="t-prompt">PS&gt;</span> <span class="t-cmd">powershell -NoProfile -ExecutionPolicy Bypass ^</span>
+<span class="t-dim">        -File scripts\win11.ps1 -Menu -TaskbarAlign left</span>
+<span class="t-ok"> [OK] Classic right-click menu enabled.</span>
+<span class="t-ok"> [OK] Taskbar alignment set to: left.</span>
+<span class="t-dim">      Restart explorer.exe to see both changes.</span></code></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>What runs on Windows 11</h2>
+          <p>The exact module matrix — no asterisks hidden in footnotes.</p>
+        </div>
+        <table class="matrix">
+          <tr>
+            <th scope="col">Module</th>
+            <th scope="col">Windows 7 SP1</th>
+            <th scope="col">Windows 10</th>
+            <th scope="col">Windows 11</th>
+          </tr>
+          <tr><td>Performance optimization</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td></tr>
+          <tr><td>Windows Terminal profile</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td></tr>
+          <tr><td>Power Panel shutdown GUI</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td></tr>
+          <tr><td>Defender control (opt-in)</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td></tr>
+          <tr><td>Visual-effect tuning</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td></tr>
+          <tr><td>Logon background (OEMBackground)</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="no">&mdash;</td></tr>
+          <tr><td>Classic right-click menu</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="ok">&#10003;</td></tr>
+          <tr><td>Taskbar alignment</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="ok">&#10003;</td></tr>
+        </table>
+        <p class="footnote" style="margin-top:14px;"><strong>Why the one dash?</strong> The
+        <code>OEMBackground</code> logon-background method is a Windows 7/10 mechanism; on
+        Windows 11 Microsoft locks the logon imagery to Spotlight and it is not reliably
+        overridable. Fundray skips the module there instead of shipping something broken.</p>
       </div>
     </section>
 
@@ -105,22 +150,40 @@
       <div class="container grid-2">
         <div class="card">
           <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 9l3 3-3 3M12 15h6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.4-3 8.4-7 10-4-1.6-7-5.6-7-10V6z"/></svg>
           </div>
-          <h3>Use the current toolkit</h3>
-          <p>Performance, Terminal configuration and safe appearance tweaks are the heart of Fundray today.
-          Explore what already works and how to roll everything back.</p>
-          <a class="card-link" href="index.html">Explore Fundray &rarr;</a>
+          <h3>Same safety rules</h3>
+          <p>Restore point before every run, whitelist-only service edits, every registry change
+          in the undo log, and <code>uninstall.bat</code> that re-enables Defender and cleans up
+          completely. Windows 11 gets the exact same guarantees.</p>
+          <a class="card-link" href="docs.html#revert">How reverting works &rarr;</a>
         </div>
 
         <div class="card">
           <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v8"/><path d="M6.3 6.3a8 8 0 1 0 11.4 0"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e879f9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
           </div>
-          <h3>Stay tuned</h3>
-          <p>Star or watch the repository on GitHub to get notified the moment the Windows 11 pack
-          lands — progress is documented openly in the README.</p>
-          <a class="card-link" href="https://github.com/gefrus112/fundray">Watch on GitHub &rarr;</a>
+          <h3>The BIOS splash stays honest</h3>
+          <p>The American Megatrends power-on screen is motherboard firmware on every Windows
+          version — Fundray guides you through BIOS Quiet Boot settings instead of pretending
+          software can remove it. That answer does not change with the OS.</p>
+          <a class="card-link" href="docs/bootsplash.md">Boot &amp; splash guide &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band">
+          <div>
+            <h2>Running Windows 11?</h2>
+            <p>Grab the latest release, verify the checksum, pick <strong>[8]</strong> in the
+            installer menu.</p>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="download.html">Download</a>
+            <a class="btn btn-ghost" href="screenshots.html">See it in action</a>
+          </div>
         </div>
       </div>
     </section>
@@ -132,13 +195,15 @@
       <div>
         <a class="brand" href="index.html">
           <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="#0078d4"/>
-            <path d="M8 6h12.5v4.6h-7.1v3.9h6v4.5h-6V26H8z" fill="#fff"/>
-            <path d="M23.4 10.6l-4.6 8.9h3.7l-2.4 8.4 7.6-10.6h-3.7l2.8-6.7z" fill="#fff" opacity="0.92"/>
+            <rect width="32" height="32" rx="7.5" fill="url(#frt-w11)"/>
+            <circle cx="8.4" cy="23.6" r="2.4" fill="url(#frr-w11)"/>
+            <path d="M8 16.6 A7 7 0 0 1 15.4 24" fill="none" stroke="url(#frr-w11)" stroke-width="2.7" stroke-linecap="round"/>
+            <path d="M8 11.4 A12.2 12.2 0 0 1 20.6 24" fill="none" stroke="url(#frr-w11)" stroke-width="2.7" stroke-linecap="round" opacity="0.72"/>
+            <path d="M8 6.2 A17.4 17.4 0 0 1 25.8 24" fill="none" stroke="url(#frr-w11)" stroke-width="2.7" stroke-linecap="round" opacity="0.45"/>
           </svg>
           <span class="brand-name">Fund<span>ray</span></span>
         </a>
-        <p>Fundray is an enhancement toolkit for Windows 7 SP1 and Windows 10 — it is
+        <p>Fundray is an enhancement toolkit for Windows 7 SP1, 10 and 11 — it is
         <strong>not an operating system</strong>, it never touches activation or licensing,
         and every change is reversible.</p>
       </div>

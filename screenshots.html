@@ -4,22 +4,34 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Screenshots — Fundray</title>
-  <meta name="description" content="Screenshots of the Fundray toolkit: optimizer console, Terminal profile, Power Panel shutdown GUI and logon background.">
+  <meta name="description" content="Screenshots of the Fundray toolkit: terminal install, optimizer console, Terminal profile, Power Panel shutdown GUI, Windows 11 tweaks and logon background.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="nav container">
       <a class="brand" href="index.html">
         <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs><linearGradient id="lgf-scr" x1="0" y1="0" x2="32" y2="32">
-            <stop stop-color="#0078d4"/><stop offset="1" stop-color="#4cc2ff"/>
-          </linearGradient></defs>
-          <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="url(#lgf-scr)"/>
-          <path d="M8 6h12.5v4.6h-7.1v3.9h6v4.5h-6V26H8z" fill="#fff"/>
-          <path d="M23.4 10.6l-4.6 8.9h3.7l-2.4 8.4 7.6-10.6h-3.7l2.8-6.7z" fill="#fff" opacity="0.92"/>
+          <defs>
+            <linearGradient id="frt-scr" x1="0" y1="32" x2="32" y2="0" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#0b0e1a"/><stop offset="1" stop-color="#171d33"/>
+            </linearGradient>
+            <linearGradient id="frr-scr" x1="4" y1="28" x2="28" y2="4" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#22d3ee"/><stop offset="0.55" stop-color="#818cf8"/><stop offset="1" stop-color="#e879f9"/>
+            </linearGradient>
+          </defs>
+          <rect width="32" height="32" rx="7.5" fill="url(#frt-scr)"/>
+          <circle cx="8.4" cy="23.6" r="2.4" fill="url(#frr-scr)"/>
+          <path d="M8 16.6 A7 7 0 0 1 15.4 24" fill="none" stroke="url(#frr-scr)" stroke-width="2.7" stroke-linecap="round"/>
+          <path d="M8 11.4 A12.2 12.2 0 0 1 20.6 24" fill="none" stroke="url(#frr-scr)" stroke-width="2.7" stroke-linecap="round" opacity="0.72"/>
+          <path d="M8 6.2 A17.4 17.4 0 0 1 25.8 24" fill="none" stroke="url(#frr-scr)" stroke-width="2.7" stroke-linecap="round" opacity="0.45"/>
         </svg>
         <span class="brand-name">Fund<span>ray</span></span>
       </a>
@@ -35,20 +47,19 @@
         <li><a href="docs.html">Docs</a></li>
         <li><a href="screenshots.html" class="active">Screenshots</a></li>
         <li><a href="download.html">Download</a></li>
-        <li><a href="windows11.html">Windows 11 <span class="badge-soon">Soon</span></a></li>
+        <li><a href="windows11.html">Windows 11</a></li>
       </ul>
     </div>
   </header>
 
-  <main>
+  <main id="main">
 
-
-    <section class="hero hero-compact">
+    <section class="hero hero-compact" style="padding-bottom:32px;">
       <div class="container">
         <span class="pill">Screenshots</span>
-        <h1>See it before you run it</h1>
-        <p class="lead">Real interfaces shipped with the toolkit. Click any screenshot to view it
-        full size — no JavaScript, just honest pixels.</p>
+        <h1>See it before you <span class="grad-text">run it</span></h1>
+        <p class="lead">Real interfaces shipped with the toolkit — including every step of the
+        terminal install. Click any screenshot to view it full size.</p>
       </div>
     </section>
 
@@ -56,28 +67,36 @@
       <div class="container">
         <div class="gallery">
         <figure class="shot-card">
-          <a href="#shot1"><img src="assets/screenshots/home.png" alt="Home page" loading="lazy"></a>
-          <figcaption><strong>Home page</strong><span>The Fundray website — dark theme, everything one click away.</span></figcaption>
+          <a href="#shot1"><img src="assets/screenshots/home.png" alt="Fundray home page" loading="lazy"></a>
+          <figcaption><strong>Home page</strong><span>The new dark site — hero, live installer menu, module grid.</span></figcaption>
         </figure>
         <figure class="shot-card">
-          <a href="#shot2"><img src="assets/screenshots/optimizer.png" alt="Optimizer run" loading="lazy"></a>
+          <a href="#shot2"><img src="assets/screenshots/install-terminal.png" alt="Installing Fundray from the terminal" loading="lazy"></a>
+          <figcaption><strong>Install from the terminal</strong><span>cd into the folder, verify the hash, run install.bat, pick a module.</span></figcaption>
+        </figure>
+        <figure class="shot-card">
+          <a href="#shot3"><img src="assets/screenshots/optimizer.png" alt="Optimizer run" loading="lazy"></a>
           <figcaption><strong>Optimizer run</strong><span>Restore point created, each step logged with an [OK] marker.</span></figcaption>
         </figure>
         <figure class="shot-card">
-          <a href="#shot3"><img src="assets/screenshots/terminal.png" alt="Fundray Terminal profile" loading="lazy"></a>
+          <a href="#shot4"><img src="assets/screenshots/terminal.png" alt="Fundray Terminal profile" loading="lazy"></a>
           <figcaption><strong>Fundray Terminal profile</strong><span>Cascadia Code, dark scheme — a separate profile in your own Terminal.</span></figcaption>
         </figure>
         <figure class="shot-card">
-          <a href="#shot4"><img src="assets/screenshots/powerpanel.png" alt="Power Panel" loading="lazy"></a>
+          <a href="#shot5"><img src="assets/screenshots/powerpanel.png" alt="Power Panel" loading="lazy"></a>
           <figcaption><strong>Power Panel</strong><span>The shutdown GUI: restart, power off, sleep, sign out, lock, restore point.</span></figcaption>
         </figure>
         <figure class="shot-card">
-          <a href="#shot5"><img src="assets/screenshots/bootsplash.png" alt="Logon background" loading="lazy"></a>
+          <a href="#shot6"><img src="assets/screenshots/win11.png" alt="Windows 11 tweaks" loading="lazy"></a>
+          <figcaption><strong>Windows 11 tweaks</strong><span>Classic right-click menu and taskbar alignment — Win11 only, self-checked.</span></figcaption>
+        </figure>
+        <figure class="shot-card">
+          <a href="#shot7"><img src="assets/screenshots/bootsplash.png" alt="Logon background" loading="lazy"></a>
           <figcaption><strong>Logon background</strong><span>OEMBackground before/after — plus the BIOS guide for the AMI splash.</span></figcaption>
         </figure>
         <figure class="shot-card">
-          <a href="#shot6"><img src="assets/screenshots/docs.png" alt="Docs" loading="lazy"></a>
-          <figcaption><strong>Docs</strong><span>Step-by-step documentation with screenshots at every step.</span></figcaption>
+          <a href="#shot8"><img src="assets/screenshots/docs.png" alt="Fundray documentation" loading="lazy"></a>
+          <figcaption><strong>Docs</strong><span>Sidebar navigation, terminal commands and screenshots at every step.</span></figcaption>
         </figure>
         </div>
         <p class="footnote">These images show Fundray's own interfaces. The logon-background image
@@ -93,21 +112,29 @@
   </div>
   <div class="lightbox" id="shot2">
     <a class="lb-close" href="#!" aria-label="Close">&times;</a>
-    <img src="assets/screenshots/optimizer.png" alt="Optimizer run">
+    <img src="assets/screenshots/install-terminal.png" alt="Installing Fundray from the terminal">
   </div>
   <div class="lightbox" id="shot3">
     <a class="lb-close" href="#!" aria-label="Close">&times;</a>
-    <img src="assets/screenshots/terminal.png" alt="Fundray Terminal profile">
+    <img src="assets/screenshots/optimizer.png" alt="Optimizer run">
   </div>
   <div class="lightbox" id="shot4">
     <a class="lb-close" href="#!" aria-label="Close">&times;</a>
-    <img src="assets/screenshots/powerpanel.png" alt="Power Panel">
+    <img src="assets/screenshots/terminal.png" alt="Fundray Terminal profile">
   </div>
   <div class="lightbox" id="shot5">
     <a class="lb-close" href="#!" aria-label="Close">&times;</a>
-    <img src="assets/screenshots/bootsplash.png" alt="Logon background">
+    <img src="assets/screenshots/powerpanel.png" alt="Power Panel">
   </div>
   <div class="lightbox" id="shot6">
+    <a class="lb-close" href="#!" aria-label="Close">&times;</a>
+    <img src="assets/screenshots/win11.png" alt="Windows 11 tweaks">
+  </div>
+  <div class="lightbox" id="shot7">
+    <a class="lb-close" href="#!" aria-label="Close">&times;</a>
+    <img src="assets/screenshots/bootsplash.png" alt="Logon background">
+  </div>
+  <div class="lightbox" id="shot8">
     <a class="lb-close" href="#!" aria-label="Close">&times;</a>
     <img src="assets/screenshots/docs.png" alt="Docs">
   </div>
@@ -119,13 +146,15 @@
       <div>
         <a class="brand" href="index.html">
           <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="#0078d4"/>
-            <path d="M8 6h12.5v4.6h-7.1v3.9h6v4.5h-6V26H8z" fill="#fff"/>
-            <path d="M23.4 10.6l-4.6 8.9h3.7l-2.4 8.4 7.6-10.6h-3.7l2.8-6.7z" fill="#fff" opacity="0.92"/>
+            <rect width="32" height="32" rx="7.5" fill="url(#frt-scr)"/>
+            <circle cx="8.4" cy="23.6" r="2.4" fill="url(#frr-scr)"/>
+            <path d="M8 16.6 A7 7 0 0 1 15.4 24" fill="none" stroke="url(#frr-scr)" stroke-width="2.7" stroke-linecap="round"/>
+            <path d="M8 11.4 A12.2 12.2 0 0 1 20.6 24" fill="none" stroke="url(#frr-scr)" stroke-width="2.7" stroke-linecap="round" opacity="0.72"/>
+            <path d="M8 6.2 A17.4 17.4 0 0 1 25.8 24" fill="none" stroke="url(#frr-scr)" stroke-width="2.7" stroke-linecap="round" opacity="0.45"/>
           </svg>
           <span class="brand-name">Fund<span>ray</span></span>
         </a>
-        <p>Fundray is an enhancement toolkit for Windows 7 SP1 and Windows 10 — it is
+        <p>Fundray is an enhancement toolkit for Windows 7 SP1, 10 and 11 — it is
         <strong>not an operating system</strong>, it never touches activation or licensing,
         and every change is reversible.</p>
       </div>

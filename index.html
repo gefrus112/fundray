@@ -3,23 +3,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fundray — Windows Enhancement Toolkit (not an operating system)</title>
-  <meta name="description" content="Fundray is a safe, reversible enhancement toolkit for Windows 7 SP1 and Windows 10: performance tweaks, Windows Terminal configuration, boot and splash, a shutdown GUI and optional Defender control. It is not an operating system.">
+  <title>Fundray — Unlock your Windows PC's full potential (not an operating system)</title>
+  <meta name="description" content="Fundray is a free, open-source enhancement toolkit for Windows 7 SP1, 10 and 11: fewer background processes, cleaner startup, a faster-feeling laptop. Every change logged, every change reversible.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="nav container">
       <a class="brand" href="index.html">
         <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs><linearGradient id="lgf-idx" x1="0" y1="0" x2="32" y2="32">
-            <stop stop-color="#0078d4"/><stop offset="1" stop-color="#4cc2ff"/>
-          </linearGradient></defs>
-          <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="url(#lgf-idx)"/>
-          <path d="M8 6h12.5v4.6h-7.1v3.9h6v4.5h-6V26H8z" fill="#fff"/>
-          <path d="M23.4 10.6l-4.6 8.9h3.7l-2.4 8.4 7.6-10.6h-3.7l2.8-6.7z" fill="#fff" opacity="0.92"/>
+          <defs>
+            <linearGradient id="frt-home" x1="0" y1="32" x2="32" y2="0" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#0b0e1a"/><stop offset="1" stop-color="#171d33"/>
+            </linearGradient>
+            <linearGradient id="frr-home" x1="4" y1="28" x2="28" y2="4" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#22d3ee"/><stop offset="0.55" stop-color="#818cf8"/><stop offset="1" stop-color="#e879f9"/>
+            </linearGradient>
+          </defs>
+          <rect width="32" height="32" rx="7.5" fill="url(#frt-home)"/>
+          <circle cx="8.4" cy="23.6" r="2.4" fill="url(#frr-home)"/>
+          <path d="M8 16.6 A7 7 0 0 1 15.4 24" fill="none" stroke="url(#frr-home)" stroke-width="2.7" stroke-linecap="round"/>
+          <path d="M8 11.4 A12.2 12.2 0 0 1 20.6 24" fill="none" stroke="url(#frr-home)" stroke-width="2.7" stroke-linecap="round" opacity="0.72"/>
+          <path d="M8 6.2 A17.4 17.4 0 0 1 25.8 24" fill="none" stroke="url(#frr-home)" stroke-width="2.7" stroke-linecap="round" opacity="0.45"/>
         </svg>
         <span class="brand-name">Fund<span>ray</span></span>
       </a>
@@ -35,91 +47,203 @@
         <li><a href="docs.html">Docs</a></li>
         <li><a href="screenshots.html">Screenshots</a></li>
         <li><a href="download.html">Download</a></li>
-        <li><a href="windows11.html">Windows 11 <span class="badge-soon">Soon</span></a></li>
+        <li><a href="windows11.html">Windows 11</a></li>
       </ul>
     </div>
   </header>
 
-  <main>
-
+  <main id="main">
 
     <section class="hero">
       <div class="container">
-        <span class="pill">Open source &middot; MIT &middot; No telemetry</span>
-        <h1>Fundray</h1>
-        <p class="lead">The full enhancement toolkit for Windows 7 SP1 and Windows 10. One installer,
-        six modules — speed, terminal, looks, boot, power and defender control — every change
-        reversible.</p>
+        <div class="hero-grid">
+          <div>
+            <span class="pill">Open source &middot; MIT &middot; No telemetry</span>
+            <h1>Unlock your Windows machine's <span class="grad-text">full potential</span>.</h1>
+            <p class="lead">Fundray is a free enhancement toolkit for Windows 7 SP1, 10 and 11.
+            Fewer background processes, a lighter startup queue, an honest power plan —
+            the lag goes away because the noise does. Every change is logged and reversible.</p>
 
-        <div class="hero-note">
-          <strong>Fundray is not an operating system.</strong> It installs on top of the Windows
-          you already have, tunes it, and can undo everything. It never touches activation or
-          licensing.
-        </div>
+            <div class="hero-note">
+              <strong>Fundray is not an operating system.</strong> It installs on top of the Windows
+              you already have, tunes it, and can undo everything. It never touches activation,
+              licensing or system files.
+            </div>
 
-        <div class="cta-row">
-          <a class="btn btn-primary" href="download.html">Download for Windows 7 / 10</a>
-          <a class="btn btn-ghost" href="docs.html">Read the docs</a>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="download.html">Download for Windows 7 / 10 / 11</a>
+              <a class="btn btn-ghost" href="docs.html">Install it from the terminal &rarr;</a>
+            </div>
+          </div>
+
+          <div class="term" role="img" aria-label="Terminal window showing the Fundray installer menu">
+            <div class="term-bar">
+              <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+              <span class="term-title">Command Prompt — install.bat</span>
+            </div>
+            <div class="term-body"><code><span class="t-prompt">C:\Fundray&gt;</span> <span class="t-cmd">install.bat</span>
+
+<span class="t-dim"> ============================================================</span>
+<span class="t-acc">  Fundray installer</span> <span class="t-dim">- detected:</span> <span class="t-ok">Windows 10/11</span>
+<span class="t-dim">  A restore point is created before every tweak.</span>
+<span class="t-dim"> ============================================================</span>
+
+ <span class="t-dim">What do you want to install?</span>
+
+   <span class="t-acc">[1]</span> <span class="t-cmd">Full install</span>      <span class="t-dim">- performance + terminal + panel</span>
+   <span class="t-acc">[2]</span> <span class="t-cmd">Performance only</span>  <span class="t-dim">- services, startup, power plan</span>
+   <span class="t-acc">[3]</span> <span class="t-cmd">Windows Terminal</span>  <span class="t-dim">- Fundray profile</span>
+   <span class="t-acc">[8]</span> <span class="t-cmd">Windows 11 tweaks</span> <span class="t-dim">- classic right-click menu</span>
+   <span class="t-acc">[0]</span> <span class="t-cmd">Exit</span>
+
+ <span class="t-sel">Choice:</span> <span class="t-warn">1</span><span class="t-cursor"></span></code></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section-tight">
+      <div class="container">
+        <div class="stat-band">
+          <div class="stat"><div class="stat-num">7</div><p class="stat-label">modules, one installer</p></div>
+          <div class="stat"><div class="stat-num">3</div><p class="stat-label">Windows versions supported</p></div>
+          <div class="stat"><div class="stat-num">0</div><p class="stat-label">telemetry, ads, bundled junk</p></div>
+          <div class="stat"><div class="stat-num">100%</div><p class="stat-label">reversible — undo log included</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="speed">
       <div class="container">
         <div class="section-head">
-          <h2>Six modules, one installer</h2>
+          <h2>Where the lag actually goes</h2>
+          <p>Game stutter and slow laptops are usually not mysterious: years of auto-starting
+          helpers, background services and a balanced power plan. Fundray removes that noise —
+          that is the whole trick, and it works.</p>
+        </div>
+        <div class="grid-features">
+          <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M7 12h10M10 18h4"/></svg>
+            </div>
+            <h3>A lighter startup queue</h3>
+            <p>Every auto-starting helper delays your desktop and your games. Fundray lists the
+            queue, disables the safe entries, and saves a before/after list you can undo.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg>
+            </div>
+            <h3>Quieter background services</h3>
+            <p>Whitelist-only service tuning: only known-safe entries are touched, critical
+            services are protected by a hard list, and everything lands in the undo log.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#e879f9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4.5 13.5H11L10 22l8.5-11.5H12z"/></svg>
+            </div>
+            <h3>The right power plan</h3>
+            <p>High or Ultimate Performance instead of the balanced default — on a laptop that
+            means fewer micro-stalls when you actually need the speed.</p>
+          </div>
+        </div>
+        <p class="footnote" style="margin-top:18px;">Honesty clause: Fundray frees CPU, RAM and disk
+        friction — it does not upgrade hardware and it does not fake FPS numbers. A quieter Windows
+        is a faster-feeling Windows; that is the promise, and it is the one it can keep.</p>
+      </div>
+    </section>
+
+    <section class="section" id="modules">
+      <div class="container">
+        <div class="section-head">
+          <h2>Seven modules, one installer</h2>
           <p>Everything is applied by readable Batch and PowerShell scripts, logged to disk,
           and reversible with one click.</p>
         </div>
 
         <div class="grid-features">
-                    <div class="card">
+          <div class="card">
             <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4.5 13.5H11L10 22l8.5-11.5H12z"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4.5 13.5H11L10 22l8.5-11.5H12z"/></svg>
             </div>
             <h3>Performance optimization</h3>
-            <p>High / Ultimate Performance power plans, whitelist-only service and startup tuning, temp &amp; Windows Update cache cleanup, optional visual-effect tuning. A restore point is created first.</p>
+            <p>High / Ultimate Performance power plans, whitelist-only service and startup tuning,
+            temp &amp; Windows Update cache cleanup, optional visual-effect tuning. A restore point
+            is created first.</p>
             <a class="card-link" href="features.html">See how it works &rarr;</a>
           </div>
-                    <div class="card">
+          <div class="card">
             <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 9l3 3-3 3M12 15h6"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 9l3 3-3 3M12 15h6"/></svg>
             </div>
             <h3>Windows Terminal configuration</h3>
-            <p>Adds a separate <em>Fundray</em> profile to your existing Terminal settings.json — Cascadia Code, a dark scheme, sane window defaults. Your configuration is never overwritten.</p>
+            <p>Adds a separate <em>Fundray</em> profile to your existing Terminal settings.json —
+            Cascadia Code, a dark scheme, sane window defaults. Your configuration is never
+            overwritten.</p>
             <a class="card-link" href="docs.html">Terminal guide &rarr;</a>
           </div>
-                    <div class="card">
+          <div class="card">
             <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18h1.5a2.5 2.5 0 0 0 0-5H12a2 2 0 0 1 0-4h7a2 2 0 0 0 2-2 7 7 0 0 0-9-7z"/><circle cx="7.5" cy="10.5" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="16.5" cy="10.5" r="1"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#e879f9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18h1.5a2.5 2.5 0 0 0 0-5H12a2 2 0 0 1 0-4h7a2 2 0 0 0 2-2 7 7 0 0 0-9-7z"/><circle cx="7.5" cy="10.5" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="16.5" cy="10.5" r="1"/></svg>
             </div>
             <h3>Appearance, safely</h3>
-            <p>Logon background via the documented registry method and a curated theme guide. Fundray never patches or replaces system files — third-party theming tools stay external and optional.</p>
+            <p>Logon background via the documented registry method and a curated theme guide.
+            Fundray never patches or replaces system files — third-party theming tools stay
+            external and optional.</p>
             <a class="card-link" href="features.html">Learn more &rarr;</a>
           </div>
-                    <div class="card">
+          <div class="card">
             <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
             </div>
             <h3>Boot &amp; splash</h3>
-            <p>Your own logon background through <code>OEMBackground</code>, plus an honest guide to quieting the BIOS / American Megatrends splash — which is firmware and cannot be changed from inside Windows.</p>
+            <p>Your own logon background through <code>OEMBackground</code>, plus an honest guide
+            to quieting the BIOS / American Megatrends splash — which is firmware and cannot be
+            changed from inside Windows.</p>
             <a class="card-link" href="features.html">Learn more &rarr;</a>
           </div>
-                    <div class="card">
+          <div class="card">
             <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v8"/><path d="M6.3 6.3a8 8 0 1 0 11.4 0"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v8"/><path d="M6.3 6.3a8 8 0 1 0 11.4 0"/></svg>
             </div>
-            <h3>Power Panel <span class="status-chip status-chip-blue">New</span></h3>
-            <p>A clean shutdown GUI: Restart, Shut down, Sleep, Sign out, Lock and a restore-point button in one dark, easy-to-use window. One shortcut — no more digging through menus.</p>
+            <h3>Power Panel</h3>
+            <p>A clean shutdown GUI: Restart, Shut down, Sleep, Sign out, Lock and a restore-point
+            button in one dark, easy-to-use window. One shortcut — no more digging through menus.</p>
             <a class="card-link" href="features.html">See the GUI &rarr;</a>
           </div>
-                    <div class="card">
+          <div class="card">
             <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.4-3 8.4-7 10-4-1.6-7-5.6-7-10V6z"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#e879f9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.4-3 8.4-7 10-4-1.6-7-5.6-7-10V6z"/></svg>
             </div>
             <h3>Defender control <span class="status-chip status-chip-blue">Opt-in</span></h3>
-            <p>Optionally pause or re-enable Windows Defender real-time protection from one switch — with clear warnings, a log entry, and full reversibility. Off by default.</p>
+            <p>Optionally pause or re-enable Windows Defender real-time protection from one switch
+            — with clear warnings, a log entry, and full reversibility. Off by default.</p>
             <a class="card-link" href="faq.html">Is it safe? &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="windows11">
+      <div class="container">
+        <div class="feature-row">
+          <div class="feature-copy">
+            <div class="kicker">New &middot; Windows 7 SP1 / 10 / 11</div>
+            <h2>Windows 11 is now properly supported</h2>
+            <p>The installer detects your Windows version and adjusts. On Windows 11 you get
+            everything above <em>plus</em> Win11-specific tweaks: the classic full right-click menu,
+            taskbar alignment your way, and Win11-safe service tuning.</p>
+            <ul>
+              <li>Classic right-click menu — one switch, fully reversible</li>
+              <li>Taskbar left or center alignment, your call</li>
+              <li>Restore point first, whitelist-only, same undo log</li>
+            </ul>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="windows11.html">See Windows 11 support</a>
+            </div>
+          </div>
+          <div class="feature-shot">
+            <img src="assets/screenshots/win11.png" alt="Fundray Windows 11 tweaks — classic right-click menu and taskbar options" loading="lazy">
           </div>
         </div>
       </div>
@@ -153,12 +277,12 @@
         <table class="req-table">
           <tr>
             <th scope="row">Operating system</th>
-            <td>Windows 7 SP1 and Windows 10 (64-bit recommended). The dedicated
-            <a href="windows11.html">Windows 11 experience pack</a> is in development.</td>
+            <td>Windows 7 SP1, Windows 10 or Windows 11 (64-bit recommended).
+            The installer detects your version and adjusts each module.</td>
           </tr>
           <tr>
             <th scope="row">Framework</th>
-            <td>.NET Framework 4.8 (preinstalled on Windows 10; free download for Windows 7 SP1)</td>
+            <td>.NET Framework 4.8 (preinstalled on Windows 10/11; free download for Windows 7 SP1)</td>
           </tr>
           <tr>
             <th scope="row">PowerShell</th>
@@ -232,13 +356,15 @@
       <div>
         <a class="brand" href="index.html">
           <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="#0078d4"/>
-            <path d="M8 6h12.5v4.6h-7.1v3.9h6v4.5h-6V26H8z" fill="#fff"/>
-            <path d="M23.4 10.6l-4.6 8.9h3.7l-2.4 8.4 7.6-10.6h-3.7l2.8-6.7z" fill="#fff" opacity="0.92"/>
+            <rect width="32" height="32" rx="7.5" fill="url(#frt-home)"/>
+            <circle cx="8.4" cy="23.6" r="2.4" fill="url(#frr-home)"/>
+            <path d="M8 16.6 A7 7 0 0 1 15.4 24" fill="none" stroke="url(#frr-home)" stroke-width="2.7" stroke-linecap="round"/>
+            <path d="M8 11.4 A12.2 12.2 0 0 1 20.6 24" fill="none" stroke="url(#frr-home)" stroke-width="2.7" stroke-linecap="round" opacity="0.72"/>
+            <path d="M8 6.2 A17.4 17.4 0 0 1 25.8 24" fill="none" stroke="url(#frr-home)" stroke-width="2.7" stroke-linecap="round" opacity="0.45"/>
           </svg>
           <span class="brand-name">Fund<span>ray</span></span>
         </a>
-        <p>Fundray is an enhancement toolkit for Windows 7 SP1 and Windows 10 — it is
+        <p>Fundray is an enhancement toolkit for Windows 7 SP1, 10 and 11 — it is
         <strong>not an operating system</strong>, it never touches activation or licensing,
         and every change is reversible.</p>
       </div>
