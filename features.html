@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Features — Fundray</title>
+  <meta name="description" content="All six Fundray modules explained with screenshots: performance, Windows Terminal, boot and splash, Power Panel shutdown GUI, Defender control and appearance.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav container">
+      <a class="brand" href="index.html">
+        <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><linearGradient id="lgf-ftr" x1="0" y1="0" x2="32" y2="32">
+            <stop stop-color="#0078d4"/><stop offset="1" stop-color="#4cc2ff"/>
+          </linearGradient></defs>
+          <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="url(#lgf-ftr)"/>
+          <path d="M8 6h12.5v4.6h-7.1v3.9h6v4.5h-6V26H8z" fill="#fff"/>
+          <path d="M23.4 10.6l-4.6 8.9h3.7l-2.4 8.4 7.6-10.6h-3.7l2.8-6.7z" fill="#fff" opacity="0.92"/>
+        </svg>
+        <span class="brand-name">Fund<span>ray</span></span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+      <label for="nav-toggle" class="nav-burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html" class="active">Features</a></li>
+        <li><a href="docs.html">Docs</a></li>
+        <li><a href="screenshots.html">Screenshots</a></li>
+        <li><a href="download.html">Download</a></li>
+        <li><a href="windows11.html">Windows 11 <span class="badge-soon">Soon</span></a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+
+    <section class="hero hero-compact">
+      <div class="container">
+        <span class="pill">Features</span>
+        <h1>Everything Fundray does</h1>
+        <p class="lead">Six focused modules, each one a plain-text script you can read before you
+        run it. Screenshots show the real interfaces shipped with the toolkit.</p>
+      </div>
+    </section>
+
+    
+    <section class="section-tight">
+      <div class="container">
+        <div class="feature-row">
+          <div class="feature-copy">
+            <div class="kicker">Module 01 &middot; Performance</div>
+            <h2>Performance optimization</h2>
+            <p>One command walks through the five steps that actually matter on an aging machine — each one announced, logged, and undoable from the same menu.</p>
+            <ul>
+              <li>High Performance (Win 7) or Ultimate Performance (Win 10) power plan</li>
+              <li>Whitelist-only service tuning — critical services are never touched</li>
+              <li>Startup-entry cleanup with a full before/after list saved to disk</li>
+              <li>Temp files and Windows Update cache cleanup</li>
+              <li>Optional visual-effects tune (disable animations, keep font smoothing)</li>
+            </ul>
+          </div>
+          <div class="feature-shot">
+            <img src="assets/screenshots/optimizer.png" alt="Fundray optimizer console output" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section-tight">
+      <div class="container">
+        <div class="feature-row flip">
+          <div class="feature-copy">
+            <div class="kicker">Module 02 &middot; Terminal</div>
+            <h2>Windows Terminal, your way</h2>
+            <p>Fundray adds a dedicated <strong>Fundray</strong> profile to your existing Windows Terminal settings.json. Nothing of yours is overwritten, and a one-click restore puts the original file back byte-for-byte.</p>
+            <ul>
+              <li>Cascadia Code font, dark scheme, 120&times;30 default window</li>
+              <li>Stored as a separate profile — your profiles stay untouched</li>
+              <li>Automatic backup of settings.json before any change</li>
+              <li>Works when Terminal is installed; skipped silently when it is not</li>
+            </ul>
+          </div>
+          <div class="feature-shot">
+            <img src="assets/screenshots/terminal.png" alt="Windows Terminal with the Fundray profile" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section-tight">
+      <div class="container">
+        <div class="feature-row">
+          <div class="feature-copy">
+            <div class="kicker">Module 03 &middot; Boot &amp; splash</div>
+            <h2>Boot &amp; splash, honestly</h2>
+            <p>Set your own logon background through the documented OEMBackground registry method, and get straight answers about the boot screens Fundray cannot touch — including the American Megatrends splash, which lives in your motherboard firmware.</p>
+            <ul>
+              <li>Logon background via OEMBackground + backgroundDefault.jpg (Win 7 &amp; 10)</li>
+              <li>Full undo — removes the image and the registry key it created</li>
+              <li>BIOS quiet-boot guide for hiding the AMI / POST splash the legitimate way</li>
+              <li>No bootres.dll patching, ever — Fundray will not risk your boot</li>
+            </ul>
+          </div>
+          <div class="feature-shot">
+            <img src="assets/screenshots/bootsplash.png" alt="Logon background before and after Fundray" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section-tight">
+      <div class="container">
+        <div class="feature-row flip">
+          <div class="feature-copy">
+            <div class="kicker">Module 04 &middot; Power Panel</div>
+            <h2>The shutdown GUI you asked for</h2>
+            <p>Power Panel is a small dark window with six big buttons: Restart, Shut down, Sleep, Sign out, Lock and Restore point. Pin it, hotkey it, done. Built with WinForms so it runs on Windows 7 SP1 and Windows 10 alike.</p>
+            <ul>
+              <li>One-click restart, shutdown, sleep, sign out and lock</li>
+              <li>Create a restore point from the same window</li>
+              <li>Keyboard-friendly and safe — a confirm step on Restart and Shut down</li>
+              <li>Start-menu shortcut created by the installer</li>
+            </ul>
+          </div>
+          <div class="feature-shot">
+            <img src="assets/screenshots/powerpanel.png" alt="Fundray Power Panel shutdown GUI" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section-tight">
+      <div class="container">
+        <div class="feature-row">
+          <div class="feature-copy">
+            <div class="kicker">Module 05 &middot; Defender control</div>
+            <h2>Windows Defender, opt-in control</h2>
+            <p>Some users want Defender real-time protection paused during heavy work or after they install their own antivirus. Fundray exposes that as a separate opt-in switch — never part of the one-click optimizer — with warnings and a full undo.</p>
+            <ul>
+              <li>Disable / enable real-time protection from one menu item</li>
+              <li>Uses documented Group Policy keys plus Set-MpPreference where available</li>
+              <li>Warns clearly: a paused Defender is a real security trade-off</li>
+              <li>Re-enabled automatically by uninstall.bat</li>
+            </ul>
+          </div>
+          <div class="feature-shot">
+            <img src="assets/screenshots/optimizer.png" alt="Defender control runs inside the Fundray console" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section-tight">
+      <div class="container">
+        <div class="feature-row flip">
+          <div class="feature-copy">
+            <div class="kicker">Module 06 &middot; Appearance</div>
+            <h2>Appearance, safely</h2>
+            <p>A calmer, cleaner desktop: visual-effects tuning, a curated theme guide, and the logon background from Module 03. Fundray itself never patches or replaces system files.</p>
+            <ul>
+              <li>Visual-effects profile: animations off, font smoothing on</li>
+              <li>Theme pointers and a Windhawk / SecureUxTheme guide — external and optional</li>
+              <li>Icon-pack recommendations without touching system DLLs</li>
+              <li>Everything recorded in the undo log</li>
+            </ul>
+          </div>
+          <div class="feature-shot">
+            <img src="assets/screenshots/home.png" alt="The Fundray website home page" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="#0078d4"/>
+            <path d="M8 6h12.5v4.6h-7.1v3.9h6v4.5h-6V26H8z" fill="#fff"/>
+            <path d="M23.4 10.6l-4.6 8.9h3.7l-2.4 8.4 7.6-10.6h-3.7l2.8-6.7z" fill="#fff" opacity="0.92"/>
+          </svg>
+          <span class="brand-name">Fund<span>ray</span></span>
+        </a>
+        <p>Fundray is an enhancement toolkit for Windows 7 SP1 and Windows 10 — it is
+        <strong>not an operating system</strong>, it never touches activation or licensing,
+        and every change is reversible.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="docs.html">Docs</a>
+        <a href="screenshots.html">Screenshots</a>
+        <a href="download.html">Download</a>
+        <a href="windows11.html">Windows 11</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Project</h4>
+        <a href="https://github.com/gefrus112/fundray">GitHub repository</a>
+        <a href="https://github.com/gefrus112/fundray/releases">Releases</a>
+        <a href="https://github.com/gefrus112/fundray/issues">Issues</a>
+        <a href="docs/install.md">Install guide</a>
+        <a href="docs/revert.md">Revert guide</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>&copy; 2026 Fundray contributors &middot; MIT License</span>
+      <span>Use at your own risk — always keep a restore point.</span>
+    </div>
+  </footer>
+
+</body>
+</html>

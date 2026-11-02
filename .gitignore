@@ -1,0 +1,17 @@
+# Build output
+build/
+bin/
+obj/
+*.exe
+*.user
+
+# Visual Studio / editor noise
+.vs/
+.idea/
+
+# OS noise
+Thumbs.db
+Desktop.ini
+
+# Local logs
+*.log

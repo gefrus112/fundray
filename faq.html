@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ — Fundray</title>
+  <meta name="description" content="Frequently asked questions about Fundray: is it an OS, the American Megatrends boot screen, Windows 7 gaming, Defender safety and reversibility.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav container">
+      <a class="brand" href="index.html">
+        <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><linearGradient id="lgf-fq" x1="0" y1="0" x2="32" y2="32">
+            <stop stop-color="#0078d4"/><stop offset="1" stop-color="#4cc2ff"/>
+          </linearGradient></defs>
+          <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="url(#lgf-fq)"/>
+          <path d="M8 6h12.5v4.6h-7.1v3.9h6v4.5h-6V26H8z" fill="#fff"/>
+          <path d="M23.4 10.6l-4.6 8.9h3.7l-2.4 8.4 7.6-10.6h-3.7l2.8-6.7z" fill="#fff" opacity="0.92"/>
+        </svg>
+        <span class="brand-name">Fund<span>ray</span></span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+      <label for="nav-toggle" class="nav-burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="docs.html">Docs</a></li>
+        <li><a href="screenshots.html">Screenshots</a></li>
+        <li><a href="download.html">Download</a></li>
+        <li><a href="windows11.html">Windows 11 <span class="badge-soon">Soon</span></a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+
+    <section class="hero hero-compact">
+      <div class="container">
+        <span class="pill">FAQ</span>
+        <h1>Frequently asked questions</h1>
+        <p class="lead">Straight answers — including the ones other tools dodge.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <details class="faq-item">
+          <summary>Is Fundray an operating system?</summary>
+          <div class="faq-body"><p>No — and it never claims to be. Fundray is an enhancement toolkit that installs on top of
+     the Windows you already have (Windows 7 SP1 or Windows 10). It tunes services, power plans,
+     Terminal, boot-time appearance and a few UX niceties. Windows stays Windows; Fundray just
+     makes it smoother.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Can Fundray remove the American Megatrends boot screen?</summary>
+          <div class="faq-body"><p>Not from inside Windows — nobody honestly can. That screen is drawn by your
+     motherboard's BIOS firmware before Windows even loads, so it belongs to your hardware, not
+     to the operating system. What you <em>can</em> do legitimately: enter BIOS setup (usually
+     <code>Del</code> or <code>F2</code> at power-on) and look for <strong>Quiet Boot</strong>,
+     <strong>Full Screen Logo</strong> or <strong>Boot Logo</strong> settings. Fundray's
+     <a href="docs/bootsplash.md">boot &amp; splash guide</a> walks you through it, and its
+     software-side tweaks (logon background) cover everything Windows controls.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Will Fundray make my Windows 7 laptop run the latest games?</summary>
+          <div class="faq-body"><p>No, and the honest answer matters here. Tuning frees CPU, RAM and disk friction — it cannot
+     add DirectX 12 support that Windows 7 lacks. Recent Minecraft: Java Edition releases, for
+     example, no longer officially support Windows 7. Use the version of each game that still
+     supports your OS; Fundray will not pretend otherwise.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Why would I disable Windows Defender, and is it safe?</summary>
+          <div class="faq-body"><p>The Defender switch is <strong>opt-in</strong> and exists for a narrow, common case: power
+     users who already run another antivirus, or who pause real-time protection for a specific
+     heavy task. It uses documented Group Policy keys, warns before acting, logs the change, and
+     <code>uninstall.bat</code> re-enables protection automatically. If you have no other
+     antivirus, leave Defender on — that is the safe default and Fundray's default too.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Is everything reversible?</summary>
+          <div class="faq-body"><p>Yes — that is the project's core rule. Three safety layers: (1) Fundray's own undo log and
+     one-click restore, (2) the Terminal settings.json backup, (3) a Windows System Restore point
+     created before any optimization. Run <code>uninstall.bat</code> or restore a checkpoint and
+     you are back to where you started.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Why does SmartScreen warn about install.bat?</summary>
+          <div class="faq-body"><p>Because it is an unsigned batch file downloaded from the internet. That is expected and not
+     a sign of malware — it just means no code-signing certificate vouches for the file. Verify
+     the SHA256 checksum from the release, read the script in Notepad (it is plain text for a
+     reason), then choose <em>More info &rarr; Run anyway</em>.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Does the boot animation get replaced?</summary>
+          <div class="faq-body"><p>No. Replacing the boot animation means patching <code>bootres.dll</code>, a Windows system
+     file — the fastest way to turn a slow laptop into an unbootable one. Fundray refuses to touch
+     system files. You get the documented logon-background tweak and a BIOS guide instead.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>What about Windows 11?</summary>
+          <div class="faq-body"><p>A dedicated Windows 11 Experience Pack is being built on the
+     <a href="windows11.html">Windows 11 page</a> — nothing is ready to download yet, and no dates
+     are promised. The current toolkit already runs fine <em>on</em> Windows 10; the pack will add
+     Win11-specific touches like the classic right-click menu.</p></div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band">
+          <div>
+            <h2>Question not here?</h2>
+            <p>Open an issue on GitHub — real questions become new FAQ entries.</p>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/gefrus112/fundray/issues">Open an issue</a>
+            <a class="btn btn-ghost" href="docs.html">Back to docs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="#0078d4"/>
+            <path d="M8 6h12.5v4.6h-7.1v3.9h6v4.5h-6V26H8z" fill="#fff"/>
+            <path d="M23.4 10.6l-4.6 8.9h3.7l-2.4 8.4 7.6-10.6h-3.7l2.8-6.7z" fill="#fff" opacity="0.92"/>
+          </svg>
+          <span class="brand-name">Fund<span>ray</span></span>
+        </a>
+        <p>Fundray is an enhancement toolkit for Windows 7 SP1 and Windows 10 — it is
+        <strong>not an operating system</strong>, it never touches activation or licensing,
+        and every change is reversible.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="docs.html">Docs</a>
+        <a href="screenshots.html">Screenshots</a>
+        <a href="download.html">Download</a>
+        <a href="windows11.html">Windows 11</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Project</h4>
+        <a href="https://github.com/gefrus112/fundray">GitHub repository</a>
+        <a href="https://github.com/gefrus112/fundray/releases">Releases</a>
+        <a href="https://github.com/gefrus112/fundray/issues">Issues</a>
+        <a href="docs/install.md">Install guide</a>
+        <a href="docs/revert.md">Revert guide</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>&copy; 2026 Fundray contributors &middot; MIT License</span>
+      <span>Use at your own risk — always keep a restore point.</span>
+    </div>
+  </footer>
+
+</body>
+</html>

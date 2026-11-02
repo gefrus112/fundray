@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Docs — Fundray</title>
+  <meta name="description" content="Fundray documentation: installation guide, module guides, revert instructions and step-by-step screenshots.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav container">
+      <a class="brand" href="index.html">
+        <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><linearGradient id="lgf-doc" x1="0" y1="0" x2="32" y2="32">
+            <stop stop-color="#0078d4"/><stop offset="1" stop-color="#4cc2ff"/>
+          </linearGradient></defs>
+          <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="url(#lgf-doc)"/>
+          <path d="M8 6h12.5v4.6h-7.1v3.9h6v4.5h-6V26H8z" fill="#fff"/>
+          <path d="M23.4 10.6l-4.6 8.9h3.7l-2.4 8.4 7.6-10.6h-3.7l2.8-6.7z" fill="#fff" opacity="0.92"/>
+        </svg>
+        <span class="brand-name">Fund<span>ray</span></span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+      <label for="nav-toggle" class="nav-burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="docs.html" class="active">Docs</a></li>
+        <li><a href="screenshots.html">Screenshots</a></li>
+        <li><a href="download.html">Download</a></li>
+        <li><a href="windows11.html">Windows 11 <span class="badge-soon">Soon</span></a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+
+    <section class="hero hero-compact">
+      <div class="container">
+        <span class="pill">Documentation</span>
+        <h1>Docs</h1>
+        <p class="lead">How to install, use and cleanly undo Fundray — with screenshots at every
+        step. The same guides live in the repository as Markdown.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Install in five steps</h2>
+          <p>From download to a tuned system in about five minutes.</p>
+        </div>
+
+        <ol class="steps">
+          <li>
+            <h3>Download</h3>
+            <p>Grab the latest release ZIP from the <a href="download.html">Download page</a> —
+            it links straight to GitHub Releases. No mirrors, no download managers.</p>
+          </li>
+          <li>
+            <h3>Verify the checksum</h3>
+            <p>Open PowerShell in the download folder and compare against
+            <code>SHA256SUMS.txt</code>:</p>
+            <div class="code-block">Get-FileHash .\Fundray-*.zip -Algorithm SHA256</div>
+          </li>
+          <li>
+            <h3>Run the installer</h3>
+            <p>Unzip, then right-click <code>install.bat</code> &rarr; <em>Run as administrator</em>.
+            The installer asks for the restore point it creates before touching anything.</p>
+            <div class="callout callout-warn"><strong>SmartScreen note:</strong> the batch file is
+            unsigned. If Windows warns you, click <em>More info</em> &rarr; <em>Run anyway</em> —
+            after checking the checksum, that is safe for an open-source script you can read.</div>
+          </li>
+          <li>
+            <h3>Pick your modules</h3>
+            <p>The installer menu runs the same scripts you could run by hand:
+            <strong>[1]</strong> Full install &middot; <strong>[2]</strong> Performance only &middot;
+            <strong>[3]</strong> Terminal only &middot; <strong>[4]</strong> Appearance &middot;
+            <strong>[5]</strong> Boot &amp; splash &middot; <strong>[6]</strong> Power Panel &middot;
+            <strong>[7]</strong> Defender control. Restore point first, always.</p>
+          </li>
+          <li>
+            <h3>Reboot and keep the undo log</h3>
+            <p>A restart applies power-plan and service changes. Your log and one-click undo live
+            in <code>%ProgramData%\Fundray\</code> — see <a href="docs/revert.md">revert.md</a>.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Module guides</h2>
+          <p>One page per module, in the repository as plain Markdown.</p>
+        </div>
+        <div class="doc-grid">
+                    <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
+            </div>
+            <h3>install.md</h3>
+            <p>Full installer reference: menu items, prerequisites, SmartScreen, silent install switches.</p>
+            <a class="card-link" href="docs/install.md">Open guide &rarr;</a>
+          </div>
+                    <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+            </div>
+            <h3>revert.md</h3>
+            <p>Three safety layers: Fundray one-click restore, Terminal reset, Windows System Restore.</p>
+            <a class="card-link" href="docs/revert.md">Open guide &rarr;</a>
+          </div>
+                    <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 9l3 3-3 3M12 15h6"/></svg>
+            </div>
+            <h3>terminal.md</h3>
+            <p>How the Fundray Terminal profile works and how to restore your original settings.json.</p>
+            <a class="card-link" href="docs/terminal.md">Open guide &rarr;</a>
+          </div>
+                    <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+            </div>
+            <h3>bootsplash.md</h3>
+            <p>Logon background via OEMBackground + the honest BIOS guide for the AMI splash.</p>
+            <a class="card-link" href="docs/bootsplash.md">Open guide &rarr;</a>
+          </div>
+                    <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.4-3 8.4-7 10-4-1.6-7-5.6-7-10V6z"/></svg>
+            </div>
+            <h3>defender.md</h3>
+            <p>What the Defender switch does, what it does not do, and why it is opt-in.</p>
+            <a class="card-link" href="docs/defender.md">Open guide &rarr;</a>
+          </div>
+                    <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v8"/><path d="M6.3 6.3a8 8 0 1 0 11.4 0"/></svg>
+            </div>
+            <h3>powerpanel.md</h3>
+            <p>Power Panel shortcuts, hotkeys and how to build the C# version with build.bat.</p>
+            <a class="card-link" href="docs/powerpanel.md">Open guide &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Using the Power Panel</h2>
+          <p>The everyday GUI — here is the whole workflow.</p>
+        </div>
+        <div class="feature-row">
+          <div class="feature-copy">
+            <div class="kicker">Everyday use</div>
+            <h2>Shut down, restart, protect</h2>
+            <p>Launch <strong>Fundray Power Panel</strong> from the Start menu. Click the action
+            you need — that is the whole interface. Restart and Shut down ask for a confirmation
+            click; Sleep, Sign out and Lock act immediately; <strong>Restore point</strong> creates
+            a fresh checkpoint before you try anything risky.</p>
+            <ul>
+              <li>Pin it to the taskbar for one-click access</li>
+              <li>Runs from <code>%ProgramFiles%\Fundray\scripts\powerpanel.ps1</code></li>
+              <li>C# build available via <code>build.bat</code> for purists</li>
+            </ul>
+          </div>
+          <div class="feature-shot">
+            <img src="assets/screenshots/powerpanel.png" alt="Fundray Power Panel GUI" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Uninstall</h2>
+          <p>The exit is as clean as the entrance.</p>
+        </div>
+        <div class="check-band">
+          <ul class="check-list">
+            <li>Run <code>uninstall.bat</code> as administrator — it re-applies defaults</li>
+            <li>Re-enables Windows Defender if the opt-in switch was used</li>
+            <li>Removes shortcuts, scheduled entries and the Fundray folder</li>
+            <li>Or restore a full System Restore point from Windows itself</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band">
+          <div>
+            <h2>Stuck on a step?</h2>
+            <p>The FAQ answers the questions users actually ask — including the boot screen
+            and Windows 7 game compatibility.</p>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="faq.html">Open the FAQ</a>
+            <a class="btn btn-ghost" href="https://github.com/gefrus112/fundray/issues">Ask on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="#0078d4"/>
+            <path d="M8 6h12.5v4.6h-7.1v3.9h6v4.5h-6V26H8z" fill="#fff"/>
+            <path d="M23.4 10.6l-4.6 8.9h3.7l-2.4 8.4 7.6-10.6h-3.7l2.8-6.7z" fill="#fff" opacity="0.92"/>
+          </svg>
+          <span class="brand-name">Fund<span>ray</span></span>
+        </a>
+        <p>Fundray is an enhancement toolkit for Windows 7 SP1 and Windows 10 — it is
+        <strong>not an operating system</strong>, it never touches activation or licensing,
+        and every change is reversible.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="docs.html">Docs</a>
+        <a href="screenshots.html">Screenshots</a>
+        <a href="download.html">Download</a>
+        <a href="windows11.html">Windows 11</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Project</h4>
+        <a href="https://github.com/gefrus112/fundray">GitHub repository</a>
+        <a href="https://github.com/gefrus112/fundray/releases">Releases</a>
+        <a href="https://github.com/gefrus112/fundray/issues">Issues</a>
+        <a href="docs/install.md">Install guide</a>
+        <a href="docs/revert.md">Revert guide</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>&copy; 2026 Fundray contributors &middot; MIT License</span>
+      <span>Use at your own risk — always keep a restore point.</span>
+    </div>
+  </footer>
+
+</body>
+</html>

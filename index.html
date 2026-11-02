@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fundray — Windows Enhancement Toolkit (not an operating system)</title>
+  <meta name="description" content="Fundray is a safe, reversible enhancement toolkit for Windows 7 SP1 and Windows 10: performance tweaks, Windows Terminal configuration, boot and splash, a shutdown GUI and optional Defender control. It is not an operating system.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav container">
+      <a class="brand" href="index.html">
+        <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><linearGradient id="lgf-idx" x1="0" y1="0" x2="32" y2="32">
+            <stop stop-color="#0078d4"/><stop offset="1" stop-color="#4cc2ff"/>
+          </linearGradient></defs>
+          <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="url(#lgf-idx)"/>
+          <path d="M8 6h12.5v4.6h-7.1v3.9h6v4.5h-6V26H8z" fill="#fff"/>
+          <path d="M23.4 10.6l-4.6 8.9h3.7l-2.4 8.4 7.6-10.6h-3.7l2.8-6.7z" fill="#fff" opacity="0.92"/>
+        </svg>
+        <span class="brand-name">Fund<span>ray</span></span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+      <label for="nav-toggle" class="nav-burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="docs.html">Docs</a></li>
+        <li><a href="screenshots.html">Screenshots</a></li>
+        <li><a href="download.html">Download</a></li>
+        <li><a href="windows11.html">Windows 11 <span class="badge-soon">Soon</span></a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+
+    <section class="hero">
+      <div class="container">
+        <span class="pill">Open source &middot; MIT &middot; No telemetry</span>
+        <h1>Fundray</h1>
+        <p class="lead">The full enhancement toolkit for Windows 7 SP1 and Windows 10. One installer,
+        six modules — speed, terminal, looks, boot, power and defender control — every change
+        reversible.</p>
+
+        <div class="hero-note">
+          <strong>Fundray is not an operating system.</strong> It installs on top of the Windows
+          you already have, tunes it, and can undo everything. It never touches activation or
+          licensing.
+        </div>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="download.html">Download for Windows 7 / 10</a>
+          <a class="btn btn-ghost" href="docs.html">Read the docs</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Six modules, one installer</h2>
+          <p>Everything is applied by readable Batch and PowerShell scripts, logged to disk,
+          and reversible with one click.</p>
+        </div>
+
+        <div class="grid-features">
+                    <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4.5 13.5H11L10 22l8.5-11.5H12z"/></svg>
+            </div>
+            <h3>Performance optimization</h3>
+            <p>High / Ultimate Performance power plans, whitelist-only service and startup tuning, temp &amp; Windows Update cache cleanup, optional visual-effect tuning. A restore point is created first.</p>
+            <a class="card-link" href="features.html">See how it works &rarr;</a>
+          </div>
+                    <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 9l3 3-3 3M12 15h6"/></svg>
+            </div>
+            <h3>Windows Terminal configuration</h3>
+            <p>Adds a separate <em>Fundray</em> profile to your existing Terminal settings.json — Cascadia Code, a dark scheme, sane window defaults. Your configuration is never overwritten.</p>
+            <a class="card-link" href="docs.html">Terminal guide &rarr;</a>
+          </div>
+                    <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18h1.5a2.5 2.5 0 0 0 0-5H12a2 2 0 0 1 0-4h7a2 2 0 0 0 2-2 7 7 0 0 0-9-7z"/><circle cx="7.5" cy="10.5" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="16.5" cy="10.5" r="1"/></svg>
+            </div>
+            <h3>Appearance, safely</h3>
+            <p>Logon background via the documented registry method and a curated theme guide. Fundray never patches or replaces system files — third-party theming tools stay external and optional.</p>
+            <a class="card-link" href="features.html">Learn more &rarr;</a>
+          </div>
+                    <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+            </div>
+            <h3>Boot &amp; splash</h3>
+            <p>Your own logon background through <code>OEMBackground</code>, plus an honest guide to quieting the BIOS / American Megatrends splash — which is firmware and cannot be changed from inside Windows.</p>
+            <a class="card-link" href="features.html">Learn more &rarr;</a>
+          </div>
+                    <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v8"/><path d="M6.3 6.3a8 8 0 1 0 11.4 0"/></svg>
+            </div>
+            <h3>Power Panel <span class="status-chip status-chip-blue">New</span></h3>
+            <p>A clean shutdown GUI: Restart, Shut down, Sleep, Sign out, Lock and a restore-point button in one dark, easy-to-use window. One shortcut — no more digging through menus.</p>
+            <a class="card-link" href="features.html">See the GUI &rarr;</a>
+          </div>
+                    <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4cc2ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.4-3 8.4-7 10-4-1.6-7-5.6-7-10V6z"/></svg>
+            </div>
+            <h3>Defender control <span class="status-chip status-chip-blue">Opt-in</span></h3>
+            <p>Optionally pause or re-enable Windows Defender real-time protection from one switch — with clear warnings, a log entry, and full reversibility. Off by default.</p>
+            <a class="card-link" href="faq.html">Is it safe? &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Safety first, always</h2>
+          <p>Fundray is designed so that every single change can be rolled back.</p>
+        </div>
+        <div class="check-band">
+          <ul class="check-list">
+            <li>Creates a system restore point before running optimizations</li>
+            <li>Whitelist-only edits — critical services are never touched</li>
+            <li>Every registry change is logged and reversible with one click</li>
+            <li>No activation cracking, no licensing bypasses, ever</li>
+            <li>No bundled third-party closed-source binaries</li>
+            <li>SHA256 checksums published with every release</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Requirements</h2>
+          <p>Modest on purpose — Fundray targets the machines that need it most.</p>
+        </div>
+        <table class="req-table">
+          <tr>
+            <th scope="row">Operating system</th>
+            <td>Windows 7 SP1 and Windows 10 (64-bit recommended). The dedicated
+            <a href="windows11.html">Windows 11 experience pack</a> is in development.</td>
+          </tr>
+          <tr>
+            <th scope="row">Framework</th>
+            <td>.NET Framework 4.8 (preinstalled on Windows 10; free download for Windows 7 SP1)</td>
+          </tr>
+          <tr>
+            <th scope="row">PowerShell</th>
+            <td>Windows PowerShell 2.0 or newer (5.1 recommended)</td>
+          </tr>
+          <tr>
+            <th scope="row">Terminal (optional)</th>
+            <td>Windows Terminal, only if you want the Terminal configuration module</td>
+          </tr>
+          <tr>
+            <th scope="row">Rights</th>
+            <td>Administrator — required for restore points, power plans and services</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>What Fundray will not do</h2>
+          <p>Honest limits, stated up front.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <h3>No hardware miracles</h3>
+            <p>Fundray removes friction from an aging system — it cannot make an old machine new.
+            It makes Windows smoother; it does not upgrade your hardware.</p>
+          </div>
+          <div class="card">
+            <h3>No compatibility breaks</h3>
+            <p>Fundray cannot make software run that its vendor no longer supports on your Windows
+            version. Recent Minecraft: Java Edition releases, for example, no longer officially
+            support Windows 7 — tuning the system will not change that.</p>
+          </div>
+          <div class="card">
+            <h3>No firmware changes</h3>
+            <p>The American Megatrends screen you see at power-on belongs to your motherboard's
+            BIOS, not to Windows. Fundray guides you through BIOS quiet-boot settings instead of
+            pretending software can remove it.</p>
+          </div>
+          <div class="card">
+            <h3>No system-file patching</h3>
+            <p>Custom boot animations require replacing <code>bootres.dll</code> — a Windows system
+            file. Fundray refuses to do that: it is the fastest way to brick a boot. You get safe,
+            documented tweaks instead.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band">
+          <div>
+            <h2>Ready to try it?</h2>
+            <p>Grab a release, verify its checksum, and let the restore point catch you.</p>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="download.html">Download</a>
+            <a class="btn btn-ghost" href="screenshots.html">See it in action</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="#0078d4"/>
+            <path d="M8 6h12.5v4.6h-7.1v3.9h6v4.5h-6V26H8z" fill="#fff"/>
+            <path d="M23.4 10.6l-4.6 8.9h3.7l-2.4 8.4 7.6-10.6h-3.7l2.8-6.7z" fill="#fff" opacity="0.92"/>
+          </svg>
+          <span class="brand-name">Fund<span>ray</span></span>
+        </a>
+        <p>Fundray is an enhancement toolkit for Windows 7 SP1 and Windows 10 — it is
+        <strong>not an operating system</strong>, it never touches activation or licensing,
+        and every change is reversible.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="docs.html">Docs</a>
+        <a href="screenshots.html">Screenshots</a>
+        <a href="download.html">Download</a>
+        <a href="windows11.html">Windows 11</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Project</h4>
+        <a href="https://github.com/gefrus112/fundray">GitHub repository</a>
+        <a href="https://github.com/gefrus112/fundray/releases">Releases</a>
+        <a href="https://github.com/gefrus112/fundray/issues">Issues</a>
+        <a href="docs/install.md">Install guide</a>
+        <a href="docs/revert.md">Revert guide</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>&copy; 2026 Fundray contributors &middot; MIT License</span>
+      <span>Use at your own risk — always keep a restore point.</span>
+    </div>
+  </footer>
+
+</body>
+</html>

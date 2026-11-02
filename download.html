@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Download — Fundray</title>
+  <meta name="description" content="Download Fundray from the official GitHub repository: latest release ZIP, installer batch, source code and SHA256 checksums.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav container">
+      <a class="brand" href="index.html">
+        <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><linearGradient id="lgf-dl" x1="0" y1="0" x2="32" y2="32">
+            <stop stop-color="#0078d4"/><stop offset="1" stop-color="#4cc2ff"/>
+          </linearGradient></defs>
+          <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="url(#lgf-dl)"/>
+          <path d="M8 6h12.5v4.6h-7.1v3.9h6v4.5h-6V26H8z" fill="#fff"/>
+          <path d="M23.4 10.6l-4.6 8.9h3.7l-2.4 8.4 7.6-10.6h-3.7l2.8-6.7z" fill="#fff" opacity="0.92"/>
+        </svg>
+        <span class="brand-name">Fund<span>ray</span></span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+      <label for="nav-toggle" class="nav-burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="docs.html">Docs</a></li>
+        <li><a href="screenshots.html">Screenshots</a></li>
+        <li><a href="download.html" class="active">Download</a></li>
+        <li><a href="windows11.html">Windows 11 <span class="badge-soon">Soon</span></a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+
+    <section class="hero hero-compact">
+      <div class="container">
+        <span class="pill">Download</span>
+        <h1>Get Fundray</h1>
+        <p class="lead">Direct from the official GitHub repository — no mirrors, no installers
+        wrapped in adware, no downloads that pretend to be Fundray.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="dl-grid">
+          <a class="dl-card" href="https://github.com/gefrus112/fundray/releases/latest">
+            <div class="dl-tag">Recommended</div>
+            <h3>Latest release (ZIP)</h3>
+            <p>The full toolkit: installer, scripts, Power Panel and docs. This always points at
+            the newest tagged release on GitHub.</p>
+            <span class="dl-meta">github.com/gefrus112/fundray/releases/latest</span>
+          </a>
+          <a class="dl-card" href="https://github.com/gefrus112/fundray/raw/main/install.bat">
+            <div class="dl-tag">Quick start</div>
+            <h3>Installer batch only</h3>
+            <p>Grab just <code>install.bat</code> — it pulls nothing by itself; you run the scripts
+            from the folder you download. Read it in any text editor first.</p>
+            <span class="dl-meta">/raw/main/install.bat</span>
+          </a>
+          <a class="dl-card" href="https://github.com/gefrus112/fundray/archive/refs/heads/main.zip">
+            <div class="dl-tag">Developers</div>
+            <h3>Source code (ZIP)</h3>
+            <p>The entire repository: C# source, PowerShell scripts, batch files and this website.
+            Build it yourself with <code>build.bat</code>.</p>
+            <span class="dl-meta">/archive/refs/heads/main.zip</span>
+          </a>
+          <a class="dl-card" href="https://github.com/gefrus112/fundray/releases">
+            <div class="dl-tag">All versions</div>
+            <h3>Releases &amp; checksums</h3>
+            <p>Every tagged version with release notes and a <code>SHA256SUMS.txt</code> attached
+            so you can verify before you run.</p>
+            <span class="dl-meta">github.com/gefrus112/fundray/releases</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Verify before you run</h2>
+          <p>Thirty seconds of checking beats an afternoon of cleanup.</p>
+        </div>
+        <div class="code-block">:: 1. Get the published checksum from SHA256SUMS.txt in the release
+:: 2. Compute the checksum of your downloaded file:
+certutil -hashfile Fundray-v1.0.zip SHA256
+
+:: 3. The two strings must match exactly.
+:: On Windows PowerShell you can also use:
+Get-FileHash .\Fundray-v1.0.zip -Algorithm SHA256</div>
+        <div class="callout">
+          <strong>Why the warning?</strong> Batch files from the internet trigger SmartScreen and
+          Mark-of-the-Web. That is expected for unsigned open-source tools. Read
+          <code>install.bat</code> in Notepad, verify the checksum, then run it as administrator.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>After the download</h2>
+          <p>Three commands, five minutes, one restore point.</p>
+        </div>
+        <ol class="steps">
+          <li><h3>Unzip</h3><p>Right-click the ZIP &rarr; <em>Extract All&hellip;</em> to a folder
+          like <code>C:\Fundray\</code>.</p></li>
+          <li><h3>Run as administrator</h3><p>Right-click <code>install.bat</code> &rarr;
+          <em>Run as administrator</em> and pick your modules from the menu.</p></li>
+          <li><h3>Keep the undo</h3><p>Leave <code>uninstall.bat</code> next to your restore
+          points — everything Fundray changes can be rolled back.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band">
+          <div>
+            <h2>Prefer building from source?</h2>
+            <p>Clone the repository and run <code>build.bat</code> — csc.exe and MSBuild are
+            already on every Windows 7 SP1 / 10 machine with .NET 4.8.</p>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/gefrus112/fundray">Open GitHub</a>
+            <a class="btn btn-ghost" href="docs.html">Read the docs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="#0078d4"/>
+            <path d="M8 6h12.5v4.6h-7.1v3.9h6v4.5h-6V26H8z" fill="#fff"/>
+            <path d="M23.4 10.6l-4.6 8.9h3.7l-2.4 8.4 7.6-10.6h-3.7l2.8-6.7z" fill="#fff" opacity="0.92"/>
+          </svg>
+          <span class="brand-name">Fund<span>ray</span></span>
+        </a>
+        <p>Fundray is an enhancement toolkit for Windows 7 SP1 and Windows 10 — it is
+        <strong>not an operating system</strong>, it never touches activation or licensing,
+        and every change is reversible.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="docs.html">Docs</a>
+        <a href="screenshots.html">Screenshots</a>
+        <a href="download.html">Download</a>
+        <a href="windows11.html">Windows 11</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Project</h4>
+        <a href="https://github.com/gefrus112/fundray">GitHub repository</a>
+        <a href="https://github.com/gefrus112/fundray/releases">Releases</a>
+        <a href="https://github.com/gefrus112/fundray/issues">Issues</a>
+        <a href="docs/install.md">Install guide</a>
+        <a href="docs/revert.md">Revert guide</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>&copy; 2026 Fundray contributors &middot; MIT License</span>
+      <span>Use at your own risk — always keep a restore point.</span>
+    </div>
+  </footer>
+
+</body>
+</html>

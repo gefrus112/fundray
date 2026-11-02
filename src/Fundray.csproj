@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Fundray - Windows Enhancement Toolkit
+    Builds with Visual Studio 2017+ or `dotnet build` on Windows.
+    For a dependency-free build on Windows 7 SP1, use build.bat instead
+    (it drives the in-box csc.exe directly against FundrayMain.cs).
+  -->
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <LangVersion>5.0</LangVersion>
+    <RootNamespace>Fundray</RootNamespace>
+    <AssemblyName>Fundray</AssemblyName>
+    <Version>0.1.0</Version>
+    <Product>Fundray - Windows Enhancement Toolkit</Product>
+    <Description>Safe, reversible enhancement toolkit for Windows. Not an operating system.</Description>
+    <Company>Fundray contributors</Company>
+    <NeutralLanguage>en</NeutralLanguage>
+  </PropertyGroup>
+
+</Project>
