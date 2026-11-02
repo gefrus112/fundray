@@ -78,3 +78,10 @@ Run **`uninstall.bat`** (Start Menu → Fundray → Uninstaller, or from
 `%ProgramFiles%\Fundray`). It offers to undo tweaks and restore your Terminal
 settings before removing everything. See [revert.md](revert.md) for manual
 cleanup paths.
+
+## After the reboot — what changed?
+
+Want the visual tour? The site's [after-install showcase](https://gefrus112.github.io/fundray/after.html)
+shows screenshots of every change: the new restart moment, the startup queue before
+and after, the Power Panel and the performance report — each with the exact undo
+command. Every step here is also covered by `revert.ps1`.

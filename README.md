@@ -27,6 +27,19 @@ risk:
 
 ---
 
+## What's new in v4 (website)
+
+- **New "After install" showcase** — [after.html](https://gefrus112.github.io/fundray/after.html)
+  walks through what actually changes when you run `install.bat`: the new restart moment, a
+  before/after slider of the startup queue, and a readable performance report (example run,
+  results vary by machine).
+- **New screenshots** — `restart.png`, `before.png`, `after.png`, `report.png` join the gallery.
+- **Cooler front page** — aurora hero, animated gradient headline, scroll-reveal sections and a
+  rebirth-tour teaser (all pure CSS; `site.js` is progressive enhancement and the site still
+  works with JavaScript off).
+
+---
+
 ## Project status
 
 | Module | Status |
@@ -73,6 +86,10 @@ risk:
    `SHA256SUMS.txt` in the release covers every shipped file.
 
 Full walkthrough (including SmartScreen and Windows 7 notes): **[docs/install.md](docs/install.md)**.
+
+Curious what your machine looks like *after* the reboot? See the
+**[after-install tour](https://gefrus112.github.io/fundray/after.html)** — screenshots of
+every change, and the exact undo command for each one.
 
 ## Using Fundray
 

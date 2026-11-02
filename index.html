@@ -45,7 +45,7 @@
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="features.html">Features</a></li>
         <li><a href="docs.html">Docs</a></li>
-        <li><a href="screenshots.html">Screenshots</a></li>
+        <li><a href="after.html">After install</a></li>
         <li><a href="download.html">Download</a></li>
         <li><a href="windows11.html">Windows 11</a></li>
       </ul>
@@ -55,12 +55,13 @@
   <main id="main">
 
     <section class="hero">
+      <div class="aurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
       <div class="container">
         <div class="hero-grid">
           <div>
-            <span class="pill">Open source &middot; MIT &middot; No telemetry</span>
-            <h1>Unlock your Windows machine's <span class="grad-text">full potential</span>.</h1>
-            <p class="lead">Fundray is a free enhancement toolkit for Windows 7 SP1, 10 and 11.
+            <span class="pill reveal">Open source &middot; MIT &middot; No telemetry</span>
+            <h1 class="reveal d1">Unlock your Windows machine's <span class="grad-text anim">full potential</span>.</h1>
+            <p class="lead reveal d2">Fundray is a free enhancement toolkit for Windows 7 SP1, 10 and 11.
             Fewer background processes, a lighter startup queue, an honest power plan —
             the lag goes away because the noise does. Every change is logged and reversible.</p>
 
@@ -109,6 +110,42 @@
           <div class="stat"><div class="stat-num">3</div><p class="stat-label">Windows versions supported</p></div>
           <div class="stat"><div class="stat-num">0</div><p class="stat-label">telemetry, ads, bundled junk</p></div>
           <div class="stat"><div class="stat-num">100%</div><p class="stat-label">reversible — undo log included</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="after">
+      <div class="container">
+        <div class="feature-row">
+          <div class="feature-copy">
+            <div class="kicker reveal">New &middot; the rebirth tour</div>
+            <h2 class="reveal">Run install.bat once. Reboot. Meet your new PC.</h2>
+            <p class="reveal">The screenshots nobody else shows you: the new restart moment, the
+            startup queue going from ten entries to one, the Power Panel, and a performance report
+            you can actually read. This is what &ldquo;after install&rdquo; really looks like.</p>
+            <div class="cta-row reveal d1">
+              <a class="btn btn-primary" href="after.html">Take the after-install tour</a>
+              <a class="btn btn-ghost" href="screenshots.html">All screenshots &rarr;</a>
+            </div>
+          </div>
+          <div class="feature-shot reveal d1">
+            <img src="assets/screenshots/restart.png" alt="The Fundray restart screen — logo, spinner, tweaks applied" loading="lazy">
+          </div>
+        </div>
+
+        <div class="grid-features" style="margin-top: 34px;">
+          <a class="shot reveal" href="after.html#startup">
+            <img src="assets/screenshots/after.png" alt="Task Manager after Fundray — 1 of 10 startup apps enabled" loading="lazy">
+            <span class="shot-meta"><span><h3>Startup queue: 10 &rarr; 1</h3><p>Undo list saved, Windows Security kept on</p></span><span class="arr">&rarr;</span></span>
+          </a>
+          <a class="shot reveal d1" href="after.html#restart">
+            <img src="assets/screenshots/restart.png" alt="The Fundray restart screen" loading="lazy">
+            <span class="shot-meta"><span><h3>The new restart moment</h3><p>One dark screen, one spinner, rebirth</p></span><span class="arr">&rarr;</span></span>
+          </a>
+          <a class="shot reveal d2" href="after.html#report">
+            <img src="assets/screenshots/report.png" alt="The Fundray performance report" loading="lazy">
+            <span class="shot-meta"><span><h3>A readable report</h3><p>What changed, what was freed, how to undo</p></span><span class="arr">&rarr;</span></span>
+          </a>
         </div>
       </div>
     </section>
@@ -374,6 +411,7 @@
         <a href="features.html">Features</a>
         <a href="docs.html">Docs</a>
         <a href="screenshots.html">Screenshots</a>
+        <a href="after.html">After install</a>
         <a href="download.html">Download</a>
         <a href="windows11.html">Windows 11</a>
         <a href="faq.html">FAQ</a>
@@ -393,5 +431,6 @@
     </div>
   </footer>
 
+  <script src="site.js" defer></script>
 </body>
 </html>

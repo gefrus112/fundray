@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>After install — your laptop, reborn | Fundray</title>
+  <meta name="description" content="What actually changes after you run the Fundray installer: a new restart moment, the Power Panel, a lighter startup queue, a tuned power plan — every screenshot, every step reversible.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="nav container">
+      <a class="brand" href="index.html">
+        <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="frt-after" x1="0" y1="32" x2="32" y2="0" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#0b0e1a"/><stop offset="1" stop-color="#171d33"/>
+            </linearGradient>
+            <linearGradient id="frr-after" x1="4" y1="28" x2="28" y2="4" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#22d3ee"/><stop offset="0.55" stop-color="#818cf8"/><stop offset="1" stop-color="#e879f9"/>
+            </linearGradient>
+          </defs>
+          <rect width="32" height="32" rx="7.5" fill="url(#frt-after)"/>
+          <circle cx="8.4" cy="23.6" r="2.4" fill="url(#frr-after)"/>
+          <path d="M8 16.6 A7 7 0 0 1 15.4 24" fill="none" stroke="url(#frr-after)" stroke-width="2.7" stroke-linecap="round"/>
+          <path d="M8 11.4 A12.2 12.2 0 0 1 20.6 24" fill="none" stroke="url(#frr-after)" stroke-width="2.7" stroke-linecap="round" opacity="0.72"/>
+          <path d="M8 6.2 A17.4 17.4 0 0 1 25.8 24" fill="none" stroke="url(#frr-after)" stroke-width="2.7" stroke-linecap="round" opacity="0.45"/>
+        </svg>
+        <span class="brand-name">Fund<span>ray</span></span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+      <label for="nav-toggle" class="nav-burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="docs.html">Docs</a></li>
+        <li><a href="after.html" class="active">After install</a></li>
+        <li><a href="download.html">Download</a></li>
+        <li><a href="windows11.html">Windows 11</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <div class="aurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
+      <div class="container">
+        <div style="max-width: 780px;">
+          <span class="chip-float reveal"><span class="dot"></span>What changes on your machine &mdash; screenshot by screenshot</span>
+          <h1 class="reveal d1">Run <code style="font-family: var(--font-mono); font-size: 0.72em; color: var(--cyan); background: rgba(34,211,238,0.08); border: 1px solid rgba(34,211,238,0.2); padding: 2px 12px; border-radius: 10px;">install.bat</code> once. Reboot. <span class="grad-text anim">Your laptop, reborn.</span></h1>
+          <p class="lead reveal d2">This is the honest tour of what Fundray actually does after the installer
+          finishes: a new restart moment, a Power Panel you will actually use, a startup queue that
+          stops fighting you, and a report showing exactly what changed. Everything on this page is
+          reversible with one script.</p>
+
+          <div class="cta-row reveal d3">
+            <a class="btn btn-primary" href="download.html">Get the installer</a>
+            <a class="btn btn-ghost" href="docs.html">Read the terminal guide &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="restart">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>The new restart moment</h2>
+          <p>Every Windows restart feels like an apology. Fundray's Power Panel makes it feel like
+          a launch sequence: one dark screen, one spinner, and your freshly tuned machine comes
+          back with a lighter startup queue.</p>
+        </div>
+        <figure class="fullshot reveal">
+          <img src="assets/screenshots/restart.png" alt="The Fundray restart screen — dark background, Fundray logo, spinner and the message: Fundray tweaks applied" loading="lazy">
+          <figcaption>
+            <span class="cap-dot"></span>
+            <span><strong>Restarting via Power Panel.</strong> Launched from the panel or <code>powerpanel.ps1</code> — the same window also handles Shut down, Sleep, Sign out and Lock.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="startup">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>The startup queue, before and after</h2>
+          <p>Drag the slider. Left: the auto-start pile-up a normal laptop collects — every entry
+          launches before your desktop is ready. Right: after <code>optimize.ps1</code>, only what
+          matters keeps starting automatically, and Windows Security is always left on.</p>
+        </div>
+
+        <div class="compare reveal" role="group" aria-label="Before and after comparison of the Windows startup app list">
+          <img src="assets/screenshots/after.png" alt="Task Manager after Fundray — 1 of 10 startup apps enabled, the rest disabled with a saved undo list">
+          <div class="cmp-before">
+            <img src="assets/screenshots/before.png" alt="Task Manager before Fundray — 10 startup apps enabled">
+          </div>
+          <span class="cmp-tag cmp-tag-before">Before &middot; 10 enabled</span>
+          <span class="cmp-tag cmp-tag-after">After &middot; 1 enabled</span>
+          <div class="cmp-handle" aria-hidden="true"></div>
+          <input class="cmp-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+        </div>
+
+        <p class="footnote reveal">Illustrative example built from a typical tune run — your queue,
+        publishers and impact ratings are your own. Fundray saves the untouched original list to
+        <code>undo\startup-before.txt</code>, and <code>optimize.ps1 -RestoreStartup</code> puts
+        every entry back.</p>
+      </div>
+    </section>
+
+    <section class="section" id="report">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>A report you can actually read</h2>
+          <p>No mystery tweaks. When the optimizer finishes, it tells you what changed, what was
+          freed, and the exact command to undo each part.</p>
+        </div>
+        <figure class="fullshot reveal">
+          <img src="assets/screenshots/report.png" alt="Fundray performance report in PowerShell — power plan, startup queue, services, disk space and safety sections" loading="lazy">
+          <figcaption>
+            <span class="cap-dot"></span>
+            <span><strong>Example run on our test laptop</strong> — your numbers depend on your machine. Fundray frees CPU, RAM and disk friction; it does not upgrade hardware or fake FPS numbers.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="tour">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>The rest of the tour</h2>
+          <p>The other things waiting for you after install — click any card to open the full
+          screenshot.</p>
+        </div>
+        <div class="grid-features">
+          <a class="shot reveal" href="assets/screenshots/powerpanel.png" target="_blank" rel="noopener">
+            <img src="assets/screenshots/powerpanel.png" alt="Fundray Power Panel — dark shutdown GUI" loading="lazy">
+            <span class="shot-meta"><span><h3>Power Panel</h3><p>Restart, shut down, sleep — one clean window</p></span><span class="arr">&rarr;</span></span>
+          </a>
+          <a class="shot reveal d1" href="assets/screenshots/bootsplash.png" target="_blank" rel="noopener">
+            <img src="assets/screenshots/bootsplash.png" alt="Logon background before and after the Fundray boot and splash module" loading="lazy">
+            <span class="shot-meta"><span><h3>Boot &amp; splash</h3><p>Your own logon background, registry method</p></span><span class="arr">&rarr;</span></span>
+          </a>
+          <a class="shot reveal d2" href="assets/screenshots/terminal.png" target="_blank" rel="noopener">
+            <img src="assets/screenshots/terminal.png" alt="The Fundray profile inside Windows Terminal" loading="lazy">
+            <span class="shot-meta"><span><h3>Fundray Terminal</h3><p>Cascadia Code, dark scheme, sane defaults</p></span><span class="arr">&rarr;</span></span>
+          </a>
+          <a class="shot reveal" href="assets/screenshots/win11.png" target="_blank" rel="noopener">
+            <img src="assets/screenshots/win11.png" alt="Windows 11 tweaks — classic right-click menu and taskbar alignment" loading="lazy">
+            <span class="shot-meta"><span><h3>Windows 11 tweaks</h3><p>Classic right-click menu, taskbar your way</p></span><span class="arr">&rarr;</span></span>
+          </a>
+          <a class="shot reveal d1" href="assets/screenshots/optimizer.png" target="_blank" rel="noopener">
+            <img src="assets/screenshots/optimizer.png" alt="The Fundray optimizer running in a terminal" loading="lazy">
+            <span class="shot-meta"><span><h3>The optimizer</h3><p>Services, startup and power plan in one pass</p></span><span class="arr">&rarr;</span></span>
+          </a>
+          <a class="shot reveal d2" href="assets/screenshots/docs.png" target="_blank" rel="noopener">
+            <img src="assets/screenshots/docs.png" alt="The Fundray documentation site" loading="lazy">
+            <span class="shot-meta"><span><h3>Docs that respect you</h3><p>Vercel-style, terminal-first, screenshot at every step</p></span><span class="arr">&rarr;</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="timeline">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>What happens when you run install.bat</h2>
+          <p>Seven steps, zero mysteries. This is the exact sequence — and the exact way out of
+          every one of them.</p>
+        </div>
+        <ul class="tl reveal">
+          <li><span class="tl-dot">1</span><h3>A restore point, first</h3><p>Before anything is touched, the installer creates the <em>"Before Fundray"</em> checkpoint. No checkpoint, no tweaks.</p></li>
+          <li><span class="tl-dot">2</span><h3>The startup queue gets honest</h3><p>Every auto-start entry is listed, the safe ones are disabled, and the untouched original list is saved to <code>undo\startup-before.txt</code>.</p></li>
+          <li><span class="tl-dot">3</span><h3>Services go quiet</h3><p>Whitelist-only tuning: 14 known-safe services on a typical run, critical services protected by a hard list, everything logged to <code>undo\services.log</code>.</p></li>
+          <li><span class="tl-dot">4</span><h3>The power plan grows up</h3><p>Balanced is replaced with High or Ultimate Performance — fewer micro-stalls when you actually need speed. One <code>powercfg</code> command undoes it.</p></li>
+          <li><span class="tl-dot">5</span><h3>Temp and update caches get flushed</h3><p>Freed space is printed in the report. Nothing outside temp and update cache locations is deleted.</p></li>
+          <li><span class="tl-dot">6</span><h3>The rebirth moment</h3><p>Restart from the Power Panel. The Fundray restart screen appears, and your machine comes back with a lighter startup queue.</p></li>
+          <li><span class="tl-dot">7</span><h3>The undo log is yours</h3><p>Every change above is logged and reversed by <code>revert.ps1</code> — the one-click way back to exactly how it was.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band">
+          <div>
+            <h2>Your laptop is one reboot away</h2>
+            <p>Download, verify the SHA256 checksum, run install.bat — and let the restore point catch you.</p>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="download.html">Download</a>
+            <a class="btn btn-ghost" href="faq.html">Is it safe? &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="32" height="32" rx="7.5" fill="url(#frt-after)"/>
+            <circle cx="8.4" cy="23.6" r="2.4" fill="url(#frr-after)"/>
+            <path d="M8 16.6 A7 7 0 0 1 15.4 24" fill="none" stroke="url(#frr-after)" stroke-width="2.7" stroke-linecap="round"/>
+            <path d="M8 11.4 A12.2 12.2 0 0 1 20.6 24" fill="none" stroke="url(#frr-after)" stroke-width="2.7" stroke-linecap="round" opacity="0.72"/>
+            <path d="M8 6.2 A17.4 17.4 0 0 1 25.8 24" fill="none" stroke="url(#frr-after)" stroke-width="2.7" stroke-linecap="round" opacity="0.45"/>
+          </svg>
+          <span class="brand-name">Fund<span>ray</span></span>
+        </a>
+        <p>Fundray is an enhancement toolkit for Windows 7 SP1, 10 and 11 — it is
+        <strong>not an operating system</strong>, it never touches activation or licensing,
+        and every change is reversible.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="docs.html">Docs</a>
+        <a href="after.html">After install</a>
+        <a href="screenshots.html">Screenshots</a>
+        <a href="download.html">Download</a>
+        <a href="windows11.html">Windows 11</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Project</h4>
+        <a href="https://github.com/gefrus112/fundray">GitHub repository</a>
+        <a href="https://github.com/gefrus112/fundray/releases">Releases</a>
+        <a href="https://github.com/gefrus112/fundray/issues">Issues</a>
+        <a href="docs/install.md">Install guide</a>
+        <a href="docs/revert.md">Revert guide</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>&copy; 2026 Fundray contributors &middot; MIT License</span>
+      <span>Use at your own risk — always keep a restore point.</span>
+    </div>
+  </footer>
+
+  <script src="site.js" defer></script>
+</body>
+</html>
