@@ -1159,3 +1159,144 @@ kbd {
 
 /* ---------- v5: Fundray Linux page ---------- */
 .img-pixelated { image-rendering: pixelated; }
+/* ============================================================================
+   Fundray — v6 "ultra" layer: motion & polish additions
+   (scroll progress, word rotator, flow tabs, copy buttons, docs search,
+    doc hero, pager, home FAQ grid, bento spotlight). No-JS safe.
+   ============================================================================ */
+
+/* ---- scroll progress bar (injected by site.js) ---- */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; height: 2px; width: 0;
+  background: var(--grad); z-index: 99; pointer-events: none;
+  box-shadow: 0 0 12px rgba(129, 140, 248, 0.65);
+}
+
+/* ---- headline word rotator ---- */
+.rot {
+  display: inline-block;
+  transition: opacity 0.28s ease, transform 0.28s ease, filter 0.28s ease;
+}
+.rot.rot-out { opacity: 0; transform: translateY(0.3em) scale(0.96); filter: blur(6px); }
+.rot.rot-in  { animation: rot-pop 0.34s ease both; }
+@keyframes rot-pop {
+  from { opacity: 0; transform: translateY(-0.28em) scale(0.97); filter: blur(5px); }
+  to   { opacity: 1; transform: none; filter: none; }
+}
+
+/* ---- flow tabs (Install / Optimize / Revert) ---- */
+.flow-tabs { margin-top: 46px; text-align: left; }
+.tab-bar { display: none; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+.js .tab-bar { display: flex; }
+.tab-btn {
+  font-family: var(--font-sans); font-size: 0.9rem; font-weight: 600;
+  color: var(--muted); background: var(--panel); border: 1px solid var(--border);
+  border-radius: 10px; padding: 9px 16px; cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.tab-btn:hover { color: var(--text); border-color: var(--border-hi); text-decoration: none; }
+.tab-btn.active {
+  color: #fff; border-color: rgba(129, 140, 248, 0.55);
+  background: rgba(129, 140, 248, 0.13);
+}
+.js .tab-pane { display: none; }
+.js .tab-pane.active { display: block; animation: pane-in 0.5s ease both; }
+.tab-pane .term { margin: 0; }
+@keyframes pane-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ---- copy buttons on terminal windows ---- */
+.term-bar { display: flex; align-items: center; }
+.copy-btn {
+  margin-left: auto; flex: 0 0 auto;
+  font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+  color: var(--muted); background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border); border-radius: 7px;
+  padding: 3px 10px; cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.copy-btn:hover { color: var(--text); border-color: var(--border-hi); background: rgba(255, 255, 255, 0.09); }
+.copy-btn.copied { color: var(--green); border-color: rgba(52, 211, 153, 0.45); }
+
+/* ---- docs nav filter (injected by site.js) ---- */
+.docs-search { margin: 0 0 14px; }
+.docs-search input {
+  width: 100%; font-family: var(--font-sans); font-size: 0.86rem;
+  color: var(--text); background: var(--panel-2);
+  border: 1px solid var(--border); border-radius: 9px;
+  padding: 8px 12px; outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.docs-search input::placeholder { color: var(--dim); }
+.docs-search input:focus {
+  border-color: rgba(129, 140, 248, 0.5);
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.14);
+}
+
+/* ---- docs page hero ---- */
+.doc-hero { position: relative; overflow: hidden; padding: 76px 0 26px; text-align: center; }
+.doc-hero h1 { font-size: clamp(2.2rem, 5vw, 3.3rem); margin-bottom: 0; }
+.doc-hero .lead { margin: 18px auto 0; }
+.doc-hero .trust-row { margin-top: 24px; }
+
+/* ---- docs prev/next pager ---- */
+.pager { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 38px; }
+.pager a {
+  display: block; border: 1px solid var(--border); background: var(--panel);
+  border-radius: var(--radius-lg); padding: 18px 22px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.pager a:hover {
+  text-decoration: none; border-color: var(--border-hi);
+  transform: translateY(-2px); box-shadow: var(--shadow);
+}
+.pager .p-dir {
+  display: block; font-size: 0.74rem; color: var(--dim);
+  letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;
+}
+.pager .p-title { color: var(--text); font-weight: 650; font-size: 0.98rem; }
+.pager .next { text-align: right; }
+
+/* ---- home FAQ grid ---- */
+.home-faq {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+  margin-top: 38px; align-items: start;
+}
+
+/* ---- bento spotlight (pointer glow, --mx/--my set by site.js) ---- */
+.b-tile { position: relative; overflow: hidden; }
+.b-tile::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(129, 140, 248, 0.14), transparent 65%);
+  opacity: 0; transition: opacity 0.3s ease;
+}
+.b-tile:hover::before { opacity: 1; }
+
+/* ---- callout tip variant ---- */
+.callout-tip {
+  border-color: rgba(52, 211, 153, 0.35);
+  background: rgba(52, 211, 153, 0.06);
+}
+.callout-tip strong { color: var(--green); }
+
+/* ---- misc polish ---- */
+.stat-num { font-variant-numeric: tabular-nums; }
+.t-arrow { color: var(--cyan); }
+
+/* ---- responsive ---- */
+@media (max-width: 920px) {
+  .home-faq { grid-template-columns: 1fr; }
+  .pager { grid-template-columns: 1fr; }
+  .pager .next { text-align: left; }
+}
+
+/* ---- reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .rot { transition: none; }
+  .js .tab-pane.active { animation: none; }
+  .b-tile::before { transition: none; opacity: 0; }
+  .pager a, .copy-btn, .tab-btn { transition: none; }
+}

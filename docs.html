@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Docs — Fundray</title>
-  <meta name="description" content="Fundray documentation: install it from the terminal, first launch, every module guide, Windows 11 tweaks and how to revert everything — with screenshots at every step.">
+  <meta name="description" content="Fundray documentation: install it from the terminal, first launch, every module guide, Windows 11 tweaks, booting Fundray Linux, and how to revert everything — with screenshots at every step.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,13 +54,31 @@
   </header>
 
   <main id="main">
+
+    <!-- ============ DOCS HERO ============ -->
+    <section class="doc-hero">
+      <div class="aurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
+      <div class="container">
+        <span class="pill reveal">Documentation &middot; v6</span>
+        <h1 class="reveal d1">Fundray <span class="grad-text anim">docs</span></h1>
+        <p class="lead reveal d2">Install from the terminal, run every module, undo everything —
+        and boot our real Linux distro. Screenshots at every step, and the same guides live in
+        the repository as plain Markdown.</p>
+        <div class="trust-row reveal d3">
+          <span class="trust-chip cyan"><span class="tdot"></span>&asymp; 10-minute install</span>
+          <span class="trust-chip indigo"><span class="tdot"></span>Windows 7 SP1 / 10 / 11 + Linux</span>
+          <span class="trust-chip green"><span class="tdot"></span>Scripts you can read first</span>
+        </div>
+      </div>
+    </section>
+
     <div class="container docs-shell">
 
       <aside class="docs-side">
         <nav class="docs-nav" aria-label="Documentation">
           <h4>Get started</h4>
           <a href="#overview">Overview</a>
-          <a href="#install" class="active">Install from the terminal</a>
+          <a href="#install">Install from the terminal</a>
           <a href="#first-launch">First launch</a>
           <h4>Modules</h4>
           <a href="#module-performance">Performance</a>
@@ -69,6 +87,8 @@
           <a href="#module-powerpanel">Power Panel</a>
           <a href="#module-defender">Defender control</a>
           <a href="#module-win11">Windows 11 tweaks</a>
+          <h4>Fundray Linux</h4>
+          <a href="#linux-quickstart">Quickstart: build &amp; boot</a>
           <h4>Safety</h4>
           <a href="#revert">Revert everything</a>
           <a href="#smartscreen">SmartScreen warnings</a>
@@ -78,13 +98,7 @@
       <article class="docs-main">
 
         <section class="doc-section" id="overview">
-          <span class="pill">Documentation</span>
-          <h1 style="font-size:2.2rem;">Fundray docs</h1>
-          <p class="lead">How to install Fundray from the terminal, use every module, and undo
-          everything — with a screenshot at every step. The same guides live in the repository
-          as plain Markdown.</p>
-
-          <h2>Supported systems at a glance</h2>
+          <h2>Overview — supported systems at a glance</h2>
           <p>The installer detects your Windows version and adjusts every module automatically.
           Here is exactly what runs where:</p>
           <table class="matrix">
@@ -211,11 +225,11 @@
 <span class="t-ok"> 09:14:09       Restore point created.</span>
 <span class="t-ok"> 09:14:09 [3/5] Startup: 6 entries disabled (list saved).</span></code></div>
           </div>
-          <ul style="list-style:none;padding:0;display:grid;gap:9px;">
-            <li style="position:relative;padding-left:24px;color:var(--muted);"><span style="position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:2px;background:var(--grad);transform:rotate(45deg);"></span>High (Win 7) or Ultimate Performance (Win 10/11) power plan</li>
-            <li style="position:relative;padding-left:24px;color:var(--muted);"><span style="position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:2px;background:var(--grad);transform:rotate(45deg);"></span>Whitelist-only service tuning — critical services are never touched</li>
-            <li style="position:relative;padding-left:24px;color:var(--muted);"><span style="position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:2px;background:var(--grad);transform:rotate(45deg);"></span>Startup cleanup with a before/after list saved to disk</li>
-            <li style="position:relative;padding-left:24px;color:var(--muted);"><span style="position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:2px;background:var(--grad);transform:rotate(45deg);"></span>Temp files + Windows Update cache cleanup</li>
+          <ul class="check-list">
+            <li>High (Win 7) or Ultimate Performance (Win 10/11) power plan</li>
+            <li>Whitelist-only service tuning — critical services are never touched</li>
+            <li>Startup cleanup with a before/after list saved to disk</li>
+            <li>Temp files + Windows Update cache cleanup</li>
           </ul>
           <p><a href="docs/install.md">Full install reference in the repository &rarr;</a></p>
         </section>
@@ -281,12 +295,76 @@
 <span class="t-ok"> 09:20:12 [OK] Taskbar alignment set to: left.</span>
 <span class="t-dim"> 09:20:12      Restart explorer.exe to see both changes.</span></code></div>
           </div>
-          <ul style="list-style:none;padding:0;display:grid;gap:9px;">
-            <li style="position:relative;padding-left:24px;color:var(--muted);"><span style="position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:2px;background:var(--grad);transform:rotate(45deg);"></span><strong>Classic right-click menu</strong> — the full context menu back, one switch to revert</li>
-            <li style="position:relative;padding-left:24px;color:var(--muted);"><span style="position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:2px;background:var(--grad);transform:rotate(45deg);"></span><strong>Taskbar alignment</strong> — <code>-TaskbarAlign left</code> or <code>center</code></li>
-            <li style="position:relative;padding-left:24px;color:var(--muted);"><span style="position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:2px;background:var(--grad);transform:rotate(45deg);"></span>Self-checks: on Windows 7/10 the script politely refuses to run</li>
+          <ul class="check-list">
+            <li><strong>Classic right-click menu</strong> — the full context menu back, one switch to revert</li>
+            <li><strong>Taskbar alignment</strong> — <code>-TaskbarAlign left</code> or <code>center</code></li>
+            <li>Self-checks: on Windows 7/10 the script politely refuses to run</li>
           </ul>
           <p><a href="windows11.html">Full Windows 11 support page &rarr;</a></p>
+        </section>
+
+        <section class="doc-section" id="linux-quickstart">
+          <h2>Fundray Linux — quickstart <span class="status-chip status-chip-green">Real distro</span></h2>
+          <p>Fundray Linux is not a Windows module — it is a separate, real, bootable operating
+          system: a tiny live Linux distribution the project assembles from the official
+          kernel and BusyBox. It runs entirely from RAM, never mounts a disk, and boots on
+          BIOS and UEFI machines alike.</p>
+          <table class="req-table">
+            <tr><th scope="row">Kernel</th><td>Official Linux 6.12.115 LTS, <code>tinyconfig</code> + the project's <code>os/kernel.fragment</code> — ~2.4&nbsp;MB <code>bzImage</code></td></tr>
+            <tr><th scope="row">Userland</th><td>Static BusyBox 1.37.0 built from source, plus <code>ctty</code>, a 30-line getty replacement</td></tr>
+            <tr><th scope="row">ISO</th><td><code>artifacts/fundray-linux-1.0-x86_64.iso</code> — ~6.3&nbsp;MB, BIOS (El Torito + isohybrid MBR) and UEFI</td></tr>
+          </table>
+
+          <h3>Try it in a VM</h3>
+          <div class="term">
+            <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span><span class="term-title">Linux host — QEMU</span></div>
+            <div class="term-body"><code><span class="t-prompt">$</span> <span class="t-cmd">qemu-system-x86_64 -m 512 -cdrom artifacts/fundray-linux-1.0-x86_64.iso</span>
+<span class="t-dim"># add -nographic for the serial console</span></code></div>
+          </div>
+
+          <h3>Boot on real hardware</h3>
+          <p>Write the ISO to a USB stick and boot from it — nothing is installed and nothing
+          persists across reboots:</p>
+          <div class="term">
+            <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span><span class="term-title">Linux host — USB stick</span></div>
+            <div class="term-body"><code><span class="t-prompt">$</span> <span class="t-cmd">dd if=fundray-linux-1.0-x86_64.iso of=/dev/sdX bs=4M status=progress</span></code></div>
+          </div>
+          <div class="callout callout-warn">
+            <strong>Double-check the device:</strong> <code>of=/dev/sdX</code> overwrites the
+            target without asking. The wrong device letter means a wiped disk — verify with
+            <code>lsblk</code> first. (Ventoy works too.)
+          </div>
+
+          <h3>Build it from source</h3>
+          <div class="term">
+            <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span><span class="term-title">Linux host — build</span></div>
+            <div class="term-body"><code><span class="t-prompt">$</span> <span class="t-cmd">sudo apt-get install -y build-essential flex bison bc perl xz-utils curl grub-pc-bin grub-efi-amd64-bin mtools xorriso</span>
+<span class="t-prompt">$</span> <span class="t-path">cd</span> <span class="t-cmd">os &amp;&amp; ./build.sh</span>
+<span class="t-dim"># ~15-30 min: kernel + busybox + ISO, sources from kernel.org / busybox.net</span>
+<span class="t-prompt">$</span> <span class="t-cmd">./qemu-test.sh</span>
+<span class="t-dim"># automated boot test: drives the serial console, checks the fundray CLI</span></code></div>
+          </div>
+
+          <h3>The <code>fundray</code> command line</h3>
+          <table class="matrix">
+            <tr><th scope="col">Command</th><th scope="col">What it does</th></tr>
+            <tr><td><code>fundray info</code></td><td>kernel, memory, uptime, process count</td></tr>
+            <tr><td><code>fundray services</code></td><td>prove that zero services are running</td></tr>
+            <tr><td><code>fundray clean</code></td><td>drop the page cache and free RAM</td></tr>
+            <tr><td><code>fundray bench</code></td><td>quick CPU throughput test</td></tr>
+            <tr><td><code>fundray net</code></td><td>DHCP on the wired NIC (e1000, e1000e, r8169, virtio-net)</td></tr>
+            <tr><td><code>fundray rebirth</code></td><td>the little reboot ceremony</td></tr>
+            <tr><td><code>fundray license</code></td><td>licensing — GPL-2.0, kernel copyright notice included</td></tr>
+          </table>
+
+          <div class="callout callout-tip">
+            <strong>Honest scope:</strong> Fundray Linux is console-only (no desktop), live-only
+            (nothing persists), and wired-network-only in v1 (Wi-Fi firmware does not fit a tiny
+            kernel). It is a rescue / tinker system — and it says so on the box.
+          </div>
+
+          <p><a href="os.html">Meet Fundray Linux &rarr;</a> &nbsp;&middot;&nbsp;
+          <a href="os/README.md">Full build reference in the repository &rarr;</a></p>
         </section>
 
         <section class="doc-section" id="revert">
@@ -332,6 +410,17 @@
           you run them — that is the point.</p>
         </section>
 
+        <nav class="pager" aria-label="Continue reading">
+          <a href="#overview">
+            <span class="p-dir">&larr; Start here</span>
+            <span class="p-title">Overview — what runs where</span>
+          </a>
+          <a class="next" href="os.html">
+            <span class="p-dir">Next up &rarr;</span>
+            <span class="p-title">Meet Fundray Linux 1.0</span>
+          </a>
+        </nav>
+
       </article>
 
       <aside class="docs-toc" aria-label="On this page">
@@ -345,6 +434,7 @@
         <a href="#module-powerpanel">Power Panel</a>
         <a href="#module-defender">Defender control</a>
         <a href="#module-win11">Windows 11 tweaks</a>
+        <a href="#linux-quickstart">Fundray Linux quickstart</a>
         <a href="#revert">Revert everything</a>
         <a href="#smartscreen">SmartScreen</a>
       </aside>
